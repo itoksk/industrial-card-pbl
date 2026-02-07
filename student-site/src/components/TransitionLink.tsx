@@ -8,17 +8,18 @@ export default function TransitionLink({
   href,
   children,
   className = '',
+  onClick,
   ...props
-}: {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-  [key: string]: any;
-}) {
+}: TransitionLinkProps) {
   const router = useRouter();
   const [isExiting, setIsExiting] = useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    onClick?.(e);
+    if (e.defaultPrevented) {
+      return;
+    }
+
     // External links
     if (href.startsWith('http') || href.startsWith('mailto:')) {
       return;
@@ -48,3 +49,10 @@ export default function TransitionLink({
     </Link>
   );
 }
+
+type TransitionLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+} & Omit<React.ComponentProps<typeof Link>, 'href' | 'children' | 'className' | 'onClick'>;

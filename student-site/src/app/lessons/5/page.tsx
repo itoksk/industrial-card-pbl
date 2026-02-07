@@ -196,7 +196,7 @@ export default function Lesson5() {
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="content-card border-l-4 border-red-500">
-                <h4 className="font-bold text-lg mb-3 text-red-600 dark:text-red-400">✗ 攻撃のみのゲーム</h4>
+                <h4 className="font-bold text-lg mb-3 text-red-600 dark:text-red-400">攻撃のみのゲーム</h4>
                 <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                   <li>• 単純に強いカードを出すだけ</li>
                   <li>• 戦略の幅が狭い</li>
@@ -206,7 +206,7 @@ export default function Lesson5() {
               </div>
 
               <div className="content-card border-l-4 border-green-500">
-                <h4 className="font-bold text-lg mb-3 text-green-600 dark:text-green-400">✓ 防御/補助を含むゲーム</h4>
+                <h4 className="font-bold text-lg mb-3 text-green-600 dark:text-green-400">防御/補助を含むゲーム</h4>
                 <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                   <li>• 多様な戦略が可能</li>
                   <li>• 読み合い・駆け引きが生まれる</li>
@@ -301,13 +301,13 @@ export default function Lesson5() {
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-white dark:bg-gray-800 p-3 rounded">
-                    <p className="text-sm font-semibold text-green-600 dark:text-green-400 mb-2">✓ 良い例</p>
+                    <p className="text-sm font-semibold text-green-600 dark:text-green-400 mb-2">良い例</p>
                     <p className="text-sm text-gray-700 dark:text-gray-300">
                       「スプリンクラー：水系の消火装置。火災攻撃を無効化する（実在する消火設備）」
                     </p>
                   </div>
                   <div className="bg-white dark:bg-gray-800 p-3 rounded">
-                    <p className="text-sm font-semibold text-red-600 dark:text-red-400 mb-2">✗ 悪い例</p>
+                    <p className="text-sm font-semibold text-red-600 dark:text-red-400 mb-2">悪い例</p>
                     <p className="text-sm text-gray-700 dark:text-gray-300">
                       「魔法の盾：すべての攻撃を跳ね返す（現実に存在しない）」
                     </p>

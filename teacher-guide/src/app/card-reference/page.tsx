@@ -18,14 +18,9 @@ export default function CardReferencePage() {
     }
   };
 
-  const scaleIn = {
-    initial: { opacity: 0, scale: 0.95 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-50 via-white to-green-50 dark:from-zinc-950 dark:via-black dark:to-green-950/20">
+    <div className="min-h-screen bg-[var(--background)]">
       <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
 
         {/* Breadcrumb */}
@@ -975,39 +970,26 @@ export default function CardReferencePage() {
             </div>
           </motion.section>
 
-          {/* CTA Section */}
-          <motion.section variants={scaleIn} className="mt-20">
-            <div className="glass-card bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-950/30 dark:via-purple-950/30 dark:to-pink-950/30 border-indigo-200 dark:border-indigo-800">
-              <div className="text-center space-y-6">
-                <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
-                  学びの旅はここから
-                </h2>
-                <p className="text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
-                  教授法の基本に立ち返り、全体の流れを再確認しましょう
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <TransitionLink
-                    href="/"
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                    <span>ホームへ戻る</span>
-                  </TransitionLink>
-                  <TransitionLink
-                    href="/pedagogy"
-                    className="inline-flex items-center gap-3 bg-white dark:bg-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-700 text-indigo-600 dark:text-indigo-400 font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-indigo-200 dark:border-indigo-800"
-                  >
-                    <span>教授法メモを見る</span>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </TransitionLink>
-                </div>
+          {/* Navigation */}
+          <motion.div variants={fadeInUp} className="mt-16 border-t border-[var(--border)] pt-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase text-[var(--text-muted)] mb-1">関連ページ</p>
+                <p className="text-[var(--text-secondary)]">教授法の基本に立ち返り、全体の流れを再確認する</p>
+              </div>
+              <div className="flex gap-4 shrink-0">
+                <TransitionLink href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
+                  ホームへ
+                </TransitionLink>
+                <TransitionLink href="/pedagogy" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-primary)] hover:underline underline-offset-4">
+                  教授法メモへ
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </TransitionLink>
               </div>
             </div>
-          </motion.section>
+          </motion.div>
 
         </motion.div>
       </div>

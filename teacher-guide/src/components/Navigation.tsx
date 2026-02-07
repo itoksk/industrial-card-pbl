@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import TransitionLink from './TransitionLink';
 import { useTheme } from './ThemeProvider';
 
@@ -16,145 +17,111 @@ const navLinks = [
 ];
 
 export default function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
+
+  const [scrolled, setScrolled] = useState(false);
+  const [mobilePath, setMobilePath] = useState<string | null>(null);
+
+  const mobileMenuOpen = mobilePath === pathname;
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+    return () => {
       document.body.style.overflow = '';
-    }
+    };
   }, [mobileMenuOpen]);
 
   return (
     <>
       <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-nav border-b border-theme shadow-lg'
-            : 'bg-transparent'
-        }`}
+        initial={{ y: -72, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.55, ease: [0.25, 1, 0.5, 1] }}
+        className="fixed top-0 left-0 right-0 z-50 border-b transition-all duration-500"
+        style={{
+          borderColor: scrolled ? 'var(--border)' : 'transparent',
+          background: scrolled ? 'var(--nav-bg)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(16px) saturate(140%)' : 'none',
+        }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            <TransitionLink href="/" className="flex items-center gap-3 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-primary blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
-                <div className="relative w-10 h-10 lg:w-12 lg:h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 lg:w-7 lg:h-7 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    />
-                  </svg>
+          <div className="flex h-16 lg:h-20 items-center justify-between gap-3">
+            <TransitionLink href="/" className="group flex items-center gap-3">
+              <div className="relative h-10 w-10 rounded-xl border overflow-hidden" style={{ borderColor: 'var(--surface-glass-border)' }}>
+                <div className="absolute inset-0 bg-gradient-primary" />
+                <div className="absolute inset-[1px] rounded-[10px]" style={{ background: 'var(--background)' }} />
+                <div className="absolute inset-0 flex items-center justify-center text-xs font-black tracking-[0.12em] text-accent-primary">
+                  EDU
                 </div>
               </div>
-              <span className="text-lg lg:text-xl font-bold gradient-text hidden sm:block">
-                TCG-PBL Guide
-              </span>
+              <div className="hidden sm:block">
+                <p className="text-[10px] uppercase tracking-[0.16em] text-theme-muted">Teacher Console</p>
+                <p className="text-base font-semibold text-theme">TCG-PBL Guide</p>
+              </div>
             </TransitionLink>
 
             <div className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link, index) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                >
+              {navLinks.map((link) => {
+                const active = pathname === link.href;
+                return (
                   <TransitionLink
+                    key={link.href}
                     href={link.href}
-                    className="px-4 py-2 text-sm font-medium text-theme hover:text-accent-primary transition-colors rounded-lg hover:bg-surface-hover"
+                    className="rounded-xl px-3 py-2 text-sm font-semibold transition-all"
+                    style={{
+                      color: active ? 'var(--text-primary)' : 'var(--text-secondary)',
+                      background: active ? 'var(--surface-hover)' : 'transparent',
+                    }}
                   >
                     {link.label}
                   </TransitionLink>
-                </motion.div>
-              ))}
+                );
+              })}
             </div>
 
-            <div className="flex items-center gap-3">
-              <motion.button
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3, duration: 0.4 }}
+            <div className="flex items-center gap-2">
+              <button
                 onClick={toggleTheme}
-                className="p-2.5 rounded-xl bg-surface-glass border border-surface-glass-border hover:border-accent-primary transition-all hover:bg-surface-hover"
+                className="hidden lg:flex h-10 w-10 items-center justify-center rounded-xl border bg-surface-glass border-surface-glass-border hover:bg-surface-hover"
                 aria-label="テーマ切り替え"
               >
                 {theme === 'light' ? (
-                  <svg
-                    className="w-5 h-5 text-theme"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                    />
+                  <svg className="w-5 h-5 text-theme" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                   </svg>
                 ) : (
-                  <svg
-                    className="w-5 h-5 text-theme"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                    />
+                  <svg className="w-5 h-5 text-theme" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                 )}
-              </motion.button>
+              </button>
 
-              <motion.button
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4, duration: 0.4 }}
-                onClick={() => setMobileMenuOpen(true)}
-                className="lg:hidden p-2.5 rounded-xl bg-surface-glass border border-surface-glass-border hover:border-accent-primary transition-all hover:bg-surface-hover"
+              <button
+                onClick={() => setMobilePath(mobileMenuOpen ? null : pathname)}
+                className="lg:hidden h-10 w-10 rounded-xl border bg-surface-glass border-surface-glass-border"
                 aria-label="メニューを開く"
               >
-                <svg
-                  className="w-5 h-5 text-theme"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </motion.button>
+                {mobileMenuOpen ? (
+                  <svg className="w-5 h-5 mx-auto text-theme" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5 mx-auto text-theme" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
         </div>
@@ -163,74 +130,64 @@ export default function Navigation() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
-            <motion.div
+            <motion.button
+              type="button"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="drawer-overlay active"
-              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 z-40"
+              style={{ background: 'rgba(2, 6, 23, 0.66)' }}
+              onClick={() => setMobilePath(null)}
+              aria-label="メニューを閉じる"
             />
 
-            <motion.div
+            <motion.aside
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="drawer active"
+              transition={{ type: 'spring', damping: 24, stiffness: 220 }}
+              className="fixed right-0 top-0 bottom-0 z-50 w-[88vw] max-w-sm border-l p-6 overflow-y-auto"
+              style={{ borderColor: 'var(--border)', background: 'var(--background)' }}
             >
-              <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-6 border-b border-theme">
-                  <h2 className="text-xl font-bold gradient-text">メニュー</h2>
-                  <button
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="p-2 rounded-lg bg-surface-glass hover:bg-surface-hover transition-colors"
-                    aria-label="閉じる"
-                  >
-                    <svg
-                      className="w-6 h-6 text-theme"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </button>
+              <div className="mb-6 flex items-center justify-between">
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.16em] text-theme-muted">Teacher Console</p>
+                  <p className="text-lg font-semibold text-theme">Navigation</p>
                 </div>
-
-                <nav className="flex-1 overflow-y-auto p-6">
-                  <div className="flex flex-col gap-2">
-                    {navLinks.map((link, index) => (
-                      <motion.div
-                        key={link.href}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05, duration: 0.3 }}
-                      >
-                        <TransitionLink
-                          href={link.href}
-                          className="block px-4 py-3 text-base font-medium text-theme hover:text-accent-primary rounded-xl hover:bg-surface-hover transition-all"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {link.label}
-                        </TransitionLink>
-                      </motion.div>
-                    ))}
-                  </div>
-                </nav>
-
-                <div className="p-6 border-t border-theme">
-                  <p className="text-sm text-theme-muted text-center">
-                    TCG-PBL 教員ガイド
-                  </p>
-                </div>
+                <button onClick={() => setMobilePath(null)} className="h-9 w-9 rounded-lg border border-theme" aria-label="閉じる">
+                  <svg className="w-5 h-5 mx-auto text-theme" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
               </div>
-            </motion.div>
+
+              <div className="space-y-1">
+                {navLinks.map((link) => {
+                  const active = pathname === link.href;
+                  return (
+                    <TransitionLink
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobilePath(null)}
+                      className="block rounded-xl px-3 py-2.5 text-sm font-semibold"
+                      style={{
+                        color: active ? 'var(--text-primary)' : 'var(--text-secondary)',
+                        background: active ? 'var(--surface-hover)' : 'transparent',
+                      }}
+                    >
+                      {link.label}
+                    </TransitionLink>
+                  );
+                })}
+              </div>
+
+              <button
+                onClick={toggleTheme}
+                className="mt-6 w-full rounded-xl border border-theme px-3 py-2.5 text-sm font-semibold text-theme"
+              >
+                {theme === 'dark' ? 'ライトモードへ' : 'ダークモードへ'}
+              </button>
+            </motion.aside>
           </>
         )}
       </AnimatePresence>

@@ -18,14 +18,9 @@ export default function PedagogyPage() {
     }
   };
 
-  const scaleIn = {
-    initial: { opacity: 0, scale: 0.95 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-50 via-white to-indigo-50 dark:from-zinc-950 dark:via-black dark:to-indigo-950/20">
+    <div className="min-h-screen bg-[var(--background)]">
       <div className="mx-auto max-w-5xl px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
 
         {/* Breadcrumb */}
@@ -1118,30 +1113,21 @@ export default function PedagogyPage() {
             </div>
           </motion.section>
 
-          {/* CTA Section */}
-          <motion.section variants={scaleIn} className="mt-20">
-            <div className="glass-card bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-950/30 dark:via-purple-950/30 dark:to-pink-950/30 border-indigo-200 dark:border-indigo-800">
-              <div className="text-center space-y-6">
-                <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
-                  次のステップ
-                </h2>
-                <p className="text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
-                  ルールがどのように進化したか、生徒の改訂プロセスを詳しく見てみましょう
-                </p>
-                <div>
-                  <TransitionLink
-                    href="/rules-evolution"
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-                  >
-                    <span>ルール進化の記録へ</span>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </TransitionLink>
-                </div>
+          {/* Next Step */}
+          <motion.div variants={fadeInUp} className="mt-16 border-t border-[var(--border)] pt-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase text-[var(--text-muted)] mb-1">次のステップ</p>
+                <p className="text-[var(--text-secondary)]">ルールがどのように進化したか、生徒の改訂プロセスを見る</p>
               </div>
+              <TransitionLink href="/rules-evolution" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-primary)] hover:underline underline-offset-4 shrink-0">
+                ルール進化の記録へ
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </TransitionLink>
             </div>
-          </motion.section>
+          </motion.div>
 
         </motion.div>
       </div>

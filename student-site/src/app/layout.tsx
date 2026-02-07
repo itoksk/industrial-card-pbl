@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
 
 export const metadata: Metadata = {
   title: "TCG-PBL | カードゲーム制作で学ぶPBL学習",
@@ -23,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`}>
+      <body className="antialiased">
         <ThemeProvider>
           <div
             className="noise-overlay"
@@ -40,7 +34,7 @@ export default function RootLayout({
           <PageTransition />
           <Navigation />
 
-          <main className="min-h-screen">
+          <main className="min-h-screen pt-16 lg:pt-20">
             {children}
           </main>
 

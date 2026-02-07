@@ -8,8 +8,6 @@ import {
   LightBulbIcon,
   UserGroupIcon,
   SparklesIcon,
-  BeakerIcon,
-  RocketLaunchIcon,
   CheckCircleIcon,
   ArrowRightIcon,
 } from '@heroicons/react/24/outline';
@@ -450,30 +448,17 @@ export default function OverviewPage() {
             </p>
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="glass-card rounded-3xl p-8 text-center space-y-6"
-          >
-            <BeakerIcon className="h-12 w-12 text-indigo-600 dark:text-indigo-400 mx-auto" />
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                次のステップ
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                PBLの全体像を理解したら、実施に向けた具体的な準備を始めましょう。
-                実施ガイドでは、必要な材料、スケジュール、チェックリストを提供しています。
-              </p>
-            </div>
-            <TransitionLink href="/guide">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-700 transition-colors"
-              >
+          <motion.div variants={itemVariants} className="mt-16 border-t border-[var(--border)] pt-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase text-[var(--text-muted)] mb-1">次のステップ</p>
+                <p className="text-[var(--text-secondary)]">実施に向けた具体的な準備を始めましょう</p>
+              </div>
+              <TransitionLink href="/guide" className="btn-primary shrink-0">
                 実施ガイドを見る
-                <ArrowRightIcon className="ml-2 h-5 w-5" />
-              </motion.button>
-            </TransitionLink>
+                <ArrowRightIcon className="ml-2 h-4 w-4" />
+              </TransitionLink>
+            </div>
           </motion.div>
         </motion.div>
       </motion.div>

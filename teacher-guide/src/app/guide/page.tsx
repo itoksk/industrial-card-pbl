@@ -307,7 +307,7 @@ export default function GuidePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-indigo-50/30 to-purple-50/30 dark:from-black dark:via-indigo-950/20 dark:to-purple-950/20">
+    <div className="min-h-screen bg-[var(--background)]">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -439,58 +439,108 @@ export default function GuidePage() {
               9レッスン（各90分）を4フェーズに分けて実施します。
               学校のカリキュラムに合わせて柔軟に調整してください。
             </p>
-            <div className="glass-card rounded-3xl p-8">
-              <div className="space-y-4">
-                <div className="grid grid-cols-12 gap-4 px-4 py-2 text-xs font-semibold text-gray-600 dark:text-gray-400 border-b border-gray-200 dark:border-gray-800">
-                  <div className="col-span-1">L</div>
-                  <div className="col-span-2">フェーズ</div>
-                  <div className="col-span-3">タイトル</div>
-                  <div className="col-span-4">主な活動</div>
-                  <div className="col-span-1">成果物</div>
-                  <div className="col-span-1">時間</div>
+            <div className="glass-card rounded-3xl p-4 sm:p-8">
+              {/* Desktop: table layout */}
+              <div className="hidden lg:block">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b-2 border-indigo-200 dark:border-indigo-800">
+                        <th className="text-left p-3 font-semibold text-[var(--text-secondary)]">L</th>
+                        <th className="text-left p-3 font-semibold text-[var(--text-secondary)]">フェーズ</th>
+                        <th className="text-left p-3 font-semibold text-[var(--text-secondary)]">タイトル</th>
+                        <th className="text-left p-3 font-semibold text-[var(--text-secondary)]">主な活動</th>
+                        <th className="text-left p-3 font-semibold text-[var(--text-secondary)]">成果物</th>
+                        <th className="text-left p-3 font-semibold text-[var(--text-secondary)]">時間</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {schedule.map((lesson, index) => (
+                        <motion.tr
+                          key={lesson.lesson}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.8 + index * 0.05 }}
+                          className="border-b border-[var(--border)] hover:bg-[var(--surface-hover)] transition-colors"
+                        >
+                          <td className="p-3">
+                            <div className="w-8 h-8 rounded-full bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-sm">
+                              {lesson.lesson}
+                            </div>
+                          </td>
+                          <td className="p-3">
+                            <span className={`tag ${getPhaseColor(lesson.color)} text-xs`}>
+                              {lesson.phase}
+                            </span>
+                          </td>
+                          <td className="p-3">
+                            <span className="font-semibold text-[var(--text-primary)] text-sm">
+                              {lesson.title}
+                            </span>
+                          </td>
+                          <td className="p-3">
+                            <ul className="space-y-1">
+                              {lesson.activities.map((activity, idx) => (
+                                <li key={idx} className="text-xs text-[var(--text-secondary)]">
+                                  {activity}
+                                </li>
+                              ))}
+                            </ul>
+                          </td>
+                          <td className="p-3">
+                            <span className="text-xs text-[var(--text-secondary)]">
+                              {lesson.deliverables}
+                            </span>
+                          </td>
+                          <td className="p-3">
+                            <div className="flex items-center text-xs text-[var(--text-muted)]">
+                              <ClockIcon className="h-3 w-3 mr-1" />
+                              {lesson.duration}
+                            </div>
+                          </td>
+                        </motion.tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
+              </div>
+
+              {/* Mobile/Tablet: card layout */}
+              <div className="lg:hidden space-y-3">
                 {schedule.map((lesson, index) => (
                   <motion.div
                     key={lesson.lesson}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 + index * 0.05 }}
-                    className="grid grid-cols-12 gap-4 px-4 py-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-900/30 transition-colors"
+                    className="content-card rounded-xl p-4"
                   >
-                    <div className="col-span-1 flex items-center">
-                      <div className="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-sm">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-full bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-sm flex-shrink-0">
                         {lesson.lesson}
                       </div>
-                    </div>
-                    <div className="col-span-2 flex items-center">
-                      <span className={`tag ${getPhaseColor(lesson.color)} text-xs`}>
-                        {lesson.phase}
-                      </span>
-                    </div>
-                    <div className="col-span-3 flex items-center">
-                      <h3 className="font-semibold text-gray-900 dark:text-white text-sm">
-                        {lesson.title}
-                      </h3>
-                    </div>
-                    <div className="col-span-4 flex items-center">
-                      <ul className="space-y-1">
-                        {lesson.activities.map((activity, idx) => (
-                          <li key={idx} className="text-xs text-gray-600 dark:text-gray-400">
-                            • {activity}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="col-span-1 flex items-center">
-                      <span className="text-xs text-gray-600 dark:text-gray-400">
-                        {lesson.deliverables}
-                      </span>
-                    </div>
-                    <div className="col-span-1 flex items-center">
-                      <div className="flex items-center text-xs text-gray-500 dark:text-gray-500">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-[var(--text-primary)] text-sm truncate">
+                          {lesson.title}
+                        </h3>
+                        <span className={`tag ${getPhaseColor(lesson.color)} text-xs mt-1`}>
+                          {lesson.phase}
+                        </span>
+                      </div>
+                      <div className="flex items-center text-xs text-[var(--text-muted)] flex-shrink-0">
                         <ClockIcon className="h-3 w-3 mr-1" />
                         {lesson.duration}
                       </div>
+                    </div>
+                    <ul className="space-y-1 mb-2">
+                      {lesson.activities.map((activity, idx) => (
+                        <li key={idx} className="text-xs text-[var(--text-secondary)]">
+                          {activity}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="text-xs text-[var(--accent-primary)] font-medium">
+                      {lesson.deliverables}
                     </div>
                   </motion.div>
                 ))}
@@ -651,29 +701,17 @@ export default function GuidePage() {
             </div>
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="glass-card rounded-3xl p-8 text-center space-y-6"
-          >
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                準備が整ったら
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                準備が完了したら、教授法メモで効果的な指導テクニックを学びましょう。
-                事実基盤制約の重要性や、生徒の創造性を引き出す方法を解説しています。
-              </p>
-            </div>
-            <TransitionLink href="/teaching">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-700 transition-colors"
-              >
+          <motion.div variants={itemVariants} className="mt-8 border-t border-[var(--border)] pt-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase text-[var(--text-muted)] mb-1">次のステップ</p>
+                <p className="text-[var(--text-secondary)]">教授法メモで効果的な指導テクニックを学ぶ</p>
+              </div>
+              <TransitionLink href="/pedagogy" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-primary)] hover:underline underline-offset-4 shrink-0">
                 教授法メモを見る
-                <ArrowRightIcon className="ml-2 h-5 w-5" />
-              </motion.button>
-            </TransitionLink>
+                <ArrowRightIcon className="ml-2 h-4 w-4" />
+              </TransitionLink>
+            </div>
           </motion.div>
         </motion.div>
       </motion.div>

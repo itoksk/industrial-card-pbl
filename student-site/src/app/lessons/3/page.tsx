@@ -299,20 +299,20 @@ export default function Lesson3() {
               <h4 className="font-bold text-lg mb-3 text-green-700 dark:text-green-300">調査のコツ</h4>
               <ul className="space-y-2 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span><strong>公的機関のデータを優先</strong>：政府機関、研究機関の公開データは信頼性が高い</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 shrink-0"></span>
+                  <span><strong>公的機関のデータを優先</strong> -- 政府機関、研究機関の公開データは信頼性が高い</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span><strong>複数の情報源で検証</strong>：1つの情報源だけでなく、複数で確認すると正確性が向上</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 shrink-0"></span>
+                  <span><strong>複数の情報源で検証</strong> -- 1つの情報源だけでなく、複数で確認すると正確性が向上</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span><strong>出典を明記</strong>：後で確認できるよう、URLや文献情報を記録</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 shrink-0"></span>
+                  <span><strong>出典を明記</strong> -- 後で確認できるよう、URLや文献情報を記録</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span><strong>単位を統一</strong>：同じパラメータは同じ単位で揃える（℃なら全て℃）</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 shrink-0"></span>
+                  <span><strong>単位を統一</strong> -- 同じパラメータは同じ単位で揃える（℃なら全て℃）</span>
                 </li>
               </ul>
             </div>

@@ -16,79 +16,75 @@ const lessons = [
 
 export default function Footer() {
   return (
-    <footer className="bg-section-alt border-t border-theme mt-20">
-      <div className="container mx-auto px-4 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          <div className="lg:col-span-1">
-            <TransitionLink href="/" className="inline-block mb-4">
-              <div className="text-2xl font-bold gradient-text-orange">
-                TCG-PBL
+    <footer className="mt-24 border-t" style={{ borderColor: 'var(--border-color)', background: 'var(--section-alt-bg)' }}>
+      <div className="container-custom py-14">
+        <div
+          className="mb-8 rounded-3xl border p-6 sm:p-8"
+          style={{
+            borderColor: 'var(--border-color)',
+            background:
+              'linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), color-mix(in srgb, var(--accent-cool) 10%, transparent))',
+          }}
+        >
+          <p className="text-xs uppercase tracking-[0.14em] text-[var(--text-muted)]">Card Game Project</p>
+          <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <h2 className="text-2xl font-bold leading-tight sm:text-3xl text-[var(--foreground)]">
+              学びを「遊び」から
+              <br />
+              「創造」へ変える
+            </h2>
+            <TransitionLink href="/lessons/1" className="btn-primary-orange">
+              授業を始める
+            </TransitionLink>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <TransitionLink href="/" className="inline-flex items-center gap-3">
+              <div className="h-10 w-10 rounded-xl bg-[linear-gradient(135deg,#f97316,#22d3ee)]" />
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">Industrial Learning</p>
+                <p className="text-base font-semibold text-[var(--foreground)]">TCG-PBL Studio</p>
               </div>
             </TransitionLink>
-            <p className="text-theme-muted text-sm leading-relaxed">
-              カードゲーム制作を通じて学ぶPBLフレームワーク。産業保安分野の知識を実践的に習得します。
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--text-secondary)]">
+              カードゲーム制作を軸に、調査・設計・制作・評価までを横断するPBL学習サイトです。
             </p>
           </div>
 
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-bold mb-4 text-[#f97316]">Lessons</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="lg:col-span-5">
+            <p className="mb-3 text-xs uppercase tracking-[0.14em] text-[var(--text-muted)]">Lessons</p>
+            <div className="grid grid-cols-1 gap-1 sm:grid-cols-2">
               {lessons.map((lesson) => (
                 <TransitionLink
                   key={lesson.id}
                   href={lesson.href}
-                  className="text-sm text-theme-muted hover:text-[#f97316] transition-colors flex items-start space-x-2 group"
+                  className="group flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--foreground)]"
                 >
-                  <span className="text-[#f97316] font-bold shrink-0">
-                    {lesson.id}.
-                  </span>
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    {lesson.title}
-                  </span>
+                  <span className="text-xs font-bold text-[var(--accent)]">{lesson.id.toString().padStart(2, '0')}</span>
+                  <span>{lesson.title}</span>
                 </TransitionLink>
               ))}
             </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-[#f97316]">Resources</h3>
-            <div className="space-y-3">
-              <TransitionLink
-                href="/rules"
-                className="block text-sm text-theme-muted hover:text-[#f97316] transition-colors hover:translate-x-1 transition-transform"
-              >
+          <div className="lg:col-span-3">
+            <p className="mb-3 text-xs uppercase tracking-[0.14em] text-[var(--text-muted)]">Links</p>
+            <div className="space-y-1">
+              <TransitionLink href="/rules" className="block rounded-lg px-2 py-1.5 text-sm text-[var(--text-secondary)] hover:text-[var(--foreground)]">
                 Game Rules
               </TransitionLink>
-              <TransitionLink
-                href="/resources"
-                className="block text-sm text-theme-muted hover:text-[#f97316] transition-colors hover:translate-x-1 transition-transform"
-              >
+              <TransitionLink href="/resources" className="block rounded-lg px-2 py-1.5 text-sm text-[var(--text-secondary)] hover:text-[var(--foreground)]">
                 Teaching Materials
               </TransitionLink>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-theme pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <p className="text-sm text-theme-muted">
-              &copy; {new Date().getFullYear()} TCG-PBL. All rights reserved.
-            </p>
-            <div className="flex items-center space-x-6">
-              <a
-                href="#"
-                className="text-sm text-theme-muted hover:text-[#f97316] transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-sm text-theme-muted hover:text-[#f97316] transition-colors"
-              >
-                Terms of Service
-              </a>
-            </div>
-          </div>
+        <div className="mt-10 flex flex-col gap-2 border-t pt-5 text-xs sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: 'var(--border-color)' }}>
+          <p className="text-[var(--text-muted)]">© {new Date().getFullYear()} TCG-PBL Studio</p>
+          <p className="text-[var(--text-muted)]">Designed for project-based learning in technical education</p>
         </div>
       </div>
     </footer>

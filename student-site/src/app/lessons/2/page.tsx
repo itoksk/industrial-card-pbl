@@ -237,13 +237,13 @@ export default function Lesson2() {
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded">
-                    <p className="text-sm font-semibold text-green-700 dark:text-green-300 mb-2">✓ 良い例</p>
+                    <p className="text-sm font-semibold text-green-700 dark:text-green-300 mb-2">良い例</p>
                     <p className="text-sm text-gray-700 dark:text-gray-300">
                       「法令上の分類」「物理特性（固体/液体/気体）」「用途別分類」
                     </p>
                   </div>
                   <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded">
-                    <p className="text-sm font-semibold text-red-700 dark:text-red-300 mb-2">✗ 悪い例</p>
+                    <p className="text-sm font-semibold text-red-700 dark:text-red-300 mb-2">悪い例</p>
                     <p className="text-sm text-gray-700 dark:text-gray-300">
                       「かっこいいもの」「人気があるもの」「面白そうなもの」
                     </p>

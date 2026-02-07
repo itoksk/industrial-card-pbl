@@ -12,246 +12,175 @@ import {
 } from '@heroicons/react/24/outline';
 import TransitionLink from '@/components/TransitionLink';
 
-const sections = [
+const primarySections = [
   {
-    id: 1,
+    number: '01',
     title: 'PBL概要',
-    description: 'TCG-PBLの全体像と教育的根拠を理解する',
+    description: 'TCG-PBLの狙い、学習成果、導入効果を短時間で把握できます。',
     icon: BookOpenIcon,
     href: '/overview',
-    color: 'indigo',
   },
   {
-    id: 2,
+    number: '02',
     title: '実施ガイド',
-    description: '準備チェックリストとスケジュール管理',
+    description: '準備チェックリスト、授業進行、評価運用までを実務ベースで整理。',
     icon: ClipboardDocumentCheckIcon,
     href: '/guide',
-    color: 'purple',
   },
+];
+
+const secondarySections = [
   {
-    id: 3,
+    number: '03',
     title: '教授法メモ',
-    description: '事実基盤制約と効果的な教授テクニック',
+    description: '授業中の問いかけと介入の設計',
     icon: LightBulbIcon,
-    href: '/teaching',
-    color: 'pink',
+    href: '/pedagogy',
   },
   {
-    id: 4,
+    number: '04',
     title: 'ルール進化',
-    description: '教員設計 vs 生徒改訂の比較分析',
+    description: '設計変更の比較分析',
     icon: ArrowPathIcon,
-    href: '/evolution',
-    color: 'emerald',
+    href: '/rules-evolution',
   },
   {
-    id: 5,
+    number: '05',
     title: '今後の展望',
-    description: '他教科展開と産業人材育成への応用',
+    description: '他教科・他校展開の視点',
     icon: RocketLaunchIcon,
-    href: '/future',
-    color: 'amber',
+    href: '/outlook',
   },
   {
-    id: 6,
+    number: '06',
     title: 'カードリファレンス',
-    description: 'カード種別とデータ形式の詳細仕様',
+    description: 'カード仕様とデータ設計',
     icon: RectangleStackIcon,
-    href: '/reference',
-    color: 'cyan',
+    href: '/card-reference',
   },
 ];
 
-const stats = [
-  { label: 'レッスン', value: '9' },
-  { label: 'フェーズ', value: '4' },
-  { label: 'カード種別', value: '4' },
-  { label: 'フレームワーク', value: '1' },
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.4,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
-  },
-};
-
-const getColorClasses = (color: string) => {
-  const colors: Record<string, { bg: string; text: string }> = {
-    indigo: { bg: 'bg-indigo-500/10', text: 'text-indigo-400' },
-    purple: { bg: 'bg-purple-500/10', text: 'text-purple-400' },
-    pink: { bg: 'bg-pink-500/10', text: 'text-pink-400' },
-    emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-400' },
-    amber: { bg: 'bg-amber-500/10', text: 'text-amber-400' },
-    cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-400' },
-  };
-  return colors[color] || colors.indigo;
+const reveal = {
+  initial: { opacity: 0, y: 22 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-80px' },
+  transition: { duration: 0.58, ease: [0.25, 1, 0.5, 1] as const },
 };
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="mx-auto max-w-7xl container-padding section-padding"
-      >
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="space-y-16"
-        >
-          <motion.div variants={itemVariants} className="text-center space-y-6">
-            <div className="flex justify-center">
-              <span className="section-label">Teacher's Guide</span>
-            </div>
-            <h1 className="h1">
-              <span className="gradient-text">TCG-PBL 教員ガイド</span>
-            </h1>
-            <p className="mx-auto max-w-2xl p text-[var(--text-secondary)]">
-              トレーディングカードゲーム型PBLを実践する教員のための総合ガイド。
-              <br />
-              準備から実施、評価まで、成功に必要なすべての情報を提供します。
-            </p>
+      <div className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-40 left-1/2 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full blur-3xl bg-[var(--surface-hover)]" />
+          <div className="grid-pattern h-full opacity-60" />
+        </div>
+
+        <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+          <motion.span {...reveal} className="section-label mb-6 inline-flex">Teacher Guide</motion.span>
+          <motion.h1 {...reveal} className="max-w-4xl text-4xl font-black tracking-tight sm:text-6xl lg:text-7xl leading-[1.08]">
+            授業を回すための
+            <br />
+            <span className="gradient-text">実践ドキュメント基盤</span>
+          </motion.h1>
+          <motion.p {...reveal} className="mt-6 max-w-2xl text-base leading-relaxed text-theme-muted sm:text-lg">
+            TCG-PBL 教員ガイドは、準備・実施・評価の情報を一箇所に集約した運用ハブです。
+            授業設計の判断を速くし、チーム指導の再現性を高めます。
+          </motion.p>
+
+          <motion.div {...reveal} className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <TransitionLink href="/overview" className="btn-primary">PBL概要から始める</TransitionLink>
+            <TransitionLink href="/guide" className="btn-secondary">実施ガイドを開く</TransitionLink>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="space-y-8">
-            <h2 className="h2 text-center text-[var(--text-primary)]">
-              ガイドコンテンツ
-            </h2>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {sections.map((section) => {
-                const Icon = section.icon;
-                const colorClasses = getColorClasses(section.color);
-                return (
-                  <motion.div
-                    key={section.id}
-                    variants={cardVariants}
-                    whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <TransitionLink href={section.href}>
-                      <div className="glass-card group relative h-full cursor-pointer">
-                        <div className="space-y-4">
-                          <div className={`inline-flex rounded-xl p-3 ${colorClasses.bg}`}>
-                            <Icon className={`h-8 w-8 ${colorClasses.text}`} />
-                          </div>
-                          <div className="space-y-2">
-                            <h3 className="h3 text-[var(--text-primary)]">
-                              {section.title}
-                            </h3>
-                            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                              {section.description}
-                            </p>
-                          </div>
-                          <div className="flex items-center text-sm font-medium text-[var(--accent-primary)]">
-                            詳しく見る
-                            <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                          </div>
-                        </div>
-                      </div>
-                    </TransitionLink>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="space-y-8">
-            <h2 className="h2 text-center text-[var(--text-primary)]">
-              プログラム統計
-            </h2>
-            <div className="glass-card">
-              <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.6 + index * 0.1, duration: 0.4 }}
-                    className="text-center space-y-2"
-                  >
-                    <div className="text-4xl font-bold gradient-text">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm font-medium text-[var(--text-secondary)]">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
+          <motion.div {...reveal} className="mt-12 grid gap-4 sm:grid-cols-3">
+            {[
+              { value: '6', label: 'Guide Sections' },
+              { value: '9', label: 'Student Lessons Covered' },
+              { value: '1', label: 'Unified Teaching Flow' },
+            ].map((item) => (
+              <div key={item.label} className="glass-card p-5">
+                <p className="text-3xl font-black text-accent-primary">{item.value}</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.12em] text-theme-muted">{item.label}</p>
               </div>
-            </div>
+            ))}
           </motion.div>
+        </div>
+      </div>
 
-          <motion.div variants={itemVariants} className="glass-card text-center space-y-4">
-            <h3 className="h3 text-[var(--text-primary)]">はじめての方へ</h3>
-            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-              TCG-PBLの実施が初めての方は、まず「PBL概要」から始めることをお勧めします。
-              プログラムの全体像を理解した上で、「実施ガイド」で具体的な準備を進めてください。
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <TransitionLink href="/overview">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-primary"
-                >
-                  PBL概要を見る
-                  <ArrowRightIcon className="ml-2 h-5 w-5" />
-                </motion.button>
-              </TransitionLink>
-              <TransitionLink href="/guide">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-secondary"
-                >
-                  実施ガイドを見る
-                  <ArrowRightIcon className="ml-2 h-5 w-5" />
-                </motion.button>
-              </TransitionLink>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="text-center text-sm text-[var(--text-muted)] pb-8"
-          >
-            <p>このガイドは教員向けに最適化されています。生徒向けの資料は別途ご用意ください。</p>
-          </motion.div>
+      <div className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
+        <motion.div {...reveal} className="mb-8 flex items-end justify-between">
+          <div>
+            <p className="section-label mb-3">Core Entry</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-theme tracking-tight">最初に見るべき2つのページ</h2>
+          </div>
         </motion.div>
-      </motion.div>
+
+        <div className="mb-6 grid gap-6 md:grid-cols-2">
+          {primarySections.map((section, i) => {
+            const Icon = section.icon;
+            return (
+              <motion.div key={section.number} {...reveal} transition={{ ...reveal.transition, delay: i * 0.08 }}>
+                <TransitionLink href={section.href}>
+                  <div className="glass-card group relative h-full overflow-hidden">
+                    <span
+                      className="pointer-events-none absolute -right-4 -top-7 text-[7rem] font-black leading-none"
+                      style={{ color: 'color-mix(in srgb, var(--accent-primary) 16%, transparent)' }}
+                    >
+                      {section.number}
+                    </span>
+                    <div className="relative space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-semibold tracking-[0.12em] text-accent-primary">{section.number}</span>
+                        <Icon className="h-5 w-5 text-theme-muted" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-theme">{section.title}</h3>
+                      <p className="text-sm leading-relaxed text-theme-muted">{section.description}</p>
+                      <div className="inline-flex items-center text-sm font-semibold text-accent-primary">
+                        詳しく見る
+                        <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </div>
+                </TransitionLink>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <motion.div {...reveal} className="mb-8">
+          <p className="section-label mb-3">Supporting Sections</p>
+          <h3 className="text-2xl sm:text-3xl font-bold text-theme tracking-tight">授業改善を支える4コンテンツ</h3>
+        </motion.div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {secondarySections.map((section, i) => {
+            const Icon = section.icon;
+            return (
+              <motion.div key={section.number} {...reveal} transition={{ ...reveal.transition, delay: i * 0.06 }}>
+                <TransitionLink href={section.href}>
+                  <div className="content-card group h-full">
+                    <div className="mb-3 flex items-center justify-between">
+                      <span className="text-xs font-semibold tracking-[0.12em] text-theme-muted">{section.number}</span>
+                      <Icon className="h-4 w-4 text-theme-muted group-hover:text-accent-primary transition-colors" />
+                    </div>
+                    <h4 className="text-base font-semibold text-theme">{section.title}</h4>
+                    <p className="mt-2 text-xs leading-relaxed text-theme-muted">{section.description}</p>
+                  </div>
+                </TransitionLink>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <motion.p {...reveal} className="mt-12 text-center text-sm text-theme-muted">
+          初めての導入は
+          <TransitionLink href="/overview" className="mx-1 text-accent-primary hover:underline underline-offset-4">
+            PBL概要
+          </TransitionLink>
+          から確認してください。
+        </motion.p>
+      </div>
     </div>
   );
 }
