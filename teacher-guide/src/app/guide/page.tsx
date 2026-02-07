@@ -312,31 +312,31 @@ export default function GuidePage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+        className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
       >
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-16"
+          className="space-y-14 sm:space-y-16"
         >
           <motion.div variants={itemVariants} className="space-y-6">
-            <nav className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-              <TransitionLink href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+            <nav className="flex items-center space-x-2 text-sm text-[var(--text-muted)]">
+              <TransitionLink href="/" className="hover:text-[var(--accent-primary)] transition-colors">
                 <HomeIcon className="h-5 w-5" />
               </TransitionLink>
               <ChevronRightIcon className="h-4 w-4" />
-              <span className="text-gray-900 dark:text-white font-medium">実施ガイド</span>
+              <span className="text-[var(--text-primary)] font-medium">実施ガイド</span>
             </nav>
 
             <div className="space-y-4">
               <div className="flex justify-start">
                 <span className="section-label">Implementation</span>
               </div>
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl gradient-text">
+              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl gradient-text">
                 実施ガイド
               </h1>
-              <p className="max-w-3xl text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="max-w-3xl text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
                 TCG-PBLを成功させるための実践的なガイドです。
                 準備チェックリスト、推奨スケジュール、必要な材料、APIキー管理まで、実施に必要なすべての情報を提供します。
               </p>
@@ -344,10 +344,10 @@ export default function GuidePage() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-bold text-[var(--text-primary)]">
               準備チェックリスト
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-[var(--text-secondary)]">
               プロジェクト開始前に、以下の項目を確認してください。チェックボックスをクリックして進捗を管理できます。
             </p>
             <div className="grid gap-4 md:grid-cols-2">
@@ -372,7 +372,7 @@ export default function GuidePage() {
                         className={`flex-shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all ${
                           isChecked
                             ? 'bg-indigo-600 border-indigo-600'
-                            : 'border-gray-300 dark:border-gray-600'
+                            : 'border-[var(--border)]'
                         }`}
                       >
                         {isChecked && (
@@ -385,20 +385,20 @@ export default function GuidePage() {
                             className={`h-5 w-5 ${
                               isChecked
                                 ? 'text-indigo-600 dark:text-indigo-400'
-                                : 'text-gray-500 dark:text-gray-400'
+                                : 'text-[var(--text-muted)]'
                             }`}
                           />
                           <h3
                             className={`font-semibold ${
                               isChecked
                                 ? 'text-indigo-900 dark:text-indigo-300'
-                                : 'text-gray-900 dark:text-white'
+                                : 'text-[var(--text-primary)]'
                             }`}
                           >
                             {item.title}
                           </h3>
                         </div>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-sm text-[var(--text-secondary)]">
                           {item.description}
                         </p>
                       </div>
@@ -432,10 +432,10 @@ export default function GuidePage() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-bold text-[var(--text-primary)]">
               推奨スケジュール
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-[var(--text-secondary)]">
               9レッスン（各90分）を4フェーズに分けて実施します。
               学校のカリキュラムに合わせて柔軟に調整してください。
             </p>
@@ -546,13 +546,13 @@ export default function GuidePage() {
                 ))}
               </div>
             </div>
-            <p className="text-sm text-gray-500 dark:text-gray-500 text-center">
+            <p className="text-sm text-[var(--text-muted)] text-center">
               スケジュールは目安です。生徒の進捗や学校のカリキュラムに合わせて調整してください
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-bold text-[var(--text-primary)]">
               必要な材料
             </h2>
             <div className="grid gap-6 lg:grid-cols-3">
@@ -566,7 +566,7 @@ export default function GuidePage() {
                   <div className="inline-flex rounded-xl p-3 bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800">
                     <ComputerDesktopIcon className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                     デジタル環境
                   </h3>
                 </div>
@@ -575,10 +575,10 @@ export default function GuidePage() {
                     <li key={idx} className="flex items-start space-x-2">
                       <CheckCircleIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">
+                        <p className="text-sm font-medium text-[var(--text-primary)]">
                           {item.name}
                         </p>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                        <p className="text-xs text-[var(--text-secondary)]">
                           {item.note}
                         </p>
                       </div>
@@ -597,7 +597,7 @@ export default function GuidePage() {
                   <div className="inline-flex rounded-xl p-3 bg-purple-50 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800">
                     <PrinterIcon className="h-6 w-6 text-purple-600 dark:text-purple-400" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                     物理材料
                   </h3>
                 </div>
@@ -606,10 +606,10 @@ export default function GuidePage() {
                     <li key={idx} className="flex items-start space-x-2">
                       <CheckCircleIcon className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">
+                        <p className="text-sm font-medium text-[var(--text-primary)]">
                           {item.name}
                         </p>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                        <p className="text-xs text-[var(--text-secondary)]">
                           {item.note}
                         </p>
                       </div>
@@ -628,7 +628,7 @@ export default function GuidePage() {
                   <div className="inline-flex rounded-xl p-3 bg-pink-50 dark:bg-pink-950/30 border border-pink-200 dark:border-pink-800">
                     <DocumentTextIcon className="h-6 w-6 text-pink-600 dark:text-pink-400" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                     ソフトウェア
                   </h3>
                 </div>
@@ -637,10 +637,10 @@ export default function GuidePage() {
                     <li key={idx} className="flex items-start space-x-2">
                       <CheckCircleIcon className="h-5 w-5 text-pink-600 dark:text-pink-400 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-sm font-medium text-gray-900 dark:text-white">
+                        <p className="text-sm font-medium text-[var(--text-primary)]">
                           {item.name}
                         </p>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                        <p className="text-xs text-[var(--text-secondary)]">
                           {item.note}
                         </p>
                       </div>
@@ -652,10 +652,10 @@ export default function GuidePage() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-8">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-bold text-[var(--text-primary)]">
               APIキー管理
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-[var(--text-secondary)]">
               Google AI Studio APIキーの管理は、プロジェクトの成功において重要な要素です。
               18歳以上制限への対応とセキュリティ管理について、以下の情報を確認してください。
             </p>
@@ -674,10 +674,10 @@ export default function GuidePage() {
                     <div className={`inline-flex rounded-xl p-3 ${colors.bg} border ${colors.border}`}>
                       <Icon className={`h-6 w-6 ${colors.text}`} />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                       {info.title}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                       {info.description}
                     </p>
                   </motion.div>
