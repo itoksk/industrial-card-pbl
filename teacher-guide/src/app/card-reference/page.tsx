@@ -43,13 +43,13 @@ export default function CardReferencePage() {
 
         {/* Hero */}
         <motion.header
-          className="mb-16"
+          className="mb-10 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
         >
           <div className="section-label mb-4">Reference</div>
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 sm:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 sm:text-4xl lg:text-5xl">
             カードデータリファレンス
           </h1>
           <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 max-w-3xl leading-relaxed">
@@ -62,7 +62,7 @@ export default function CardReferencePage() {
           variants={staggerContainer}
           initial="initial"
           animate="animate"
-          className="space-y-20"
+          className="space-y-14 sm:space-y-16"
         >
 
           {/* 4 Card Types Overview */}
