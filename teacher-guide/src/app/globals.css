@@ -155,7 +155,7 @@ body {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--surface-glass-border);
   border-radius: 14px;
-  padding: 1.25rem;
+  padding: 1.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -402,7 +402,7 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid var(--surface-glass-border);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.25rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -768,6 +768,15 @@ body.page-exiting .page-transition-overlay {
   padding-right: clamp(1rem, 5vw, 2rem);
 }
 
+.page-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: clamp(1rem, 3vw, 2rem);
+  padding-right: clamp(1rem, 3vw, 2rem);
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
 /* ============================================
    Mobile Drawer
    ============================================ */
@@ -888,11 +897,11 @@ select:focus-visible {
 
 @media (max-width: 768px) {
   :where(.glass-card) {
-    padding: 1rem;
+    padding: 1.125rem;
   }
 
   :where(.content-card) {
-    padding: 0.875rem;
+    padding: 1rem;
   }
 
   .section-padding {
@@ -904,15 +913,20 @@ select:focus-visible {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  .page-shell {
+    padding-top: 2.5rem;
+    padding-bottom: 2.75rem;
+  }
 }
 
 @media (min-width: 769px) {
   :where(.glass-card) {
-    padding: 1.5rem;
+    padding: 1.75rem;
     border-radius: 16px;
   }
 
   :where(.content-card) {
-    padding: 1.25rem;
+    padding: 1.5rem;
   }
 }

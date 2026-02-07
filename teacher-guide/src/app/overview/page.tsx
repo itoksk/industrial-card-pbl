@@ -184,7 +184,7 @@ export default function OverviewPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="mx-auto max-w-7xl container-padding section-padding"
+        className="page-shell"
       >
         <motion.div
           variants={containerVariants}

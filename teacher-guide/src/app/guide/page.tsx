@@ -312,7 +312,7 @@ export default function GuidePage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+        className="page-shell"
       >
         <motion.div
           variants={containerVariants}

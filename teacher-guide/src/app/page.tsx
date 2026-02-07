@@ -76,7 +76,7 @@ export default function Home() {
           <div className="grid-pattern h-full opacity-60" />
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+        <div className="relative mx-auto max-w-[1200px] px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
           <motion.span {...reveal} className="section-label mb-6 inline-flex">Teacher Guide</motion.span>
           <motion.h1 {...reveal} className="max-w-4xl text-4xl font-black tracking-tight sm:text-6xl lg:text-7xl leading-[1.08]">
             授業を回すための
@@ -108,7 +108,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6 lg:px-8">
         <motion.div {...reveal} className="mb-8 flex items-end justify-between">
           <div>
             <p className="section-label mb-3">Core Entry</p>

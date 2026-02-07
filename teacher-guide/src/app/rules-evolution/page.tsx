@@ -21,7 +21,7 @@ export default function RulesEvolutionPage() {
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+      <div className="page-shell">
 
         {/* Breadcrumb */}
         <motion.nav

@@ -55,7 +55,7 @@ export default function Navigation() {
           backdropFilter: scrolled ? 'blur(16px) saturate(140%)' : 'none',
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 lg:h-20 items-center justify-between gap-3">
             <TransitionLink href="/" className="group flex items-center gap-3">
               <div className="relative h-10 w-10 rounded-xl border overflow-hidden" style={{ borderColor: 'var(--surface-glass-border)' }}>

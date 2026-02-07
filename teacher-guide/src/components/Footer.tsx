@@ -16,7 +16,7 @@ export default function Footer() {
 
   return (
     <footer className="mt-24 border-t bg-section-alt" style={{ borderColor: 'var(--border)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="mb-8 rounded-3xl border p-6 sm:p-8" style={{ borderColor: 'var(--surface-glass-border)', background: 'var(--surface-glass)' }}>
           <p className="text-xs uppercase tracking-[0.14em] text-theme-muted">Teacher Guide</p>
           <div className="mt-3 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
