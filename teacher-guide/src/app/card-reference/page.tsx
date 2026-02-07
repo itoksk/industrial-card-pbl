@@ -21,7 +21,7 @@ export default function CardReferencePage() {
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
 
         {/* Breadcrumb */}
         <motion.nav
@@ -49,10 +49,10 @@ export default function CardReferencePage() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
         >
           <div className="section-label mb-4">Reference</div>
-          <h1 className="text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-6 sm:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 sm:text-5xl lg:text-6xl">
             カードデータリファレンス
           </h1>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 max-w-3xl leading-relaxed">
             4種類のカードタイプ、データフォーマット、CSV一括発行の方法、そしてゲームバランスの考え方まで、カード作成に必要な全ての情報をまとめています。
           </p>
         </motion.header>
