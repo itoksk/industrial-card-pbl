@@ -32,12 +32,12 @@ export default function PedagogyPage() {
         >
           <ol className="flex items-center space-x-2 text-sm">
             <li>
-              <TransitionLink href="/" className="text-zinc-500 hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400 transition-colors">
+              <TransitionLink href="/" className="text-[var(--text-muted)] hover:text-[var(--accent-primary)] transition-colors">
                 ホーム
               </TransitionLink>
             </li>
-            <li className="text-zinc-400 dark:text-zinc-600">/</li>
-            <li className="text-zinc-900 dark:text-zinc-100 font-medium">教授法メモ</li>
+            <li className="text-[var(--text-muted)]">/</li>
+            <li className="text-[var(--text-primary)] font-medium">教授法メモ</li>
           </ol>
         </motion.nav>
 
@@ -49,10 +49,10 @@ export default function PedagogyPage() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
         >
           <div className="section-label mb-4">Pedagogy</div>
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 sm:text-4xl lg:text-5xl">
+          <h1 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-4 sm:text-4xl lg:text-5xl">
             教授法メモ
           </h1>
-          <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-[var(--text-secondary)] max-w-3xl leading-relaxed">
             カードゲームを通じた危険物取扱者試験の学習において、実践から得られた教育的知見と指導上のポイントをまとめています。
           </p>
         </motion.header>
@@ -75,7 +75,7 @@ export default function PedagogyPage() {
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
+                  <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
                     事実基盤制約
                   </h2>
                   <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">
@@ -84,9 +84,9 @@ export default function PedagogyPage() {
                 </div>
               </div>
 
-              <div className="space-y-6 text-zinc-700 dark:text-zinc-300">
+              <div className="space-y-6 text-[var(--text-secondary)]">
                 <div className="border-l-4 border-indigo-500 pl-6 py-2">
-                  <p className="text-lg font-medium text-zinc-900 dark:text-zinc-100 mb-3">
+                  <p className="text-lg font-medium text-[var(--text-primary)] mb-3">
                     核心的洞察
                   </p>
                   <p className="leading-relaxed">
@@ -94,8 +94,8 @@ export default function PedagogyPage() {
                   </p>
                 </div>
 
-                <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-lg p-6 border border-zinc-200 dark:border-zinc-800">
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+                <div className="bg-[var(--background-alt)] rounded-lg p-6 border border-[var(--border)]">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4">
                     具体例: 引火点と攻撃力の関係
                   </h3>
                   <div className="space-y-4">
@@ -106,8 +106,8 @@ export default function PedagogyPage() {
                         </svg>
                       </div>
                       <div>
-                        <p className="font-medium text-zinc-900 dark:text-zinc-100">事実に基づくルール</p>
-                        <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+                        <p className="font-medium text-[var(--text-primary)]">事実に基づくルール</p>
+                        <p className="text-sm text-[var(--text-muted)] mt-1">
                           「引火点が低いほど攻撃力が高い」というルールにより、生徒は正確な引火点データを探し求めるようになります。
                         </p>
                       </div>
@@ -119,8 +119,8 @@ export default function PedagogyPage() {
                         </svg>
                       </div>
                       <div>
-                        <p className="font-medium text-zinc-900 dark:text-zinc-100">恣意的なルール</p>
-                        <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+                        <p className="font-medium text-[var(--text-primary)]">恣意的なルール</p>
+                        <p className="text-sm text-[var(--text-muted)] mt-1">
                           「好きな数字を決めていいよ」では、表面的な関わりしか生まれず、深い学びに到達しません。
                         </p>
                       </div>
@@ -130,7 +130,7 @@ export default function PedagogyPage() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="glass-card bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 border-indigo-200 dark:border-indigo-800">
-                    <h4 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+                    <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
                       制約の教育的価値
                     </h4>
                     <ul className="space-y-2 text-sm">
@@ -154,7 +154,7 @@ export default function PedagogyPage() {
                   </div>
 
                   <div className="glass-card bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 border-amber-200 dark:border-amber-800">
-                    <h4 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+                    <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-3">
                       指導上の注意点
                     </h4>
                     <ul className="space-y-2 text-sm">
@@ -198,7 +198,7 @@ export default function PedagogyPage() {
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
+                  <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
                     反復テストプレイ
                   </h2>
                   <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">
@@ -207,13 +207,13 @@ export default function PedagogyPage() {
                 </div>
               </div>
 
-              <div className="space-y-6 text-zinc-700 dark:text-zinc-300">
+              <div className="space-y-6 text-[var(--text-secondary)]">
                 <p className="text-lg leading-relaxed">
                   繰り返しプレイすることで、バランス問題が明らかになり、データ間の関係性についての深い思考が促されます。
                 </p>
 
-                <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-lg p-6 border border-zinc-200 dark:border-zinc-800">
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-6">
+                <div className="bg-[var(--background-alt)] rounded-lg p-6 border border-[var(--border)]">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-6">
                     学習サイクル
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -222,13 +222,13 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center mx-auto mb-2 font-bold">
                           1
                         </div>
-                        <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
+                        <p className="font-semibold text-[var(--text-primary)] text-sm">
                           プレイ
                         </p>
                       </div>
                     </div>
                     <div className="hidden md:flex items-center justify-center">
-                      <svg className="w-6 h-6 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </div>
@@ -237,13 +237,13 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-purple-500 text-white flex items-center justify-center mx-auto mb-2 font-bold">
                           2
                         </div>
-                        <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
+                        <p className="font-semibold text-[var(--text-primary)] text-sm">
                           問題発見
                         </p>
                       </div>
                     </div>
                     <div className="hidden md:flex items-center justify-center">
-                      <svg className="w-6 h-6 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </div>
@@ -252,7 +252,7 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center mx-auto mb-2 font-bold">
                           3
                         </div>
-                        <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
+                        <p className="font-semibold text-[var(--text-primary)] text-sm">
                           調査
                         </p>
                       </div>
@@ -262,13 +262,13 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center mx-auto mb-2 font-bold">
                           4
                         </div>
-                        <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
+                        <p className="font-semibold text-[var(--text-primary)] text-sm">
                           調整
                         </p>
                       </div>
                     </div>
                     <div className="hidden md:flex items-center justify-center md:col-start-3">
-                      <svg className="w-6 h-6 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </div>
@@ -277,14 +277,14 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-2 font-bold">
                           5
                         </div>
-                        <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
+                        <p className="font-semibold text-[var(--text-primary)] text-sm">
                           再プレイ
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className="mt-6 text-center">
-                    <div className="inline-flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+                    <div className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)]">
                       <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                       </svg>
@@ -294,31 +294,31 @@ export default function PedagogyPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)]">
                     自然発生する学習行動
                   </h3>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="glass-card border-l-4 border-indigo-500">
-                      <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
+                      <h4 className="font-semibold text-[var(--text-primary)] mb-2">
                         データの正確性議論
                       </h4>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      <p className="text-sm text-[var(--text-muted)]">
                         「この数値は本当に正しい?」という疑問が生徒間で自然に起こります。
                       </p>
                     </div>
                     <div className="glass-card border-l-4 border-purple-500">
-                      <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
+                      <h4 className="font-semibold text-[var(--text-primary)] mb-2">
                         バランス調整の提案
                       </h4>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      <p className="text-sm text-[var(--text-muted)]">
                         「もっとこうしたら面白くなる」という建設的な意見が出ます。
                       </p>
                     </div>
                     <div className="glass-card border-l-4 border-pink-500">
-                      <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
+                      <h4 className="font-semibold text-[var(--text-primary)] mb-2">
                         知識の主体的探求
                       </h4>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      <p className="text-sm text-[var(--text-muted)]">
                         教えられる前に、自ら調べて理解しようとします。
                       </p>
                     </div>
@@ -352,7 +352,7 @@ export default function PedagogyPage() {
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
+                  <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
                     物理的UXの発見
                   </h2>
                   <p className="text-sm text-green-600 dark:text-green-400 font-medium">
@@ -361,22 +361,22 @@ export default function PedagogyPage() {
                 </div>
               </div>
 
-              <div className="space-y-6 text-zinc-700 dark:text-zinc-300">
+              <div className="space-y-6 text-[var(--text-secondary)]">
                 <p className="text-lg leading-relaxed">
                   実際にプレイする中で、生徒たち自身が発見したユーザビリティの改善点。教員が事前に設計するよりも、使う人の視点から生まれたアイデアの方が優れています。
                 </p>
 
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 border-l-4 border-green-500 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4">
                     重要な原則
                   </h3>
-                  <p className="text-zinc-700 dark:text-zinc-300">
+                  <p className="text-[var(--text-secondary)]">
                     これらのUX改善は生徒から生まれたものであり、教員から押し付けられたものではありません。実際の使用体験から得られた知見こそが、最も価値のあるデザイン指針となります。
                   </p>
                 </div>
 
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+                  <h3 className="text-2xl font-semibold text-[var(--text-primary)]">
                     生徒が発見した3つの改善点
                   </h3>
 
@@ -389,26 +389,26 @@ export default function PedagogyPage() {
                           </svg>
                         </div>
                         <div className="tag tag-primary mb-2">発見 1</div>
-                        <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                        <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                           効果カードは場に残す
                         </h4>
                       </div>
                       <div className="space-y-3 text-sm">
                         <div className="flex items-start gap-2">
                           <span className="text-blue-600 dark:text-blue-400 font-bold">課題</span>
-                          <p className="text-zinc-600 dark:text-zinc-400">
+                          <p className="text-[var(--text-muted)]">
                             使い捨てだと効果が一瞬で終わり、戦略性が生まれない
                           </p>
                         </div>
                         <div className="flex items-start gap-2">
                           <span className="text-blue-600 dark:text-blue-400 font-bold">解決</span>
-                          <p className="text-zinc-600 dark:text-zinc-400">
+                          <p className="text-[var(--text-muted)]">
                             場に残して持続効果を持たせることで、配置の戦略性が生まれた
                           </p>
                         </div>
                         <div className="flex items-start gap-2">
                           <span className="text-blue-600 dark:text-blue-400 font-bold">効果</span>
-                          <p className="text-zinc-600 dark:text-zinc-400">
+                          <p className="text-[var(--text-muted)]">
                             いつ使うか、どこに置くかという判断が重要になった
                           </p>
                         </div>
@@ -424,26 +424,26 @@ export default function PedagogyPage() {
                           </svg>
                         </div>
                         <div className="tag tag-secondary mb-2">発見 2</div>
-                        <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                        <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                           置き場所が重要
                         </h4>
                       </div>
                       <div className="space-y-3 text-sm">
                         <div className="flex items-start gap-2">
                           <span className="text-purple-600 dark:text-purple-400 font-bold">課題</span>
-                          <p className="text-zinc-600 dark:text-zinc-400">
+                          <p className="text-[var(--text-muted)]">
                             カードが混在して、どれがどの状態か分からなくなる
                           </p>
                         </div>
                         <div className="flex items-start gap-2">
                           <span className="text-purple-600 dark:text-purple-400 font-bold">解決</span>
-                          <p className="text-zinc-600 dark:text-zinc-400">
+                          <p className="text-[var(--text-muted)]">
                             手札、場、捨て札、デッキなど、明確なエリア分けが必要
                           </p>
                         </div>
                         <div className="flex items-start gap-2">
                           <span className="text-purple-600 dark:text-purple-400 font-bold">効果</span>
-                          <p className="text-zinc-600 dark:text-zinc-400">
+                          <p className="text-[var(--text-muted)]">
                             ゲーム状態の把握が容易になり、プレイがスムーズに
                           </p>
                         </div>
@@ -458,26 +458,26 @@ export default function PedagogyPage() {
                           </svg>
                         </div>
                         <div className="tag tag-tertiary mb-2">発見 3</div>
-                        <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                        <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                           デッキを種別で分離
                         </h4>
                       </div>
                       <div className="space-y-3 text-sm">
                         <div className="flex items-start gap-2">
                           <span className="text-amber-600 dark:text-amber-400 font-bold">課題</span>
-                          <p className="text-zinc-600 dark:text-zinc-400">
+                          <p className="text-[var(--text-muted)]">
                             全カードが混ざっていると、必要な種類が引けない
                           </p>
                         </div>
                         <div className="flex items-start gap-2">
                           <span className="text-amber-600 dark:text-amber-400 font-bold">解決</span>
-                          <p className="text-zinc-600 dark:text-zinc-400">
+                          <p className="text-[var(--text-muted)]">
                             攻撃、防御、強化、妨害で別デッキにすることを提案
                           </p>
                         </div>
                         <div className="flex items-start gap-2">
                           <span className="text-amber-600 dark:text-amber-400 font-bold">効果</span>
-                          <p className="text-zinc-600 dark:text-zinc-400">
+                          <p className="text-[var(--text-muted)]">
                             戦略的な手札管理が可能になり、ゲーム性が向上
                           </p>
                         </div>
@@ -486,15 +486,15 @@ export default function PedagogyPage() {
                   </div>
                 </div>
 
-                <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-lg p-6 border border-zinc-200 dark:border-zinc-800">
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4 flex items-center gap-2">
+                <div className="bg-[var(--background-alt)] rounded-lg p-6 border border-[var(--border)]">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
                     <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                     教訓: プレイを通じて発見させる
                   </h3>
                   <div className="space-y-3">
-                    <p className="text-zinc-700 dark:text-zinc-300">
+                    <p className="text-[var(--text-secondary)]">
                       これらの改善点は、教員が事前に設計して与えたものではありません。実際にプレイする中で生徒自身が問題を感じ、解決策を考え出しました。
                     </p>
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
@@ -505,8 +505,8 @@ export default function PedagogyPage() {
                           </svg>
                         </div>
                         <div>
-                          <p className="font-medium text-zinc-900 dark:text-zinc-100">推奨アプローチ</p>
-                          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+                          <p className="font-medium text-[var(--text-primary)]">推奨アプローチ</p>
+                          <p className="text-sm text-[var(--text-muted)] mt-1">
                             最小限のルールでスタートし、生徒の発見を待つ
                           </p>
                         </div>
@@ -518,8 +518,8 @@ export default function PedagogyPage() {
                           </svg>
                         </div>
                         <div>
-                          <p className="font-medium text-zinc-900 dark:text-zinc-100">避けるべきアプローチ</p>
-                          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">
+                          <p className="font-medium text-[var(--text-primary)]">避けるべきアプローチ</p>
+                          <p className="text-sm text-[var(--text-muted)] mt-1">
                             完璧なルールを事前に用意して指示する
                           </p>
                         </div>
@@ -555,7 +555,7 @@ export default function PedagogyPage() {
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
+                  <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
                     Google Forms評価
                   </h2>
                   <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">
@@ -564,13 +564,13 @@ export default function PedagogyPage() {
                 </div>
               </div>
 
-              <div className="space-y-6 text-zinc-700 dark:text-zinc-300">
+              <div className="space-y-6 text-[var(--text-secondary)]">
                 <p className="text-lg leading-relaxed">
                   構造化された評価フォームを使用することで、生徒からの定量的・定性的フィードバックを効率的に収集し、授業改善に活用できます。
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 border-l-4 border-blue-500 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
                     評価システムの目的
                   </h3>
                   <ul className="space-y-2">
@@ -596,7 +596,7 @@ export default function PedagogyPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+                  <h3 className="text-2xl font-semibold text-[var(--text-primary)]">
                     7つの評価カテゴリ
                   </h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -605,11 +605,11 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold text-lg">
                           1
                         </div>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">
+                        <h4 className="font-bold text-[var(--text-primary)]">
                           学習目標
                         </h4>
                       </div>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      <p className="text-sm text-[var(--text-muted)]">
                         危険物の性質や取扱いについて理解が深まったか
                       </p>
                     </div>
@@ -619,11 +619,11 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold text-lg">
                           2
                         </div>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">
+                        <h4 className="font-bold text-[var(--text-primary)]">
                           カード内容
                         </h4>
                       </div>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      <p className="text-sm text-[var(--text-muted)]">
                         カードの情報は正確で、学習に役立ったか
                       </p>
                     </div>
@@ -633,11 +633,11 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold text-lg">
                           3
                         </div>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">
+                        <h4 className="font-bold text-[var(--text-primary)]">
                           ゲームバランス
                         </h4>
                       </div>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      <p className="text-sm text-[var(--text-muted)]">
                         カードの強さや戦略性のバランスは適切だったか
                       </p>
                     </div>
@@ -647,11 +647,11 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-lg">
                           4
                         </div>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">
+                        <h4 className="font-bold text-[var(--text-primary)]">
                           ルール明確性
                         </h4>
                       </div>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      <p className="text-sm text-[var(--text-muted)]">
                         ルールは分かりやすく、迷わずプレイできたか
                       </p>
                     </div>
@@ -661,11 +661,11 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-lg">
                           5
                         </div>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">
+                        <h4 className="font-bold text-[var(--text-primary)]">
                           テストプレイ
                         </h4>
                       </div>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      <p className="text-sm text-[var(--text-muted)]">
                         実際にプレイして楽しめたか、改善点はあったか
                       </p>
                     </div>
@@ -675,11 +675,11 @@ export default function PedagogyPage() {
                         <div className="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-lg">
                           6
                         </div>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">
+                        <h4 className="font-bold text-[var(--text-primary)]">
                           総合評価
                         </h4>
                       </div>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      <p className="text-sm text-[var(--text-muted)]">
                         全体的な満足度と、他者への推薦度
                       </p>
                     </div>
@@ -689,33 +689,33 @@ export default function PedagogyPage() {
                       <div className="w-10 h-10 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-lg">
                         7
                       </div>
-                      <h4 className="font-bold text-zinc-900 dark:text-zinc-100">
+                      <h4 className="font-bold text-[var(--text-primary)]">
                         自由記述
                       </h4>
                     </div>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    <p className="text-sm text-[var(--text-muted)]">
                       改善提案、感想、その他気づいたことを自由に記入
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-lg p-6 border border-zinc-200 dark:border-zinc-800">
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4 flex items-center gap-2">
+                <div className="bg-[var(--background-alt)] rounded-lg p-6 border border-[var(--border)]">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
                     <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                     Google Apps Scriptによる自動化
                   </h3>
                   <div className="space-y-4">
-                    <p className="text-zinc-700 dark:text-zinc-300">
+                    <p className="text-[var(--text-secondary)]">
                       GASを使用することで、フォームの作成からスプレッドシートへのデータ集約まで自動化できます。
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
+                        <h4 className="font-semibold text-[var(--text-primary)] text-sm">
                           フォーム自動生成
                         </h4>
-                        <ul className="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+                        <ul className="space-y-1 text-sm text-[var(--text-muted)]">
                           <li className="flex items-start gap-2">
                             <span className="text-blue-600 dark:text-blue-400">•</span>
                             <span>テンプレートから一括作成</span>
@@ -731,10 +731,10 @@ export default function PedagogyPage() {
                         </ul>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
+                        <h4 className="font-semibold text-[var(--text-primary)] text-sm">
                           データ分析支援
                         </h4>
-                        <ul className="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+                        <ul className="space-y-1 text-sm text-[var(--text-muted)]">
                           <li className="flex items-start gap-2">
                             <span className="text-blue-600 dark:text-blue-400">•</span>
                             <span>回答の自動集計</span>
@@ -753,20 +753,20 @@ export default function PedagogyPage() {
                   </div>
                 </div>
 
-                <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-lg p-6 border border-zinc-200 dark:border-zinc-800">
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4 flex items-center gap-2">
+                <div className="bg-[var(--background-alt)] rounded-lg p-6 border border-[var(--border)]">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
                     <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                     スプレッドシートとの連携
                   </h3>
                   <div className="space-y-3">
-                    <p className="text-zinc-700 dark:text-zinc-300">
+                    <p className="text-[var(--text-secondary)]">
                       Google Formsの回答は自動的にスプレッドシートに集約され、リアルタイムで分析可能です。
                     </p>
-                    <div className="glass-card bg-white dark:bg-zinc-800 p-4">
+                    <div className="glass-card bg-[var(--surface-glass)] p-4">
                       <div className="space-y-2 text-sm font-mono">
-                        <div className="text-zinc-600 dark:text-zinc-400">
+                        <div className="text-[var(--text-muted)]">
                           <span className="text-blue-600 dark:text-blue-400">フォーム回答</span> →
                           <span className="text-purple-600 dark:text-purple-400"> スプレッドシート</span> →
                           <span className="text-green-600 dark:text-green-400"> 分析・可視化</span>
@@ -776,15 +776,15 @@ export default function PedagogyPage() {
                     <div className="grid md:grid-cols-3 gap-3 mt-3">
                       <div className="text-center p-3 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
                         <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">即時</p>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">データ反映</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">データ反映</p>
                       </div>
                       <div className="text-center p-3 bg-purple-50 dark:bg-purple-950/30 rounded-lg">
                         <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">自動</p>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">集計処理</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">集計処理</p>
                       </div>
                       <div className="text-center p-3 bg-green-50 dark:bg-green-950/30 rounded-lg">
                         <p className="text-2xl font-bold text-green-600 dark:text-green-400">容易</p>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">共有・活用</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">共有・活用</p>
                       </div>
                     </div>
                   </div>
@@ -817,7 +817,7 @@ export default function PedagogyPage() {
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
+                  <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
                     効果テキスト整頓アプローチ
                   </h2>
                   <p className="text-sm text-amber-600 dark:text-amber-400 font-medium">
@@ -826,24 +826,24 @@ export default function PedagogyPage() {
                 </div>
               </div>
 
-              <div className="space-y-6 text-zinc-700 dark:text-zinc-300">
+              <div className="space-y-6 text-[var(--text-secondary)]">
                 <p className="text-lg leading-relaxed">
                   カードジェネレーターには、生徒が書いた効果テキストを自動的に整える機能があります。これは単なる技術的処理ではなく、教育的な意図を持った設計です。
                 </p>
 
                 <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 border-l-4 border-amber-500 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
                     機能の目的
                   </h3>
                   <div className="space-y-2">
-                    <p className="text-zinc-700 dark:text-zinc-300">
+                    <p className="text-[var(--text-secondary)]">
                       生徒が考えた効果を尊重しながら、ゲームとして適切な形に整形することで、創造性と規律のバランスを取ります。
                     </p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+                  <h3 className="text-2xl font-semibold text-[var(--text-primary)]">
                     4つの処理プロセス
                   </h3>
 
@@ -857,16 +857,16 @@ export default function PedagogyPage() {
                         </div>
                         <div className="flex-1">
                           <div className="tag tag-tertiary mb-2">処理 1</div>
-                          <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                          <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                             現実の危険表現の除去
                           </h4>
                         </div>
                       </div>
                       <div className="space-y-3">
-                        <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                        <p className="text-sm text-[var(--text-secondary)]">
                           ゲームテキストから現実世界の危険性に関する直接的な言及を削除します。
                         </p>
-                        <div className="bg-white dark:bg-zinc-800 rounded-lg p-4 border border-red-200 dark:border-red-800">
+                        <div className="bg-[var(--surface-glass)] rounded-lg p-4 border border-red-200 dark:border-red-800">
                           <div className="space-y-3">
                             <div>
                               <p className="text-xs font-semibold text-red-600 dark:text-red-400 mb-1">変更前</p>
@@ -875,7 +875,7 @@ export default function PedagogyPage() {
                               </p>
                             </div>
                             <div className="flex justify-center">
-                              <svg className="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-5 h-5 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                               </svg>
                             </div>
@@ -904,26 +904,26 @@ export default function PedagogyPage() {
                         </div>
                         <div className="flex-1">
                           <div className="tag tag-primary mb-2">処理 2</div>
-                          <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                          <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                             句読点の統一
                           </h4>
                         </div>
                       </div>
                       <div className="space-y-3">
-                        <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                        <p className="text-sm text-[var(--text-secondary)]">
                           カード全体で句読点の使い方を統一し、読みやすさを向上させます。
                         </p>
                         <div className="grid md:grid-cols-2 gap-3">
-                          <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 border border-blue-200 dark:border-blue-800">
-                            <p className="text-xs font-semibold text-zinc-500 dark:text-zinc-400 mb-2">不統一な例</p>
+                          <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-blue-200 dark:border-blue-800">
+                            <p className="text-xs font-semibold text-[var(--text-muted)] mb-2">不統一な例</p>
                             <ul className="space-y-1 text-xs font-mono">
                               <li className="text-red-600 dark:text-red-400">• HPを5減らす</li>
                               <li className="text-red-600 dark:text-red-400">• HPを5減らす。</li>
                               <li className="text-red-600 dark:text-red-400">• HPを5減らす!</li>
                             </ul>
                           </div>
-                          <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 border border-green-200 dark:border-green-800">
-                            <p className="text-xs font-semibold text-zinc-500 dark:text-zinc-400 mb-2">統一後</p>
+                          <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-green-200 dark:border-green-800">
+                            <p className="text-xs font-semibold text-[var(--text-muted)] mb-2">統一後</p>
                             <ul className="space-y-1 text-xs font-mono">
                               <li className="text-green-600 dark:text-green-400">• HPを5減らす</li>
                               <li className="text-green-600 dark:text-green-400">• HPを5減らす</li>
@@ -948,16 +948,16 @@ export default function PedagogyPage() {
                         </div>
                         <div className="flex-1">
                           <div className="tag tag-secondary mb-2">処理 3</div>
-                          <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                          <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                             文字数制限の調整
                           </h4>
                         </div>
                       </div>
                       <div className="space-y-3">
-                        <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                        <p className="text-sm text-[var(--text-secondary)]">
                           長すぎるテキストを適切な長さに調整し、カードデザインに収まるようにします。
                         </p>
-                        <div className="bg-white dark:bg-zinc-800 rounded-lg p-4 border border-purple-200 dark:border-purple-800">
+                        <div className="bg-[var(--surface-glass)] rounded-lg p-4 border border-purple-200 dark:border-purple-800">
                           <div className="space-y-3">
                             <div>
                               <div className="flex items-center justify-between mb-1">
@@ -969,7 +969,7 @@ export default function PedagogyPage() {
                               </p>
                             </div>
                             <div className="flex justify-center">
-                              <svg className="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-5 h-5 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                               </svg>
                             </div>
@@ -1001,27 +1001,27 @@ export default function PedagogyPage() {
                         </div>
                         <div className="flex-1">
                           <div className="tag tag-quaternary mb-2">処理 4</div>
-                          <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                          <h4 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                             フォーマットの標準化
                           </h4>
                         </div>
                       </div>
                       <div className="space-y-3">
-                        <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                        <p className="text-sm text-[var(--text-secondary)]">
                           カード効果の記述形式を統一し、プレイヤーが理解しやすくします。
                         </p>
                         <div className="space-y-2">
-                          <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 border border-green-200 dark:border-green-800">
-                            <p className="text-xs font-semibold text-zinc-500 dark:text-zinc-400 mb-2">標準フォーマット</p>
+                          <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-green-200 dark:border-green-800">
+                            <p className="text-xs font-semibold text-[var(--text-muted)] mb-2">標準フォーマット</p>
                             <div className="space-y-1 text-xs">
                               <p className="font-mono bg-green-50 dark:bg-green-950/30 p-2 rounded">
                                 [対象] を [数値] [単位] [動詞]
                               </p>
                               <div className="grid grid-cols-2 gap-2 mt-2">
-                                <p className="text-zinc-600 dark:text-zinc-400">• 相手のHPを10減らす</p>
-                                <p className="text-zinc-600 dark:text-zinc-400">• 自分の攻撃力を5増やす</p>
-                                <p className="text-zinc-600 dark:text-zinc-400">• 相手の防御力を半減する</p>
-                                <p className="text-zinc-600 dark:text-zinc-400">• 全カードを無効化する</p>
+                                <p className="text-[var(--text-muted)]">• 相手のHPを10減らす</p>
+                                <p className="text-[var(--text-muted)]">• 自分の攻撃力を5増やす</p>
+                                <p className="text-[var(--text-muted)]">• 相手の防御力を半減する</p>
+                                <p className="text-[var(--text-muted)]">• 全カードを無効化する</p>
                               </div>
                             </div>
                           </div>
@@ -1036,59 +1036,59 @@ export default function PedagogyPage() {
                   </div>
                 </div>
 
-                <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-lg p-6 border border-zinc-200 dark:border-zinc-800">
-                  <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4 flex items-center gap-2">
+                <div className="bg-[var(--background-alt)] rounded-lg p-6 border border-[var(--border)]">
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
                     <svg className="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                     教育的価値
                   </h3>
                   <div className="space-y-4">
-                    <p className="text-zinc-700 dark:text-zinc-300">
+                    <p className="text-[var(--text-secondary)]">
                       この自動整形機能は、単なる技術的処理以上の意味を持ちます。
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm flex items-center gap-2">
+                        <h4 className="font-semibold text-[var(--text-primary)] text-sm flex items-center gap-2">
                           <svg className="w-4 h-4 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           ライティングスキル向上
                         </h4>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 pl-6">
+                        <p className="text-xs text-[var(--text-muted)] pl-6">
                           簡潔で明確な文章を書く重要性を、実践を通じて学びます。
                         </p>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm flex items-center gap-2">
+                        <h4 className="font-semibold text-[var(--text-primary)] text-sm flex items-center gap-2">
                           <svg className="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           安全意識の育成
                         </h4>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 pl-6">
+                        <p className="text-xs text-[var(--text-muted)] pl-6">
                           現実の危険性とゲームの区別を明確にする習慣が身につきます。
                         </p>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm flex items-center gap-2">
+                        <h4 className="font-semibold text-[var(--text-primary)] text-sm flex items-center gap-2">
                           <svg className="w-4 h-4 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           一貫性の重要性理解
                         </h4>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 pl-6">
+                        <p className="text-xs text-[var(--text-muted)] pl-6">
                           表現の統一がユーザビリティに与える影響を体感します。
                         </p>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm flex items-center gap-2">
+                        <h4 className="font-semibold text-[var(--text-primary)] text-sm flex items-center gap-2">
                           <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           制約内での創造性
                         </h4>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 pl-6">
+                        <p className="text-xs text-[var(--text-muted)] pl-6">
                           ルールの中で最大限の工夫をする力が養われます。
                         </p>
                       </div>

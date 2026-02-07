@@ -32,12 +32,12 @@ export default function RulesEvolutionPage() {
         >
           <ol className="flex items-center space-x-2 text-sm">
             <li>
-              <TransitionLink href="/" className="text-zinc-500 hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400 transition-colors">
+              <TransitionLink href="/" className="text-[var(--text-muted)] hover:text-[var(--accent-primary)] transition-colors">
                 ホーム
               </TransitionLink>
             </li>
-            <li className="text-zinc-400 dark:text-zinc-600">/</li>
-            <li className="text-zinc-900 dark:text-zinc-100 font-medium">ルール進化の記録</li>
+            <li className="text-[var(--text-muted)]">/</li>
+            <li className="text-[var(--text-primary)] font-medium">ルール進化の記録</li>
           </ol>
         </motion.nav>
 
@@ -49,10 +49,10 @@ export default function RulesEvolutionPage() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
         >
           <div className="section-label mb-4">Rules Evolution</div>
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 sm:text-4xl lg:text-5xl">
+          <h1 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-4 sm:text-4xl lg:text-5xl">
             ルール進化の記録
           </h1>
-          <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-[var(--text-secondary)] max-w-3xl leading-relaxed">
             教員が設計した初期ルールから、生徒たちの提案により進化したルールまで。実際のプレイを通じて発見された問題点と、その解決プロセスを記録します。
           </p>
         </motion.header>
@@ -68,7 +68,7 @@ export default function RulesEvolutionPage() {
           {/* Introduction */}
           <motion.section variants={fadeInUp}>
             <div className="glass-card">
-              <div className="space-y-4 text-zinc-700 dark:text-zinc-300">
+              <div className="space-y-4 text-[var(--text-secondary)]">
                 <p className="text-lg leading-relaxed">
                   このゲームのルールは、教員が一方的に決めたものではありません。生徒たちが実際にプレイし、問題を発見し、議論を重ね、より良いゲームにするために改訂を提案してきました。
                 </p>
@@ -76,10 +76,10 @@ export default function RulesEvolutionPage() {
                   ここでは、バージョン1(教員設計)からバージョン2(生徒改訂)への変遷を詳しく記録します。それぞれの変更には、発見された問題と、なぜその解決策が選ばれたのかという理由が込められています。
                 </p>
                 <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 border-l-4 border-indigo-500 rounded-lg p-6 mt-6">
-                  <p className="font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
+                  <p className="font-semibold text-[var(--text-primary)] mb-2">
                     重要な視点
                   </p>
-                  <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                  <p className="text-sm text-[var(--text-secondary)]">
                     これらの改訂は、生徒の主体性と問題解決能力の証です。教員の役割は完璧なルールを提供することではなく、生徒が自ら改善できる環境を整えることでした。
                   </p>
                 </div>
@@ -97,10 +97,10 @@ export default function RulesEvolutionPage() {
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
+                  <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
                     バージョン比較表
                   </h2>
-                  <p className="text-zinc-600 dark:text-zinc-400">
+                  <p className="text-[var(--text-muted)]">
                     各項目における変更点と、その背景にある理由
                   </p>
                 </div>
@@ -110,143 +110,143 @@ export default function RulesEvolutionPage() {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="border-b-2 border-indigo-200 dark:border-indigo-800">
-                      <th className="text-left p-4 font-semibold text-zinc-900 dark:text-zinc-100 bg-zinc-50 dark:bg-zinc-900/50">
+                      <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-[var(--background-alt)]">
                         項目
                       </th>
-                      <th className="text-left p-4 font-semibold text-zinc-900 dark:text-zinc-100 bg-blue-50 dark:bg-blue-950/30">
+                      <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-blue-50 dark:bg-blue-950/30">
                         教員設計 (v1)
                       </th>
-                      <th className="text-left p-4 font-semibold text-zinc-900 dark:text-zinc-100 bg-purple-50 dark:bg-purple-950/30">
+                      <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-purple-50 dark:bg-purple-950/30">
                         生徒改訂 (v2)
                       </th>
-                      <th className="text-left p-4 font-semibold text-zinc-900 dark:text-zinc-100 bg-green-50 dark:bg-green-950/30">
+                      <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-green-50 dark:bg-green-950/30">
                         変更理由
                       </th>
                     </tr>
                   </thead>
                   <tbody className="text-sm">
-                    <tr className="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors">
-                      <td className="p-4 font-medium text-zinc-900 dark:text-zinc-100">
+                    <tr className="border-b border-[var(--border)] hover:bg-[var(--background-alt)] transition-colors">
+                      <td className="p-4 font-medium text-[var(--text-primary)]">
                         初期手札
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-primary mb-2">v1</div>
                         <p>全員一律5枚</p>
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-secondary mb-2">v2</div>
                         <p>カード種別ごとに配分</p>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">攻撃2枚、防御1枚、強化1枚、妨害1枚</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">攻撃2枚、防御1枚、強化1枚、妨害1枚</p>
                       </td>
-                      <td className="p-4 text-zinc-600 dark:text-zinc-400">
+                      <td className="p-4 text-[var(--text-muted)]">
                         ランダムだと特定種別に偏り、戦略が立てられない。均等配分で公平性向上。
                       </td>
                     </tr>
-                    <tr className="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors">
-                      <td className="p-4 font-medium text-zinc-900 dark:text-zinc-100">
+                    <tr className="border-b border-[var(--border)] hover:bg-[var(--background-alt)] transition-colors">
+                      <td className="p-4 font-medium text-[var(--text-primary)]">
                         デッキ構成
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-primary mb-2">v1</div>
                         <p>全カード種別を混合した1つのデッキ</p>
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-secondary mb-2">v2</div>
                         <p>カード種別ごとに分離</p>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">攻撃、防御、強化、妨害で別デッキ</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">攻撃、防御、強化、妨害で別デッキ</p>
                       </td>
-                      <td className="p-4 text-zinc-600 dark:text-zinc-400">
+                      <td className="p-4 text-[var(--text-muted)]">
                         必要な種類が引けず、ゲームが一方的に。分離することで戦略的選択が可能に。
                       </td>
                     </tr>
-                    <tr className="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors">
-                      <td className="p-4 font-medium text-zinc-900 dark:text-zinc-100">
+                    <tr className="border-b border-[var(--border)] hover:bg-[var(--background-alt)] transition-colors">
+                      <td className="p-4 font-medium text-[var(--text-primary)]">
                         HP制
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-primary mb-2">v1</div>
                         <p>なし</p>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">カード枚数のみで勝敗</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">カード枚数のみで勝敗</p>
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-secondary mb-2">v2</div>
                         <p>HP制導入</p>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">初期HP: 50</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">初期HP: 50</p>
                       </td>
-                      <td className="p-4 text-zinc-600 dark:text-zinc-400">
+                      <td className="p-4 text-[var(--text-muted)]">
                         カード枚数だけでは勝敗が分かりにくく、ゲームが長引きすぎる。HP制で明確な勝利条件を設定。
                       </td>
                     </tr>
-                    <tr className="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors">
-                      <td className="p-4 font-medium text-zinc-900 dark:text-zinc-100">
+                    <tr className="border-b border-[var(--border)] hover:bg-[var(--background-alt)] transition-colors">
+                      <td className="p-4 font-medium text-[var(--text-primary)]">
                         回復メカニズム
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-primary mb-2">v1</div>
                         <p>なし</p>
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-secondary mb-2">v2</div>
                         <p>防御カードで回復可能</p>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">防御成功時にHP回復</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">防御成功時にHP回復</p>
                       </td>
-                      <td className="p-4 text-zinc-600 dark:text-zinc-400">
+                      <td className="p-4 text-[var(--text-muted)]">
                         攻撃が強すぎて防御の価値が低い。回復要素で防御カードの戦略的価値が向上。
                       </td>
                     </tr>
-                    <tr className="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors">
-                      <td className="p-4 font-medium text-zinc-900 dark:text-zinc-100">
+                    <tr className="border-b border-[var(--border)] hover:bg-[var(--background-alt)] transition-colors">
+                      <td className="p-4 font-medium text-[var(--text-primary)]">
                         行動経済
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-primary mb-2">v1</div>
                         <p>1ターン1行動</p>
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-secondary mb-2">v2</div>
                         <p>行動ポイント制</p>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">3ポイント/ターン</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">3ポイント/ターン</p>
                       </td>
-                      <td className="p-4 text-zinc-600 dark:text-zinc-400">
+                      <td className="p-4 text-[var(--text-muted)]">
                         単純すぎて戦略性が乏しい。ポイント制で複数行動やコンボが可能に。
                       </td>
                     </tr>
-                    <tr className="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors">
-                      <td className="p-4 font-medium text-zinc-900 dark:text-zinc-100">
+                    <tr className="border-b border-[var(--border)] hover:bg-[var(--background-alt)] transition-colors">
+                      <td className="p-4 font-medium text-[var(--text-primary)]">
                         勝利条件
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-primary mb-2">v1</div>
                         <p>相手のカード枚数が0</p>
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-secondary mb-2">v2</div>
                         <p>複数の勝利条件</p>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+                        <p className="text-xs text-[var(--text-muted)] mt-1">
                           ①相手HP=0<br />
                           ②相手デッキ=0<br />
                           ③特殊勝利条件
                         </p>
                       </td>
-                      <td className="p-4 text-zinc-600 dark:text-zinc-400">
+                      <td className="p-4 text-[var(--text-muted)]">
                         勝ち筋が1つだと単調。複数の勝利条件で戦略の幅が広がる。
                       </td>
                     </tr>
-                    <tr className="border-b border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors">
-                      <td className="p-4 font-medium text-zinc-900 dark:text-zinc-100">
+                    <tr className="border-b border-[var(--border)] hover:bg-[var(--background-alt)] transition-colors">
+                      <td className="p-4 font-medium text-[var(--text-primary)]">
                         効果カード
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-primary mb-2">v1</div>
                         <p>使い捨て</p>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">使用後すぐ捨て札へ</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">使用後すぐ捨て札へ</p>
                       </td>
-                      <td className="p-4 text-zinc-700 dark:text-zinc-300">
+                      <td className="p-4 text-[var(--text-secondary)]">
                         <div className="tag tag-secondary mb-2">v2</div>
                         <p>場に残して持続</p>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">効果が続く限り場に配置</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">効果が続く限り場に配置</p>
                       </td>
-                      <td className="p-4 text-zinc-600 dark:text-zinc-400">
+                      <td className="p-4 text-[var(--text-muted)]">
                         一瞬で終わると戦略性が低い。場に残すことで配置の重要性が生まれる。
                       </td>
                     </tr>
@@ -260,10 +260,10 @@ export default function RulesEvolutionPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
-                    <p className="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
+                    <p className="font-semibold text-[var(--text-primary)] mb-1">
                       データから見える傾向
                     </p>
-                    <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                    <p className="text-sm text-[var(--text-secondary)]">
                       全ての変更において共通するのは、「戦略性の向上」「公平性の確保」「プレイ時間の適正化」という3つの軸です。生徒たちは、ゲームバランスを体感的に理解し、論理的な改善案を提示しました。
                     </p>
                   </div>
@@ -283,10 +283,10 @@ export default function RulesEvolutionPage() {
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
+                  <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
                     主要変更の深堀り分析
                   </h2>
-                  <p className="text-zinc-600 dark:text-zinc-400">
+                  <p className="text-[var(--text-muted)]">
                     特に重要な3つの変更について、詳細なビフォーアフターを見ていきます
                   </p>
                 </div>
@@ -299,23 +299,23 @@ export default function RulesEvolutionPage() {
                     <div className="inline-block bg-red-500 text-white px-4 py-2 rounded-full font-semibold text-sm mb-3">
                       主要変更 1
                     </div>
-                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                    <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
                       HP制の導入
                     </h3>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    <p className="text-sm text-[var(--text-muted)]">
                       勝敗を明確にし、ゲーム時間を適正化
                     </p>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-white dark:bg-zinc-800 rounded-lg p-6 border-2 border-red-200 dark:border-red-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-red-200 dark:border-red-800">
                       <div className="flex items-center gap-2 mb-4">
                         <svg className="w-5 h-5 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">変更前の問題</h4>
+                        <h4 className="font-bold text-[var(--text-primary)]">変更前の問題</h4>
                       </div>
-                      <ul className="space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
+                      <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
                         <li className="flex items-start gap-2">
                           <span className="text-red-600 dark:text-red-400 font-bold">▸</span>
                           <span>
@@ -343,14 +343,14 @@ export default function RulesEvolutionPage() {
                       </ul>
                     </div>
 
-                    <div className="bg-white dark:bg-zinc-800 rounded-lg p-6 border-2 border-green-200 dark:border-green-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-green-200 dark:border-green-800">
                       <div className="flex items-center gap-2 mb-4">
                         <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">変更後の改善</h4>
+                        <h4 className="font-bold text-[var(--text-primary)]">変更後の改善</h4>
                       </div>
-                      <ul className="space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
+                      <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
                         <li className="flex items-start gap-2">
                           <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
                           <span>
@@ -392,21 +392,21 @@ export default function RulesEvolutionPage() {
                     <div className="inline-block bg-blue-500 text-white px-4 py-2 rounded-full font-semibold text-sm mb-3">
                       主要変更 2
                     </div>
-                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                    <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
                       デッキの種別分離
                     </h3>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    <p className="text-sm text-[var(--text-muted)]">
                       戦略的なカード選択を可能にする
                     </p>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-white dark:bg-zinc-800 rounded-lg p-6 border-2 border-blue-200 dark:border-blue-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-blue-200 dark:border-blue-800">
                       <div className="flex items-center gap-2 mb-4">
                         <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">混合デッキの問題</h4>
+                        <h4 className="font-bold text-[var(--text-primary)]">混合デッキの問題</h4>
                       </div>
                       <div className="space-y-4">
                         <div className="bg-blue-50 dark:bg-blue-950/30 rounded p-3">
@@ -415,7 +415,7 @@ export default function RulesEvolutionPage() {
                             攻撃されているのに、引いたカードが全て攻撃カード。防御カードが1枚も来ず、一方的に負ける。
                           </p>
                         </div>
-                        <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+                        <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                           <li className="flex items-start gap-2">
                             <span className="text-blue-600 dark:text-blue-400 font-bold">▸</span>
                             <span>運要素が強すぎる</span>
@@ -432,12 +432,12 @@ export default function RulesEvolutionPage() {
                       </div>
                     </div>
 
-                    <div className="bg-white dark:bg-zinc-800 rounded-lg p-6 border-2 border-green-200 dark:border-green-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-green-200 dark:border-green-800">
                       <div className="flex items-center gap-2 mb-4">
                         <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">分離デッキの利点</h4>
+                        <h4 className="font-bold text-[var(--text-primary)]">分離デッキの利点</h4>
                       </div>
                       <div className="space-y-4">
                         <div className="bg-green-50 dark:bg-green-950/30 rounded p-3">
@@ -446,7 +446,7 @@ export default function RulesEvolutionPage() {
                             攻撃されている→防御デッキから引く→適切に防御できる。状況に応じた戦略的なプレイが可能に。
                           </p>
                         </div>
-                        <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+                        <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                           <li className="flex items-start gap-2">
                             <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
                             <span>戦略的なカード選択</span>
@@ -465,35 +465,35 @@ export default function RulesEvolutionPage() {
                   </div>
 
                   <div className="mt-6">
-                    <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">デッキ構成例</h4>
+                    <h4 className="font-semibold text-[var(--text-primary)] mb-4">デッキ構成例</h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       <div className="bg-red-100 dark:bg-red-950/30 rounded-lg p-4 text-center border-2 border-red-300 dark:border-red-700">
                         <div className="w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
                           攻
                         </div>
-                        <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">攻撃デッキ</p>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">15枚</p>
+                        <p className="font-semibold text-[var(--text-primary)] text-sm">攻撃デッキ</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">15枚</p>
                       </div>
                       <div className="bg-blue-100 dark:bg-blue-950/30 rounded-lg p-4 text-center border-2 border-blue-300 dark:border-blue-700">
                         <div className="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
                           防
                         </div>
-                        <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">防御デッキ</p>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">12枚</p>
+                        <p className="font-semibold text-[var(--text-primary)] text-sm">防御デッキ</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">12枚</p>
                       </div>
                       <div className="bg-green-100 dark:bg-green-950/30 rounded-lg p-4 text-center border-2 border-green-300 dark:border-green-700">
                         <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
                           強
                         </div>
-                        <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">強化デッキ</p>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">10枚</p>
+                        <p className="font-semibold text-[var(--text-primary)] text-sm">強化デッキ</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">10枚</p>
                       </div>
                       <div className="bg-purple-100 dark:bg-purple-950/30 rounded-lg p-4 text-center border-2 border-purple-300 dark:border-purple-700">
                         <div className="w-12 h-12 rounded-full bg-purple-500 text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
                           妨
                         </div>
-                        <p className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">妨害デッキ</p>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">8枚</p>
+                        <p className="font-semibold text-[var(--text-primary)] text-sm">妨害デッキ</p>
+                        <p className="text-xs text-[var(--text-muted)] mt-1">8枚</p>
                       </div>
                     </div>
                   </div>
@@ -511,21 +511,21 @@ export default function RulesEvolutionPage() {
                     <div className="inline-block bg-purple-500 text-white px-4 py-2 rounded-full font-semibold text-sm mb-3">
                       主要変更 3
                     </div>
-                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                    <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
                       行動ポイント制の導入
                     </h3>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    <p className="text-sm text-[var(--text-muted)]">
                       複雑な戦略とコンボを可能にする
                     </p>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-white dark:bg-zinc-800 rounded-lg p-6 border-2 border-purple-200 dark:border-purple-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-purple-200 dark:border-purple-800">
                       <div className="flex items-center gap-2 mb-4">
                         <svg className="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">1行動制の限界</h4>
+                        <h4 className="font-bold text-[var(--text-primary)]">1行動制の限界</h4>
                       </div>
                       <div className="space-y-4">
                         <div className="bg-purple-50 dark:bg-purple-950/30 rounded p-4">
@@ -537,14 +537,14 @@ export default function RulesEvolutionPage() {
                               <div className="w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold">
                                 1
                               </div>
-                              <span className="text-zinc-700 dark:text-zinc-300">カードを1枚使う</span>
+                              <span className="text-[var(--text-secondary)]">カードを1枚使う</span>
                             </div>
-                            <div className="text-center text-xs text-zinc-500 dark:text-zinc-400 py-2">
+                            <div className="text-center text-xs text-[var(--text-muted)] py-2">
                               ↓ ターン終了
                             </div>
                           </div>
                         </div>
-                        <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+                        <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                           <li className="flex items-start gap-2">
                             <span className="text-purple-600 dark:text-purple-400 font-bold">▸</span>
                             <span>選択肢が少なすぎる</span>
@@ -561,12 +561,12 @@ export default function RulesEvolutionPage() {
                       </div>
                     </div>
 
-                    <div className="bg-white dark:bg-zinc-800 rounded-lg p-6 border-2 border-green-200 dark:border-green-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-green-200 dark:border-green-800">
                       <div className="flex items-center gap-2 mb-4">
                         <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <h4 className="font-bold text-zinc-900 dark:text-zinc-100">ポイント制の可能性</h4>
+                        <h4 className="font-bold text-[var(--text-primary)]">ポイント制の可能性</h4>
                       </div>
                       <div className="space-y-4">
                         <div className="bg-green-50 dark:bg-green-950/30 rounded p-4">
@@ -578,20 +578,20 @@ export default function RulesEvolutionPage() {
                               <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">
                                 1
                               </div>
-                              <span className="text-zinc-700 dark:text-zinc-300">攻撃カード (2pt)</span>
+                              <span className="text-[var(--text-secondary)]">攻撃カード (2pt)</span>
                             </div>
                             <div className="flex items-center gap-2 text-xs">
                               <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">
                                 2
                               </div>
-                              <span className="text-zinc-700 dark:text-zinc-300">強化カード (1pt)</span>
+                              <span className="text-[var(--text-secondary)]">強化カード (1pt)</span>
                             </div>
-                            <div className="text-center text-xs text-zinc-500 dark:text-zinc-400 py-2">
+                            <div className="text-center text-xs text-[var(--text-muted)] py-2">
                               ↓ ターン終了
                             </div>
                           </div>
                         </div>
-                        <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+                        <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                           <li className="flex items-start gap-2">
                             <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
                             <span>複数の行動が可能</span>
@@ -610,35 +610,35 @@ export default function RulesEvolutionPage() {
                   </div>
 
                   <div className="mt-6">
-                    <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-4">カードのコスト設定例</h4>
+                    <h4 className="font-semibold text-[var(--text-primary)] mb-4">カードのコスト設定例</h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 border border-zinc-200 dark:border-zinc-700">
+                      <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-[var(--border)] ">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-semibold text-zinc-600 dark:text-zinc-400">強力な攻撃</span>
+                          <span className="text-xs font-semibold text-[var(--text-muted)]">強力な攻撃</span>
                           <span className="bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">3pt</span>
                         </div>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400">1ターン全消費</p>
+                        <p className="text-xs text-[var(--text-muted)]">1ターン全消費</p>
                       </div>
-                      <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 border border-zinc-200 dark:border-zinc-700">
+                      <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-[var(--border)] ">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-semibold text-zinc-600 dark:text-zinc-400">通常攻撃</span>
+                          <span className="text-xs font-semibold text-[var(--text-muted)]">通常攻撃</span>
                           <span className="bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">2pt</span>
                         </div>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400">もう1行動可能</p>
+                        <p className="text-xs text-[var(--text-muted)]">もう1行動可能</p>
                       </div>
-                      <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 border border-zinc-200 dark:border-zinc-700">
+                      <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-[var(--border)] ">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-semibold text-zinc-600 dark:text-zinc-400">小技</span>
+                          <span className="text-xs font-semibold text-[var(--text-muted)]">小技</span>
                           <span className="bg-green-500 text-white px-2 py-1 rounded text-xs font-bold">1pt</span>
                         </div>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400">複数回可能</p>
+                        <p className="text-xs text-[var(--text-muted)]">複数回可能</p>
                       </div>
-                      <div className="bg-white dark:bg-zinc-800 rounded-lg p-3 border border-zinc-200 dark:border-zinc-700">
+                      <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-[var(--border)] ">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-semibold text-zinc-600 dark:text-zinc-400">ドロー</span>
+                          <span className="text-xs font-semibold text-[var(--text-muted)]">ドロー</span>
                           <span className="bg-purple-500 text-white px-2 py-1 rounded text-xs font-bold">0pt</span>
                         </div>
-                        <p className="text-xs text-zinc-500 dark:text-zinc-400">無料行動</p>
+                        <p className="text-xs text-[var(--text-muted)]">無料行動</p>
                       </div>
                     </div>
                   </div>
@@ -663,10 +663,10 @@ export default function RulesEvolutionPage() {
                   </svg>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
+                  <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-2">
                     ファシリテーションのコツ
                   </h2>
-                  <p className="text-zinc-600 dark:text-zinc-400">
+                  <p className="text-[var(--text-muted)]">
                     生徒主導のルール改訂を成功させるための指導ポイント
                   </p>
                 </div>
@@ -680,56 +680,56 @@ export default function RulesEvolutionPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <div>
-                        <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                        <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                           推奨アプローチ
                         </h3>
-                        <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3">
+                        <p className="text-sm text-[var(--text-muted)] mb-3">
                           生徒の主体性を引き出す効果的な方法
                         </p>
                       </div>
                     </div>
-                    <ul className="space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
-                      <li className="flex items-start gap-2 bg-white dark:bg-zinc-800 rounded-lg p-3">
+                    <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
+                      <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
                         <span className="text-green-600 dark:text-green-400 font-bold flex-shrink-0">▸</span>
                         <div>
-                          <strong className="text-zinc-900 dark:text-zinc-100">オープンな問いかけ</strong>
-                          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                          <strong className="text-[var(--text-primary)]">オープンな問いかけ</strong>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">
                             「このルールで困ったことはない?」「もっと面白くするにはどうする?」
                           </p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-2 bg-white dark:bg-zinc-800 rounded-lg p-3">
+                      <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
                         <span className="text-green-600 dark:text-green-400 font-bold flex-shrink-0">▸</span>
                         <div>
-                          <strong className="text-zinc-900 dark:text-zinc-100">十分な時間確保</strong>
-                          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                          <strong className="text-[var(--text-primary)]">十分な時間確保</strong>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">
                             議論とテストプレイに最低2〜3コマ分の時間を割く
                           </p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-2 bg-white dark:bg-zinc-800 rounded-lg p-3">
+                      <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
                         <span className="text-green-600 dark:text-green-400 font-bold flex-shrink-0">▸</span>
                         <div>
-                          <strong className="text-zinc-900 dark:text-zinc-100">提案を記録</strong>
-                          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                          <strong className="text-[var(--text-primary)]">提案を記録</strong>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">
                             全ての意見を書き留め、可視化することで議論を深める
                           </p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-2 bg-white dark:bg-zinc-800 rounded-lg p-3">
+                      <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
                         <span className="text-green-600 dark:text-green-400 font-bold flex-shrink-0">▸</span>
                         <div>
-                          <strong className="text-zinc-900 dark:text-zinc-100">実験的試行を促す</strong>
-                          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                          <strong className="text-[var(--text-primary)]">実験的試行を促す</strong>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">
                             「試しにこのルールでやってみよう」と気軽にテストさせる
                           </p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-2 bg-white dark:bg-zinc-800 rounded-lg p-3">
+                      <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
                         <span className="text-green-600 dark:text-green-400 font-bold flex-shrink-0">▸</span>
                         <div>
-                          <strong className="text-zinc-900 dark:text-zinc-100">対立を建設的に</strong>
-                          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                          <strong className="text-[var(--text-primary)]">対立を建設的に</strong>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">
                             意見の対立は成長の機会。両方試してデータで判断させる
                           </p>
                         </div>
@@ -743,56 +743,56 @@ export default function RulesEvolutionPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                       <div>
-                        <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                        <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">
                           避けるべきアプローチ
                         </h3>
-                        <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3">
+                        <p className="text-sm text-[var(--text-muted)] mb-3">
                           生徒の主体性を奪ってしまう行為
                         </p>
                       </div>
                     </div>
-                    <ul className="space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
-                      <li className="flex items-start gap-2 bg-white dark:bg-zinc-800 rounded-lg p-3">
+                    <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
+                      <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
                         <span className="text-red-600 dark:text-red-400 font-bold flex-shrink-0">▸</span>
                         <div>
-                          <strong className="text-zinc-900 dark:text-zinc-100">答えを与える</strong>
-                          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                          <strong className="text-[var(--text-primary)]">答えを与える</strong>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">
                             「正解はこれだよ」と教員が解決策を提示してしまう
                           </p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-2 bg-white dark:bg-zinc-800 rounded-lg p-3">
+                      <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
                         <span className="text-red-600 dark:text-red-400 font-bold flex-shrink-0">▸</span>
                         <div>
-                          <strong className="text-zinc-900 dark:text-zinc-100">時間を急かす</strong>
-                          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                          <strong className="text-[var(--text-primary)]">時間を急かす</strong>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">
                             「早く決めて」と議論を打ち切ってしまう
                           </p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-2 bg-white dark:bg-zinc-800 rounded-lg p-3">
+                      <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
                         <span className="text-red-600 dark:text-red-400 font-bold flex-shrink-0">▸</span>
                         <div>
-                          <strong className="text-zinc-900 dark:text-zinc-100">意見を否定</strong>
-                          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                          <strong className="text-[var(--text-primary)]">意見を否定</strong>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">
                             「それは無理」と最初から可能性を閉ざす
                           </p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-2 bg-white dark:bg-zinc-800 rounded-lg p-3">
+                      <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
                         <span className="text-red-600 dark:text-red-400 font-bold flex-shrink-0">▸</span>
                         <div>
-                          <strong className="text-zinc-900 dark:text-zinc-100">完璧を求める</strong>
-                          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                          <strong className="text-[var(--text-primary)]">完璧を求める</strong>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">
                             最初から完璧なルールを期待し、試行錯誤を認めない
                           </p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-2 bg-white dark:bg-zinc-800 rounded-lg p-3">
+                      <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
                         <span className="text-red-600 dark:text-red-400 font-bold flex-shrink-0">▸</span>
                         <div>
-                          <strong className="text-zinc-900 dark:text-zinc-100">声の大きい生徒優先</strong>
-                          <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                          <strong className="text-[var(--text-primary)]">声の大きい生徒優先</strong>
+                          <p className="text-xs text-[var(--text-muted)] mt-1">
                             積極的な生徒の意見だけで決めてしまう
                           </p>
                         </div>
@@ -802,43 +802,43 @@ export default function RulesEvolutionPage() {
                 </div>
 
                 <div className="glass-card bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 border-blue-200 dark:border-blue-800">
-                  <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">
+                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-4">
                     介入が必要なタイミング
                   </h3>
-                  <p className="text-sm text-zinc-700 dark:text-zinc-300 mb-4">
+                  <p className="text-sm text-[var(--text-secondary)] mb-4">
                     基本的には生徒に任せますが、以下の場合は教員の介入が必要です。
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-white dark:bg-zinc-800 rounded-lg p-4">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <svg className="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                         </svg>
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">安全性の問題</h4>
+                        <h4 className="font-semibold text-[var(--text-primary)] text-sm">安全性の問題</h4>
                       </div>
-                      <p className="text-xs text-zinc-600 dark:text-zinc-400">
+                      <p className="text-xs text-[var(--text-muted)]">
                         現実の危険物取扱いに関する誤解が生じそうな場合は修正が必要
                       </p>
                     </div>
-                    <div className="bg-white dark:bg-zinc-800 rounded-lg p-4">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <svg className="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">議論の停滞</h4>
+                        <h4 className="font-semibold text-[var(--text-primary)] text-sm">議論の停滞</h4>
                       </div>
-                      <p className="text-xs text-zinc-600 dark:text-zinc-400">
+                      <p className="text-xs text-[var(--text-muted)]">
                         同じ議論が繰り返され、前に進まない場合は新しい視点を提示
                       </p>
                     </div>
-                    <div className="bg-white dark:bg-zinc-800 rounded-lg p-4">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <svg className="w-5 h-5 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">事実誤認</h4>
+                        <h4 className="font-semibold text-[var(--text-primary)] text-sm">事実誤認</h4>
                       </div>
-                      <p className="text-xs text-zinc-600 dark:text-zinc-400">
+                      <p className="text-xs text-[var(--text-muted)]">
                         危険物の性質について明らかな事実誤認がある場合は訂正が必要
                       </p>
                     </div>
@@ -846,42 +846,42 @@ export default function RulesEvolutionPage() {
                 </div>
 
                 <div className="glass-card bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 border-indigo-200 dark:border-indigo-800">
-                  <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">
+                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-4">
                     変更の記録方法
                   </h3>
-                  <p className="text-sm text-zinc-700 dark:text-zinc-300 mb-4">
+                  <p className="text-sm text-[var(--text-secondary)] mb-4">
                     ルールの進化過程を記録することで、学習の軌跡を可視化します。
                   </p>
                   <div className="space-y-3">
-                    <div className="flex items-start gap-3 bg-white dark:bg-zinc-800 rounded-lg p-4">
+                    <div className="flex items-start gap-3 bg-[var(--surface-glass)] rounded-lg p-4">
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold">
                         1
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">変更提案シート</h4>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400">
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">変更提案シート</h4>
+                        <p className="text-xs text-[var(--text-muted)]">
                           提案者名、現状の問題点、改善案、期待される効果を記入
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 bg-white dark:bg-zinc-800 rounded-lg p-4">
+                    <div className="flex items-start gap-3 bg-[var(--surface-glass)] rounded-lg p-4">
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold">
                         2
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">テストプレイログ</h4>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400">
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">テストプレイログ</h4>
+                        <p className="text-xs text-[var(--text-muted)]">
                           新ルールでのプレイ結果、気づいた点、さらなる改善案を記録
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3 bg-white dark:bg-zinc-800 rounded-lg p-4">
+                    <div className="flex items-start gap-3 bg-[var(--surface-glass)] rounded-lg p-4">
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold">
                         3
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">バージョン管理</h4>
-                        <p className="text-xs text-zinc-600 dark:text-zinc-400">
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-1">バージョン管理</h4>
+                        <p className="text-xs text-[var(--text-muted)]">
                           変更日時、バージョン番号、変更内容、変更理由を体系的に管理
                         </p>
                       </div>
