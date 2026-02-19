@@ -21,6 +21,21 @@
     --border: 39 39 42;
     --input: 39 39 42;
     --ring: 249 115 22;
+
+    /* Golden ratio (phi) spacing scale */
+    --scale: 1.618;
+    --size-xs: 0.618rem;    /* 1rem / 1.618 */
+    --size-sm: 0.786rem;    /* 1rem / 1.272 */
+    --size-md: 1rem;
+    --size-lg: 1.618rem;    /* 1rem * 1.618 */
+    --size-xl: 2.618rem;    /* 1rem * 1.618^2 */
+    --size-2xl: 4.236rem;   /* 1rem * 1.618^3 */
+
+    /* Phi-based section spacing */
+    --space-section: 2.618rem;
+    --space-card: 1.618rem;
+    --space-inner: 1rem;
+    --space-tight: 0.618rem;
   }
 
   * {
@@ -72,14 +87,14 @@
   .glass-card {
     @apply relative overflow-hidden;
     @apply bg-surface-900/80 backdrop-blur-xl;
-    @apply border border-surface-800/50;
+    @apply border border-surface-700/40;
     @apply rounded-2xl;
     @apply shadow-elevated;
     @apply transition-all duration-300;
   }
 
   .light .glass-card {
-    @apply bg-white/90 border-surface-200;
+    @apply bg-white/95 border-surface-200;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
 
@@ -99,7 +114,7 @@
     @apply bg-surface-900/50 backdrop-blur-sm;
     @apply border border-surface-700/50;
     @apply rounded-xl;
-    @apply text-surface-100 placeholder:text-surface-300;
+    @apply text-surface-100 placeholder:text-surface-400;
     @apply transition-all duration-300 ease-out;
     @apply focus:outline-none focus:border-accent-500/50 focus:ring-2 focus:ring-accent-500/20;
     @apply hover:border-surface-600;
@@ -107,7 +122,7 @@
 
   .light .premium-input {
     @apply bg-surface-100/80 border-surface-300;
-    @apply text-surface-900 placeholder:text-surface-500;
+    @apply text-surface-900 placeholder:text-surface-400;
     @apply hover:border-surface-400;
     @apply focus:border-accent-500 focus:ring-accent-500/30;
   }
@@ -276,7 +291,7 @@
   }
 
   .light .label-text {
-    @apply text-surface-700;
+    @apply text-surface-800;
   }
 
   /* Rule tag */
@@ -550,7 +565,7 @@
   }
 
   .light .text-muted {
-    @apply text-surface-700;
+    @apply text-surface-600;
   }
 
   .text-subtle {
@@ -558,7 +573,7 @@
   }
 
   .light .text-subtle {
-    @apply text-surface-600;
+    @apply text-surface-500;
   }
 
   .text-danger {

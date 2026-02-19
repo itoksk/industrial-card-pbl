@@ -8,12 +8,24 @@ export default function PageTransition() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoaded(true);
-    }, 100);
+    }, 600);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className={`page-transition-overlay ${loaded ? 'loaded' : ''}`} />
+    <div
+      className={`page-transition-overlay ${loaded ? 'loaded' : ''}`}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9998,
+        background: 'var(--transition-overlay)',
+        transformOrigin: loaded ? 'top' : 'bottom',
+        transform: loaded ? 'scaleY(0)' : 'scaleY(1)',
+        transition: 'transform 0.6s cubic-bezier(0.87, 0, 0.13, 1)',
+        pointerEvents: 'none',
+      }}
+    />
   );
 }

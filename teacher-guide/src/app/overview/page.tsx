@@ -169,10 +169,10 @@ const itemVariants = {
 
 const getPhaseColor = (color: string) => {
   const colors: Record<string, { text: string; tag: string }> = {
-    indigo: { text: 'text-indigo-400', tag: 'tag-indigo' },
-    purple: { text: 'text-purple-400', tag: 'tag-purple' },
-    pink: { text: 'text-pink-400', tag: 'tag-red' },
-    emerald: { text: 'text-emerald-400', tag: 'tag-green' },
+    indigo: { text: 'text-phase-1', tag: 'tag-indigo' },
+    purple: { text: 'text-phase-2', tag: 'tag-purple' },
+    pink: { text: 'text-phase-3', tag: 'tag-red' },
+    emerald: { text: 'text-phase-4', tag: 'tag-green' },
   };
   return colors[color] || colors.indigo;
 };
@@ -244,7 +244,7 @@ export default function OverviewPage() {
                       <li>• 個人作業が中心</li>
                     </ul>
                   </div>
-                  <div className="content-card" style={{background: 'rgba(99, 102, 241, 0.1)'}}>
+                  <div className="content-card" style={{background: 'rgba(20, 184, 166, 0.1)'}}>
                     <h4 className="h4 text-[var(--accent-primary)] mb-2">TCG-PBL</h4>
                     <ul className="space-y-2 text-sm text-[var(--accent-primary)]">
                       <li>• 生徒自身が主体的に調査・制作</li>
@@ -273,13 +273,13 @@ export default function OverviewPage() {
                     transition={{ delay: 0.6 + index * 0.1 }}
                     className="glass-card rounded-2xl p-6 space-y-4"
                   >
-                    <div className="inline-flex rounded-xl p-3 bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800">
-                      <Icon className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                    <div className="icon-badge icon-badge-primary">
+                      <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                       {reason.title}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                       {reason.description}
                     </p>
                   </motion.div>
@@ -292,7 +292,7 @@ export default function OverviewPage() {
             <h2 className="h2 text-[var(--text-primary)]">
               4フェーズ構造
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-[var(--text-secondary)] leading-relaxed">
               TCG-PBLは9レッスンを4つのフェーズに分けて実施します。各フェーズは明確な目標を持ち、段階的に学習を深めていきます。
             </p>
             <div className="space-y-6">
@@ -309,21 +309,21 @@ export default function OverviewPage() {
                     <div className="space-y-4">
                       <div className="flex flex-wrap items-center gap-3">
                         <span className={`tag ${colors.tag}`}>{phase.phase}</span>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">{phase.lessons}</span>
+                        <span className="text-sm text-[var(--text-muted)]">{phase.lessons}</span>
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      <h3 className="text-2xl font-bold text-[var(--text-primary)]">
                         {phase.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400">
+                      <p className="text-[var(--text-secondary)]">
                         {phase.description}
                       </p>
                       <div className="space-y-2">
-                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                        <h4 className="text-sm font-semibold text-[var(--text-secondary)]">
                           主な活動
                         </h4>
                         <ul className="space-y-1">
                           {phase.activities.map((activity, idx) => (
-                            <li key={idx} className="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                            <li key={idx} className="flex items-start text-sm text-[var(--text-secondary)]">
                               <CheckCircleIcon className={`h-5 w-5 mr-2 flex-shrink-0 ${colors.text}`} />
                               {activity}
                             </li>
@@ -356,8 +356,8 @@ export default function OverviewPage() {
                     </h3>
                     <ul className="space-y-2">
                       {objective.items.map((item, idx) => (
-                        <li key={idx} className="flex items-start text-sm text-gray-600 dark:text-gray-400">
-                          <span className="mr-2 text-indigo-600 dark:text-indigo-400">•</span>
+                        <li key={idx} className="flex items-start text-sm text-[var(--text-secondary)]">
+                          <span className="mr-2 dot-primary">•</span>
                           {item}
                         </li>
                       ))}
@@ -373,30 +373,30 @@ export default function OverviewPage() {
               普遍的フレームワーク
             </h2>
             <div className="glass-card rounded-3xl p-8 space-y-6">
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-[var(--text-secondary)] leading-relaxed">
                 TCG-PBLの核心は、どの教科にも適用できる普遍的なカード構造です。
                 このフレームワークにより、生徒は事実に基づいた学習とゲーム設計を両立できます。
               </p>
-              <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 rounded-2xl p-8 border border-indigo-200 dark:border-indigo-800">
+              <div className="rounded-2xl p-8 border" style={{ background: 'color-mix(in srgb, var(--accent-primary) 6%, var(--surface-glass))', borderColor: 'color-mix(in srgb, var(--accent-primary) 24%, transparent)' }}>
                 <div className="flex flex-wrap items-center justify-center gap-4 text-center">
                   <div className="space-y-2">
-                    <div className="text-lg font-bold text-indigo-900 dark:text-indigo-300">名称</div>
-                    <div className="text-sm text-indigo-700 dark:text-indigo-400">カード名</div>
+                    <div className="text-lg font-bold text-phase-1">名称</div>
+                    <div className="text-sm text-[var(--text-secondary)]">カード名</div>
                   </div>
-                  <div className="text-2xl text-indigo-600 dark:text-indigo-400">+</div>
+                  <div className="text-2xl text-phase-1">+</div>
                   <div className="space-y-2">
-                    <div className="text-lg font-bold text-purple-900 dark:text-purple-300">パラメータ</div>
-                    <div className="text-sm text-purple-700 dark:text-purple-400">数値情報</div>
+                    <div className="text-lg font-bold text-phase-2">パラメータ</div>
+                    <div className="text-sm text-[var(--text-secondary)]">数値情報</div>
                   </div>
-                  <div className="text-2xl text-purple-600 dark:text-purple-400">+</div>
+                  <div className="text-2xl text-phase-2">+</div>
                   <div className="space-y-2">
-                    <div className="text-lg font-bold text-pink-900 dark:text-pink-300">事実根拠</div>
-                    <div className="text-sm text-pink-700 dark:text-pink-400">情報欄</div>
+                    <div className="text-lg font-bold text-phase-3">事実根拠</div>
+                    <div className="text-sm text-[var(--text-secondary)]">情報欄</div>
                   </div>
-                  <div className="text-2xl text-pink-600 dark:text-pink-400">+</div>
+                  <div className="text-2xl text-phase-3">+</div>
                   <div className="space-y-2">
-                    <div className="text-lg font-bold text-emerald-900 dark:text-emerald-300">ゲーム効果</div>
-                    <div className="text-sm text-emerald-700 dark:text-emerald-400">効果テキスト</div>
+                    <div className="text-lg font-bold text-phase-4">ゲーム効果</div>
+                    <div className="text-sm text-[var(--text-secondary)]">効果テキスト</div>
                   </div>
                 </div>
               </div>
@@ -428,22 +428,22 @@ export default function OverviewPage() {
                 >
                   <div className="space-y-2">
                     <span className="tag tag-primary">{app.subject}</span>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                       {app.example}
                     </h3>
                   </div>
                   <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    <h4 className="text-sm font-semibold text-[var(--text-secondary)]">
                       フレームワーク適用
                     </h4>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
                       {app.framework}
                     </p>
                   </div>
                 </motion.div>
               ))}
             </div>
-            <p className="text-sm text-gray-500 dark:text-gray-500 text-center">
+            <p className="text-sm text-[var(--text-muted)] text-center">
               このフレームワークは、あらゆる教科の専門知識をゲーム化することができます
             </p>
           </motion.div>

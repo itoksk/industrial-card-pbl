@@ -75,7 +75,7 @@ export default function RulesEvolutionPage() {
                 <p className="text-lg leading-relaxed">
                   ここでは、バージョン1(教員設計)からバージョン2(生徒改訂)への変遷を詳しく記録します。それぞれの変更には、発見された問題と、なぜその解決策が選ばれたのかという理由が込められています。
                 </p>
-                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 border-l-4 border-indigo-500 rounded-lg p-6 mt-6">
+                <div className="bg-[rgba(20,184,166,0.06)] dark:bg-[rgba(20,184,166,0.08)] border-l-4 border-[var(--accent-primary)] rounded-lg p-6 mt-6">
                   <p className="font-semibold text-[var(--text-primary)] mb-2">
                     重要な視点
                   </p>
@@ -91,7 +91,7 @@ export default function RulesEvolutionPage() {
           <motion.section variants={fadeInUp}>
             <div className="glass-card">
               <div className="flex items-start gap-4 mb-8">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                   </svg>
@@ -109,17 +109,17 @@ export default function RulesEvolutionPage() {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr className="border-b-2 border-indigo-200 dark:border-indigo-800">
+                    <tr className="border-b-2 border-[color-mix(in_srgb,var(--accent-primary)_24%,transparent)]">
                       <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-[var(--background-alt)]">
                         項目
                       </th>
-                      <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-blue-50 dark:bg-blue-950/30">
+                      <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-[rgba(59,130,246,0.06)] dark:bg-[rgba(59,130,246,0.08)]">
                         教員設計 (v1)
                       </th>
-                      <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-purple-50 dark:bg-purple-950/30">
+                      <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-[rgba(168,85,247,0.06)] dark:bg-[rgba(168,85,247,0.08)]">
                         生徒改訂 (v2)
                       </th>
-                      <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-green-50 dark:bg-green-950/30">
+                      <th className="text-left p-4 font-semibold text-[var(--text-primary)] bg-[rgba(16,185,129,0.06)] dark:bg-[rgba(16,185,129,0.08)]">
                         変更理由
                       </th>
                     </tr>
@@ -254,9 +254,9 @@ export default function RulesEvolutionPage() {
                 </table>
               </div>
 
-              <div className="mt-6 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 rounded-lg p-6">
+              <div className="mt-6 bg-[rgba(20,184,166,0.06)] dark:bg-[rgba(20,184,166,0.08)] rounded-lg p-6">
                 <div className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-[var(--accent-primary)] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
@@ -276,7 +276,7 @@ export default function RulesEvolutionPage() {
           <motion.section variants={fadeInUp}>
             <div className="glass-card">
               <div className="flex items-start gap-4 mb-8">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[var(--accent-secondary)] to-[var(--accent-tertiary)] flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -294,9 +294,9 @@ export default function RulesEvolutionPage() {
 
               <div className="space-y-8">
                 {/* Change 1: HP System */}
-                <div className="glass-card bg-gradient-to-br from-red-50 to-rose-50 dark:from-red-950/30 dark:to-rose-950/30 border-red-200 dark:border-red-800">
+                <div className="glass-card bg-[rgba(239,68,68,0.06)] dark:bg-[rgba(239,68,68,0.08)] border-[color-mix(in_srgb,var(--error)_24%,transparent)]">
                   <div className="mb-6">
-                    <div className="inline-block bg-red-500 text-white px-4 py-2 rounded-full font-semibold text-sm mb-3">
+                    <div className="inline-block bg-[var(--error)] text-white px-4 py-2 rounded-full font-semibold text-sm mb-3">
                       主要変更 1
                     </div>
                     <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
@@ -308,34 +308,34 @@ export default function RulesEvolutionPage() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-red-200 dark:border-red-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-[color-mix(in_srgb,var(--error)_24%,transparent)]">
                       <div className="flex items-center gap-2 mb-4">
-                        <svg className="w-5 h-5 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[var(--error)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                         <h4 className="font-bold text-[var(--text-primary)]">変更前の問題</h4>
                       </div>
                       <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
                         <li className="flex items-start gap-2">
-                          <span className="text-red-600 dark:text-red-400 font-bold">▸</span>
+                          <span className="text-[var(--error)] font-bold">▸</span>
                           <span>
                             <strong>不明確な勝敗:</strong> カード枚数だけでは、いつ終わるか分からない
                           </span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-red-600 dark:text-red-400 font-bold">▸</span>
+                          <span className="text-[var(--error)] font-bold">▸</span>
                           <span>
                             <strong>ゲームが長引く:</strong> 50分の授業時間内に終わらないケースが頻発
                           </span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-red-600 dark:text-red-400 font-bold">▸</span>
+                          <span className="text-[var(--error)] font-bold">▸</span>
                           <span>
                             <strong>戦略が立たない:</strong> どのカードを使えば有利か判断しづらい
                           </span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-red-600 dark:text-red-400 font-bold">▸</span>
+                          <span className="text-[var(--error)] font-bold">▸</span>
                           <span>
                             <strong>終盤が単調:</strong> カードが減るだけで、駆け引きがない
                           </span>
@@ -343,34 +343,34 @@ export default function RulesEvolutionPage() {
                       </ul>
                     </div>
 
-                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-green-200 dark:border-green-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-[color-mix(in_srgb,var(--success)_24%,transparent)]">
                       <div className="flex items-center gap-2 mb-4">
-                        <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[var(--success)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         <h4 className="font-bold text-[var(--text-primary)]">変更後の改善</h4>
                       </div>
                       <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
                         <li className="flex items-start gap-2">
-                          <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
+                          <span className="text-[var(--success)] font-bold">▸</span>
                           <span>
                             <strong>明確な目標:</strong> HP=0という分かりやすい勝利条件
                           </span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
+                          <span className="text-[var(--success)] font-bold">▸</span>
                           <span>
                             <strong>適切な時間:</strong> 平均25〜30分で決着、授業時間内に収まる
                           </span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
+                          <span className="text-[var(--success)] font-bold">▸</span>
                           <span>
                             <strong>戦略的判断:</strong> ダメージ計算により、カード選択が重要に
                           </span>
                         </li>
                         <li className="flex items-start gap-2">
-                          <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
+                          <span className="text-[var(--success)] font-bold">▸</span>
                           <span>
                             <strong>逆転要素:</strong> HPが少なくても、戦略次第で逆転可能
                           </span>
@@ -379,17 +379,17 @@ export default function RulesEvolutionPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 bg-red-100 dark:bg-red-950/30 rounded-lg p-4">
-                    <p className="text-sm text-red-900 dark:text-red-200 font-medium">
+                  <div className="mt-6 bg-[rgba(239,68,68,0.1)] dark:bg-[rgba(239,68,68,0.08)] rounded-lg p-4">
+                    <p className="text-sm text-[var(--text-secondary)] font-medium">
                       <strong>生徒のコメント:</strong> 「HPがあると、あとどれくらいで勝てるか分かるから戦略が立てやすい。最後まで緊張感があって面白い。」
                     </p>
                   </div>
                 </div>
 
                 {/* Change 2: Deck Separation */}
-                <div className="glass-card bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 border-blue-200 dark:border-blue-800">
+                <div className="glass-card bg-[rgba(59,130,246,0.06)] dark:bg-[rgba(59,130,246,0.08)] border-[color-mix(in_srgb,var(--info)_24%,transparent)]">
                   <div className="mb-6">
-                    <div className="inline-block bg-blue-500 text-white px-4 py-2 rounded-full font-semibold text-sm mb-3">
+                    <div className="inline-block bg-[var(--info)] text-white px-4 py-2 rounded-full font-semibold text-sm mb-3">
                       主要変更 2
                     </div>
                     <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
@@ -401,62 +401,62 @@ export default function RulesEvolutionPage() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-blue-200 dark:border-blue-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-[color-mix(in_srgb,var(--info)_24%,transparent)]">
                       <div className="flex items-center gap-2 mb-4">
-                        <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[var(--info)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                         <h4 className="font-bold text-[var(--text-primary)]">混合デッキの問題</h4>
                       </div>
                       <div className="space-y-4">
-                        <div className="bg-blue-50 dark:bg-blue-950/30 rounded p-3">
-                          <p className="text-xs font-semibold text-blue-900 dark:text-blue-200 mb-2">典型的な問題シナリオ</p>
-                          <p className="text-xs text-blue-800 dark:text-blue-300">
+                        <div className="bg-[rgba(59,130,246,0.06)] dark:bg-[rgba(59,130,246,0.08)] rounded p-3">
+                          <p className="text-xs font-semibold text-[var(--text-secondary)] mb-2">典型的な問題シナリオ</p>
+                          <p className="text-xs text-[var(--text-secondary)]">
                             攻撃されているのに、引いたカードが全て攻撃カード。防御カードが1枚も来ず、一方的に負ける。
                           </p>
                         </div>
                         <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                           <li className="flex items-start gap-2">
-                            <span className="text-blue-600 dark:text-blue-400 font-bold">▸</span>
+                            <span className="text-[var(--info)] font-bold">▸</span>
                             <span>運要素が強すぎる</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-blue-600 dark:text-blue-400 font-bold">▸</span>
+                            <span className="text-[var(--info)] font-bold">▸</span>
                             <span>必要なカードが引けない</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-blue-600 dark:text-blue-400 font-bold">▸</span>
+                            <span className="text-[var(--info)] font-bold">▸</span>
                             <span>状況に応じた対応ができない</span>
                           </li>
                         </ul>
                       </div>
                     </div>
 
-                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-green-200 dark:border-green-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-[color-mix(in_srgb,var(--success)_24%,transparent)]">
                       <div className="flex items-center gap-2 mb-4">
-                        <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[var(--success)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         <h4 className="font-bold text-[var(--text-primary)]">分離デッキの利点</h4>
                       </div>
                       <div className="space-y-4">
-                        <div className="bg-green-50 dark:bg-green-950/30 rounded p-3">
-                          <p className="text-xs font-semibold text-green-900 dark:text-green-200 mb-2">改善されたシナリオ</p>
-                          <p className="text-xs text-green-800 dark:text-green-300">
+                        <div className="bg-[rgba(16,185,129,0.06)] dark:bg-[rgba(16,185,129,0.08)] rounded p-3">
+                          <p className="text-xs font-semibold text-[var(--text-secondary)] mb-2">改善されたシナリオ</p>
+                          <p className="text-xs text-[var(--text-secondary)]">
                             攻撃されている→防御デッキから引く→適切に防御できる。状況に応じた戦略的なプレイが可能に。
                           </p>
                         </div>
                         <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                           <li className="flex items-start gap-2">
-                            <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
+                            <span className="text-[var(--success)] font-bold">▸</span>
                             <span>戦略的なカード選択</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
+                            <span className="text-[var(--success)] font-bold">▸</span>
                             <span>状況判断が重要に</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
+                            <span className="text-[var(--success)] font-bold">▸</span>
                             <span>技術で運をカバーできる</span>
                           </li>
                         </ul>
@@ -467,29 +467,29 @@ export default function RulesEvolutionPage() {
                   <div className="mt-6">
                     <h4 className="font-semibold text-[var(--text-primary)] mb-4">デッキ構成例</h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      <div className="bg-red-100 dark:bg-red-950/30 rounded-lg p-4 text-center border-2 border-red-300 dark:border-red-700">
-                        <div className="w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
+                      <div className="bg-[rgba(239,68,68,0.1)] dark:bg-[rgba(239,68,68,0.08)] rounded-lg p-4 text-center border-2 border-[color-mix(in_srgb,var(--error)_30%,transparent)] dark:border-[color-mix(in_srgb,var(--error)_40%,transparent)]">
+                        <div className="w-12 h-12 rounded-full bg-[var(--error)] text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
                           攻
                         </div>
                         <p className="font-semibold text-[var(--text-primary)] text-sm">攻撃デッキ</p>
                         <p className="text-xs text-[var(--text-muted)] mt-1">15枚</p>
                       </div>
-                      <div className="bg-blue-100 dark:bg-blue-950/30 rounded-lg p-4 text-center border-2 border-blue-300 dark:border-blue-700">
-                        <div className="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
+                      <div className="bg-[rgba(59,130,246,0.1)] dark:bg-[rgba(59,130,246,0.08)] rounded-lg p-4 text-center border-2 border-[color-mix(in_srgb,var(--info)_30%,transparent)] dark:border-[color-mix(in_srgb,var(--info)_40%,transparent)]">
+                        <div className="w-12 h-12 rounded-full bg-[var(--info)] text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
                           防
                         </div>
                         <p className="font-semibold text-[var(--text-primary)] text-sm">防御デッキ</p>
                         <p className="text-xs text-[var(--text-muted)] mt-1">12枚</p>
                       </div>
-                      <div className="bg-green-100 dark:bg-green-950/30 rounded-lg p-4 text-center border-2 border-green-300 dark:border-green-700">
-                        <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
+                      <div className="bg-[rgba(16,185,129,0.1)] dark:bg-[rgba(16,185,129,0.08)] rounded-lg p-4 text-center border-2 border-[color-mix(in_srgb,var(--success)_30%,transparent)] dark:border-[color-mix(in_srgb,var(--success)_40%,transparent)]">
+                        <div className="w-12 h-12 rounded-full bg-[var(--success)] text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
                           強
                         </div>
                         <p className="font-semibold text-[var(--text-primary)] text-sm">強化デッキ</p>
                         <p className="text-xs text-[var(--text-muted)] mt-1">10枚</p>
                       </div>
-                      <div className="bg-purple-100 dark:bg-purple-950/30 rounded-lg p-4 text-center border-2 border-purple-300 dark:border-purple-700">
-                        <div className="w-12 h-12 rounded-full bg-purple-500 text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
+                      <div className="bg-[rgba(168,85,247,0.1)] dark:bg-[rgba(168,85,247,0.08)] rounded-lg p-4 text-center border-2 border-[color-mix(in_srgb,var(--accent-secondary)_30%,transparent)] dark:border-[color-mix(in_srgb,var(--accent-secondary)_40%,transparent)]">
+                        <div className="w-12 h-12 rounded-full bg-[var(--accent-secondary)] text-white flex items-center justify-center mx-auto mb-2 font-bold text-lg">
                           妨
                         </div>
                         <p className="font-semibold text-[var(--text-primary)] text-sm">妨害デッキ</p>
@@ -498,17 +498,17 @@ export default function RulesEvolutionPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 bg-blue-100 dark:bg-blue-950/30 rounded-lg p-4">
-                    <p className="text-sm text-blue-900 dark:text-blue-200 font-medium">
+                  <div className="mt-6 bg-[rgba(59,130,246,0.1)] dark:bg-[rgba(59,130,246,0.08)] rounded-lg p-4">
+                    <p className="text-sm text-[var(--text-secondary)] font-medium">
                       <strong>生徒のコメント:</strong> 「デッキを分けたら、状況に合わせてどれを引くか選べるから、すごく頭を使うようになった。運だけじゃなくて実力も必要になって面白い。」
                     </p>
                   </div>
                 </div>
 
                 {/* Change 3: Action Points */}
-                <div className="glass-card bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30 border-purple-200 dark:border-purple-800">
+                <div className="glass-card bg-[rgba(168,85,247,0.06)] dark:bg-[rgba(168,85,247,0.08)] border-[color-mix(in_srgb,var(--accent-secondary)_24%,transparent)]">
                   <div className="mb-6">
-                    <div className="inline-block bg-purple-500 text-white px-4 py-2 rounded-full font-semibold text-sm mb-3">
+                    <div className="inline-block bg-[var(--accent-secondary)] text-white px-4 py-2 rounded-full font-semibold text-sm mb-3">
                       主要変更 3
                     </div>
                     <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
@@ -520,21 +520,21 @@ export default function RulesEvolutionPage() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-purple-200 dark:border-purple-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-[color-mix(in_srgb,var(--accent-secondary)_24%,transparent)]">
                       <div className="flex items-center gap-2 mb-4">
-                        <svg className="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[var(--accent-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                         <h4 className="font-bold text-[var(--text-primary)]">1行動制の限界</h4>
                       </div>
                       <div className="space-y-4">
-                        <div className="bg-purple-50 dark:bg-purple-950/30 rounded p-4">
-                          <p className="text-xs font-mono text-purple-900 dark:text-purple-200 mb-3">
+                        <div className="bg-[rgba(168,85,247,0.06)] dark:bg-[rgba(168,85,247,0.08)] rounded p-4">
+                          <p className="text-xs font-mono text-[var(--text-secondary)] mb-3">
                             プレイヤーのターン
                           </p>
                           <div className="space-y-2">
                             <div className="flex items-center gap-2 text-xs">
-                              <div className="w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold">
+                              <div className="w-6 h-6 rounded-full bg-[var(--accent-secondary)] text-white flex items-center justify-center font-bold">
                                 1
                               </div>
                               <span className="text-[var(--text-secondary)]">カードを1枚使う</span>
@@ -546,42 +546,42 @@ export default function RulesEvolutionPage() {
                         </div>
                         <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                           <li className="flex items-start gap-2">
-                            <span className="text-purple-600 dark:text-purple-400 font-bold">▸</span>
+                            <span className="text-[var(--accent-secondary)] font-bold">▸</span>
                             <span>選択肢が少なすぎる</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-purple-600 dark:text-purple-400 font-bold">▸</span>
+                            <span className="text-[var(--accent-secondary)] font-bold">▸</span>
                             <span>コンボが組めない</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-purple-600 dark:text-purple-400 font-bold">▸</span>
+                            <span className="text-[var(--accent-secondary)] font-bold">▸</span>
                             <span>戦略の幅が狭い</span>
                           </li>
                         </ul>
                       </div>
                     </div>
 
-                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-green-200 dark:border-green-800">
+                    <div className="bg-[var(--surface-glass)] rounded-lg p-6 border-2 border-[color-mix(in_srgb,var(--success)_24%,transparent)]">
                       <div className="flex items-center gap-2 mb-4">
-                        <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[var(--success)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         <h4 className="font-bold text-[var(--text-primary)]">ポイント制の可能性</h4>
                       </div>
                       <div className="space-y-4">
-                        <div className="bg-green-50 dark:bg-green-950/30 rounded p-4">
-                          <p className="text-xs font-mono text-green-900 dark:text-green-200 mb-3">
+                        <div className="bg-[rgba(16,185,129,0.06)] dark:bg-[rgba(16,185,129,0.08)] rounded p-4">
+                          <p className="text-xs font-mono text-[var(--text-secondary)] mb-3">
                             プレイヤーのターン (3ポイント)
                           </p>
                           <div className="space-y-2">
                             <div className="flex items-center gap-2 text-xs">
-                              <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">
+                              <div className="w-6 h-6 rounded-full bg-[var(--success)] text-white flex items-center justify-center font-bold">
                                 1
                               </div>
                               <span className="text-[var(--text-secondary)]">攻撃カード (2pt)</span>
                             </div>
                             <div className="flex items-center gap-2 text-xs">
-                              <div className="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">
+                              <div className="w-6 h-6 rounded-full bg-[var(--success)] text-white flex items-center justify-center font-bold">
                                 2
                               </div>
                               <span className="text-[var(--text-secondary)]">強化カード (1pt)</span>
@@ -593,15 +593,15 @@ export default function RulesEvolutionPage() {
                         </div>
                         <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                           <li className="flex items-start gap-2">
-                            <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
+                            <span className="text-[var(--success)] font-bold">▸</span>
                             <span>複数の行動が可能</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
+                            <span className="text-[var(--success)] font-bold">▸</span>
                             <span>コンボ戦略が生まれる</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-green-600 dark:text-green-400 font-bold">▸</span>
+                            <span className="text-[var(--success)] font-bold">▸</span>
                             <span>深い戦略性が実現</span>
                           </li>
                         </ul>
@@ -615,36 +615,36 @@ export default function RulesEvolutionPage() {
                       <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-[var(--border)] ">
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-xs font-semibold text-[var(--text-muted)]">強力な攻撃</span>
-                          <span className="bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">3pt</span>
+                          <span className="bg-[var(--error)] text-white px-2 py-1 rounded text-xs font-bold">3pt</span>
                         </div>
                         <p className="text-xs text-[var(--text-muted)]">1ターン全消費</p>
                       </div>
                       <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-[var(--border)] ">
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-xs font-semibold text-[var(--text-muted)]">通常攻撃</span>
-                          <span className="bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">2pt</span>
+                          <span className="bg-[var(--info)] text-white px-2 py-1 rounded text-xs font-bold">2pt</span>
                         </div>
                         <p className="text-xs text-[var(--text-muted)]">もう1行動可能</p>
                       </div>
                       <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-[var(--border)] ">
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-xs font-semibold text-[var(--text-muted)]">小技</span>
-                          <span className="bg-green-500 text-white px-2 py-1 rounded text-xs font-bold">1pt</span>
+                          <span className="bg-[var(--success)] text-white px-2 py-1 rounded text-xs font-bold">1pt</span>
                         </div>
                         <p className="text-xs text-[var(--text-muted)]">複数回可能</p>
                       </div>
                       <div className="bg-[var(--surface-glass)] rounded-lg p-3 border border-[var(--border)] ">
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-xs font-semibold text-[var(--text-muted)]">ドロー</span>
-                          <span className="bg-purple-500 text-white px-2 py-1 rounded text-xs font-bold">0pt</span>
+                          <span className="bg-[var(--accent-secondary)] text-white px-2 py-1 rounded text-xs font-bold">0pt</span>
                         </div>
                         <p className="text-xs text-[var(--text-muted)]">無料行動</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-6 bg-purple-100 dark:bg-purple-950/30 rounded-lg p-4">
-                    <p className="text-sm text-purple-900 dark:text-purple-200 font-medium">
+                  <div className="mt-6 bg-[rgba(168,85,247,0.1)] dark:bg-[rgba(168,85,247,0.08)] rounded-lg p-4">
+                    <p className="text-sm text-[var(--text-secondary)] font-medium">
                       <strong>生徒のコメント:</strong> 「ポイント制になってから、どの順番でカードを使うか考えるのが楽しい。強いカード1枚か、弱いカード3枚か、状況で判断するのが面白い。」
                     </p>
                   </div>
@@ -657,7 +657,7 @@ export default function RulesEvolutionPage() {
           <motion.section variants={fadeInUp}>
             <div className="glass-card">
               <div className="flex items-start gap-4 mb-8">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[var(--warning)] to-[var(--accent-tertiary)] flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
@@ -674,9 +674,9 @@ export default function RulesEvolutionPage() {
 
               <div className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="glass-card bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 border-green-200 dark:border-green-800">
+                  <div className="glass-card bg-[rgba(16,185,129,0.06)] dark:bg-[rgba(16,185,129,0.08)] border-[color-mix(in_srgb,var(--success)_24%,transparent)]">
                     <div className="flex items-start gap-3 mb-4">
-                      <svg className="w-6 h-6 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-[var(--success)] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <div>
@@ -690,7 +690,7 @@ export default function RulesEvolutionPage() {
                     </div>
                     <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
                       <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
-                        <span className="text-green-600 dark:text-green-400 font-bold flex-shrink-0">▸</span>
+                        <span className="text-[var(--success)] font-bold flex-shrink-0">▸</span>
                         <div>
                           <strong className="text-[var(--text-primary)]">オープンな問いかけ</strong>
                           <p className="text-xs text-[var(--text-muted)] mt-1">
@@ -699,7 +699,7 @@ export default function RulesEvolutionPage() {
                         </div>
                       </li>
                       <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
-                        <span className="text-green-600 dark:text-green-400 font-bold flex-shrink-0">▸</span>
+                        <span className="text-[var(--success)] font-bold flex-shrink-0">▸</span>
                         <div>
                           <strong className="text-[var(--text-primary)]">十分な時間確保</strong>
                           <p className="text-xs text-[var(--text-muted)] mt-1">
@@ -708,7 +708,7 @@ export default function RulesEvolutionPage() {
                         </div>
                       </li>
                       <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
-                        <span className="text-green-600 dark:text-green-400 font-bold flex-shrink-0">▸</span>
+                        <span className="text-[var(--success)] font-bold flex-shrink-0">▸</span>
                         <div>
                           <strong className="text-[var(--text-primary)]">提案を記録</strong>
                           <p className="text-xs text-[var(--text-muted)] mt-1">
@@ -717,7 +717,7 @@ export default function RulesEvolutionPage() {
                         </div>
                       </li>
                       <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
-                        <span className="text-green-600 dark:text-green-400 font-bold flex-shrink-0">▸</span>
+                        <span className="text-[var(--success)] font-bold flex-shrink-0">▸</span>
                         <div>
                           <strong className="text-[var(--text-primary)]">実験的試行を促す</strong>
                           <p className="text-xs text-[var(--text-muted)] mt-1">
@@ -726,7 +726,7 @@ export default function RulesEvolutionPage() {
                         </div>
                       </li>
                       <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
-                        <span className="text-green-600 dark:text-green-400 font-bold flex-shrink-0">▸</span>
+                        <span className="text-[var(--success)] font-bold flex-shrink-0">▸</span>
                         <div>
                           <strong className="text-[var(--text-primary)]">対立を建設的に</strong>
                           <p className="text-xs text-[var(--text-muted)] mt-1">
@@ -737,9 +737,9 @@ export default function RulesEvolutionPage() {
                     </ul>
                   </div>
 
-                  <div className="glass-card bg-gradient-to-br from-red-50 to-rose-50 dark:from-red-950/30 dark:to-rose-950/30 border-red-200 dark:border-red-800">
+                  <div className="glass-card bg-[rgba(239,68,68,0.06)] dark:bg-[rgba(239,68,68,0.08)] border-[color-mix(in_srgb,var(--error)_24%,transparent)]">
                     <div className="flex items-start gap-3 mb-4">
-                      <svg className="w-6 h-6 text-red-600 dark:text-red-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-[var(--error)] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                       <div>
@@ -753,7 +753,7 @@ export default function RulesEvolutionPage() {
                     </div>
                     <ul className="space-y-3 text-sm text-[var(--text-secondary)]">
                       <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
-                        <span className="text-red-600 dark:text-red-400 font-bold flex-shrink-0">▸</span>
+                        <span className="text-[var(--error)] font-bold flex-shrink-0">▸</span>
                         <div>
                           <strong className="text-[var(--text-primary)]">答えを与える</strong>
                           <p className="text-xs text-[var(--text-muted)] mt-1">
@@ -762,7 +762,7 @@ export default function RulesEvolutionPage() {
                         </div>
                       </li>
                       <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
-                        <span className="text-red-600 dark:text-red-400 font-bold flex-shrink-0">▸</span>
+                        <span className="text-[var(--error)] font-bold flex-shrink-0">▸</span>
                         <div>
                           <strong className="text-[var(--text-primary)]">時間を急かす</strong>
                           <p className="text-xs text-[var(--text-muted)] mt-1">
@@ -771,7 +771,7 @@ export default function RulesEvolutionPage() {
                         </div>
                       </li>
                       <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
-                        <span className="text-red-600 dark:text-red-400 font-bold flex-shrink-0">▸</span>
+                        <span className="text-[var(--error)] font-bold flex-shrink-0">▸</span>
                         <div>
                           <strong className="text-[var(--text-primary)]">意見を否定</strong>
                           <p className="text-xs text-[var(--text-muted)] mt-1">
@@ -780,7 +780,7 @@ export default function RulesEvolutionPage() {
                         </div>
                       </li>
                       <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
-                        <span className="text-red-600 dark:text-red-400 font-bold flex-shrink-0">▸</span>
+                        <span className="text-[var(--error)] font-bold flex-shrink-0">▸</span>
                         <div>
                           <strong className="text-[var(--text-primary)]">完璧を求める</strong>
                           <p className="text-xs text-[var(--text-muted)] mt-1">
@@ -789,7 +789,7 @@ export default function RulesEvolutionPage() {
                         </div>
                       </li>
                       <li className="flex items-start gap-2 bg-[var(--surface-glass)] rounded-lg p-3">
-                        <span className="text-red-600 dark:text-red-400 font-bold flex-shrink-0">▸</span>
+                        <span className="text-[var(--error)] font-bold flex-shrink-0">▸</span>
                         <div>
                           <strong className="text-[var(--text-primary)]">声の大きい生徒優先</strong>
                           <p className="text-xs text-[var(--text-muted)] mt-1">
@@ -801,7 +801,7 @@ export default function RulesEvolutionPage() {
                   </div>
                 </div>
 
-                <div className="glass-card bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30 border-blue-200 dark:border-blue-800">
+                <div className="glass-card bg-[rgba(59,130,246,0.06)] dark:bg-[rgba(59,130,246,0.08)] border-[color-mix(in_srgb,var(--info)_24%,transparent)]">
                   <h3 className="text-xl font-bold text-[var(--text-primary)] mb-4">
                     介入が必要なタイミング
                   </h3>
@@ -811,7 +811,7 @@ export default function RulesEvolutionPage() {
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-[var(--surface-glass)] rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <svg className="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[var(--warning)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                         </svg>
                         <h4 className="font-semibold text-[var(--text-primary)] text-sm">安全性の問題</h4>
@@ -822,7 +822,7 @@ export default function RulesEvolutionPage() {
                     </div>
                     <div className="bg-[var(--surface-glass)] rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <svg className="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[var(--accent-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                         <h4 className="font-semibold text-[var(--text-primary)] text-sm">議論の停滞</h4>
@@ -833,7 +833,7 @@ export default function RulesEvolutionPage() {
                     </div>
                     <div className="bg-[var(--surface-glass)] rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <svg className="w-5 h-5 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[var(--error)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <h4 className="font-semibold text-[var(--text-primary)] text-sm">事実誤認</h4>
@@ -845,7 +845,7 @@ export default function RulesEvolutionPage() {
                   </div>
                 </div>
 
-                <div className="glass-card bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 border-indigo-200 dark:border-indigo-800">
+                <div className="glass-card bg-[rgba(20,184,166,0.06)] dark:bg-[rgba(20,184,166,0.08)] border-[color-mix(in_srgb,var(--accent-primary)_24%,transparent)]">
                   <h3 className="text-xl font-bold text-[var(--text-primary)] mb-4">
                     変更の記録方法
                   </h3>
@@ -854,7 +854,7 @@ export default function RulesEvolutionPage() {
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3 bg-[var(--surface-glass)] rounded-lg p-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--accent-primary)] text-white flex items-center justify-center font-bold">
                         1
                       </div>
                       <div className="flex-1">
@@ -865,7 +865,7 @@ export default function RulesEvolutionPage() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3 bg-[var(--surface-glass)] rounded-lg p-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--accent-secondary)] text-white flex items-center justify-center font-bold">
                         2
                       </div>
                       <div className="flex-1">
@@ -876,7 +876,7 @@ export default function RulesEvolutionPage() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3 bg-[var(--surface-glass)] rounded-lg p-4">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--accent-tertiary)] text-white flex items-center justify-center font-bold">
                         3
                       </div>
                       <div className="flex-1">
@@ -890,14 +890,14 @@ export default function RulesEvolutionPage() {
                 </div>
               </div>
 
-              <div className="mt-8 bg-gradient-to-r from-amber-500 to-orange-600 rounded-lg p-6 text-white">
+              <div className="mt-8 bg-gradient-to-r from-[var(--warning)] to-[var(--accent-tertiary)] rounded-lg p-6 text-white">
                 <div className="flex items-start gap-4">
                   <svg className="w-6 h-6 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                   <div>
                     <p className="font-semibold mb-2">教員の役割</p>
-                    <p className="text-amber-100 text-sm">
+                    <p className="text-[rgba(255,255,255,0.85)] text-sm">
                       完璧なルールを最初から提供するのではなく、生徒が自ら問題を発見し、解決策を考え、試行錯誤できる環境を整えることが教員の最も重要な役割です。失敗も含めて、そのプロセス全体が学びです。
                     </p>
                   </div>

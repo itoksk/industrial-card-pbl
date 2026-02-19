@@ -35,15 +35,15 @@ export default function Lesson1() {
       explanation: '事実基盤制約が最も重要です。現実のデータや法則に基づいてゲームルールを設計することで、学習効果が最大化されます。'
     },
     {
-      question: 'TCG-PBLの4つの要素に含まれないものはどれですか？',
+      question: 'カードのパラメータとして使える実際のデータはどれですか？',
       options: [
-        '名称',
-        'パラメータ',
-        'イラスト',
-        'ゲーム効果'
+        'かっこよさ',
+        '引火点（物質が引火する温度）',
+        '人気度',
+        'レア度'
       ],
-      correct: 2,
-      explanation: '4つの要素は「名称」「パラメータ」「事実根拠」「ゲーム効果」です。イラストは重要ですが、この4要素には含まれません。'
+      correct: 1,
+      explanation: '引火点は実在する物理データであり、物質ごとに異なる数値を持つため、カードのパラメータに最適です。ガソリンの引火点は-40℃、灯油は40℃以上など、事実に基づいた数値でゲームバランスを設計できます。'
     },
     {
       question: 'PBL（プロジェクト型学習）の利点はどれですか？',
@@ -67,7 +67,7 @@ export default function Lesson1() {
           animate={{ opacity: 1, y: 0 }}
           className="breadcrumb mb-8"
         >
-          <Link href="/" className="hover:text-blue-500 transition-colors">
+          <Link href="/" className="hover:text-[var(--accent)] transition-colors">
             <HomeIcon className="w-4 h-4 inline" />
           </Link>
           <ChevronRightIcon className="w-4 h-4" />
@@ -220,7 +220,7 @@ export default function Lesson1() {
                 className="content-card category-card-blue"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center text-white text-sm font-bold">
+                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-sm font-bold" style={{ background: 'var(--color-info)' }}>
                     1
                   </div>
                   <h3 className="text-lg font-bold">名称</h3>
@@ -241,7 +241,7 @@ export default function Lesson1() {
                 className="content-card category-card-purple"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center text-white text-sm font-bold">
+                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-sm font-bold" style={{ background: 'var(--color-purple)' }}>
                     2
                   </div>
                   <h3 className="text-lg font-bold">パラメータ</h3>
@@ -262,7 +262,7 @@ export default function Lesson1() {
                 className="content-card category-card-pink"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 bg-pink-500 rounded-md flex items-center justify-center text-white text-sm font-bold">
+                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-white text-sm font-bold" style={{ background: 'var(--color-pink)' }}>
                     3
                   </div>
                   <h3 className="text-lg font-bold">事実根拠</h3>
@@ -361,7 +361,92 @@ export default function Lesson1() {
           </div>
         </motion.section>
 
-        {/* Section 5: Why It Works */}
+        {/* Section 5: 今回のテーマ：乙4 */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-16"
+        >
+          <h2 className="text-2xl font-bold mb-6">今回のテーマ：乙4（第4類危険物）</h2>
+          <div className="glass-card">
+            <div className="p-5 rounded-lg border-l-3 mb-6" style={{ background: 'var(--accent-subtle)', borderLeft: '3px solid var(--accent)' }}>
+              <h4 className="font-bold mb-3" style={{ color: 'var(--accent)' }}>乙4とは？</h4>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                <strong className="text-foreground">危険物取扱者試験 乙種第4類</strong>は、ガソリン・灯油・エタノールなどの<strong className="text-foreground">引火性液体</strong>を扱うための国家資格です。工場やガソリンスタンドで働く人に必要とされ、最も受験者が多い人気資格です。
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4 mb-6">
+              <div className="content-card border-l-3" style={{ borderLeftColor: '#f97316' }}>
+                <h4 className="font-bold mb-2">試験構成</h4>
+                <ul className="space-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                  <li><strong className="text-foreground">法令</strong>：15問</li>
+                  <li><strong className="text-foreground">物理・化学</strong>：10問</li>
+                  <li><strong className="text-foreground">性質・消火</strong>：10問</li>
+                  <li className="pt-1 border-t" style={{ borderColor: 'var(--border-color)' }}>計35問（各科目60%以上で合格）</li>
+                </ul>
+              </div>
+              <div className="content-card border-l-3" style={{ borderLeftColor: '#ef4444' }}>
+                <h4 className="font-bold mb-2">なぜ第4類か？</h4>
+                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                  ガソリン・灯油・エタノールなど、<strong className="text-foreground">日常生活で最も身近な危険物</strong>が第4類です。セルフスタンドでの静電気火災など、正しい知識がないと事故につながります。
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Section 6: 身近な第4類危険物 */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-16"
+        >
+          <h2 className="text-2xl font-bold mb-6">身近な第4類危険物</h2>
+          <div className="glass-card">
+            <p className="mb-6 text-sm" style={{ color: 'var(--text-secondary)' }}>
+              これらの物質は、カードゲームの素材になります。引火点の違いに注目してみましょう。
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { name: 'ガソリン', category: '第1石油類', flashPoint: '-40℃', feature: '最も身近で最も危険な引火性液体', color: '#f97316' },
+                { name: '灯油', category: '第2石油類', flashPoint: '40℃以上', feature: '暖房やストーブに使われる冬の必需品', color: '#3b82f6' },
+                { name: 'エタノール', category: 'アルコール類', flashPoint: '13℃', feature: '消毒液や酒類に含まれる水溶性アルコール', color: '#8b5cf6' },
+                { name: 'ジエチルエーテル', category: '特殊引火物', flashPoint: '-45℃', feature: '最も危険な特殊引火物、揮発性が極めて高い', color: '#ef4444' },
+                { name: '重油', category: '第3石油類', flashPoint: '60-150℃', feature: '発電所や船舶で使われる粘度の高い燃料', color: '#22c55e' },
+              ].map((substance, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="content-card border-l-3"
+                  style={{ borderLeftColor: substance.color }}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="font-bold">{substance.name}</h4>
+                    <span className="text-xs font-semibold px-2 py-0.5 rounded" style={{ background: `${substance.color}20`, color: substance.color }}>
+                      {substance.category}
+                    </span>
+                  </div>
+                  <p className="text-lg font-bold mb-1" style={{ color: substance.color }}>
+                    引火点: {substance.flashPoint}
+                  </p>
+                  <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                    {substance.feature}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Section 7: Why It Works */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -418,7 +503,7 @@ export default function Lesson1() {
               <h3 className="text-lg font-bold mb-4">考えてみよう</h3>
               <div className="space-y-5">
                 <div>
-                  <p className="font-semibold text-sm mb-2">Q1. TCG-PBLで学びたい分野は何ですか？その理由も書いてください。</p>
+                  <p className="font-semibold text-sm mb-2">Q1. 乙4の危険物の中で、あなたが最も身近に感じる物質は何ですか？その理由も書いてください。</p>
                   <div className="border-2 border-dashed rounded-lg p-4 min-h-20" style={{ borderColor: 'var(--border-color)', background: 'var(--surface)' }}>
                     <p className="text-xs" style={{ color: 'var(--text-muted)' }}>（ここに記入）</p>
                   </div>
@@ -475,14 +560,9 @@ export default function Lesson1() {
                               ? 'incorrect'
                               : ''
                             : quizAnswers[qIndex] === oIndex
-                            ? 'border-blue-500 dark:border-blue-400'
+                            ? 'selected'
                             : ''
                         }`}
-                        style={
-                          !quizRevealed.includes(qIndex) && quizAnswers[qIndex] === oIndex
-                            ? { borderColor: 'var(--accent)', background: 'var(--accent-subtle)' }
-                            : {}
-                        }
                       >
                         <span className="font-medium mr-2 text-sm">{String.fromCharCode(65 + oIndex)}.</span>
                         <span className="text-sm">{option}</span>

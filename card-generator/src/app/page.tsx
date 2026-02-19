@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
+import JSZip from "jszip";
 import {
   classificationOptions,
   sampleDangerousGoods,
@@ -177,6 +178,23 @@ const TEXT_LIMITS = {
   studyFull: 180,
 } as const;
 
+const sanitizeFileName = (value: string) => {
+  const sanitized = value
+    .normalize("NFKC")
+    .replace(/[\\/:*?"<>|]/g, "_")
+    .replace(/\s+/g, "_")
+    .replace(/_+/g, "_")
+    .replace(/^_+|_+$/g, "")
+    .slice(0, 48);
+  return sanitized || "card";
+};
+
+const extractPngBase64 = (dataUrl: string) => {
+  const prefix = "data:image/png;base64,";
+  if (!dataUrl.startsWith(prefix)) return null;
+  return dataUrl.slice(prefix.length);
+};
+
 export default function Home() {
   const [apiKey, setApiKey] = useState("");
   const [activeTab, setActiveTab] = useState<Tab>("templates");
@@ -246,6 +264,7 @@ export default function Home() {
   const [bulkConfirmChecked, setBulkConfirmChecked] = useState(false);
   const [bulkResults, setBulkResults] = useState<Array<{ name: string; image: string; cardType: BulkCsvType }>>([]);
   const [isBulkGenerating, setIsBulkGenerating] = useState(false);
+  const [isBulkDownloading, setIsBulkDownloading] = useState(false);
   const [bulkProgress, setBulkProgress] = useState("");
   const bulkInputRef = useRef<HTMLInputElement>(null);
 
@@ -1039,13 +1058,46 @@ export default function Home() {
     }
   };
 
-  const downloadAllBulkResults = () => {
-    bulkResults.forEach((result, index) => {
+  const downloadAllBulkResults = async () => {
+    if (bulkResults.length === 0 || isBulkDownloading) return;
+
+    setIsBulkDownloading(true);
+    setError(null);
+    setMessage(null);
+    setBulkProgress(`ZIP作成中... 0% (${bulkResults.length}件)`);
+
+    try {
+      const zip = new JSZip();
+      for (let i = 0; i < bulkResults.length; i += 1) {
+        const result = bulkResults[i];
+        const base64 = extractPngBase64(result.image);
+        if (!base64) {
+          throw new Error(`${i + 1}件目の画像データ形式が不正です`);
+        }
+        const safeName = sanitizeFileName(result.name);
+        const fileName = `${String(i + 1).padStart(3, "0")}_${result.cardType}_${safeName}.png`;
+        zip.file(fileName, base64, { base64: true });
+      }
+
+      const blob = await zip.generateAsync(
+        { type: "blob", compression: "DEFLATE", compressionOptions: { level: 6 } },
+        (metadata) => {
+          setBulkProgress(`ZIP作成中... ${Math.round(metadata.percent)}% (${bulkResults.length}件)`);
+        },
+      );
+      const timestamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\..+/, "");
+      const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
-      link.href = result.image;
-      link.download = `hazmat_${result.cardType}_${index + 1}_${Date.now()}.png`;
+      link.href = url;
+      link.download = `hazmat_bulk_${timestamp}.zip`;
       link.click();
-    });
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+      setBulkProgress(`ZIPダウンロードを開始しました (${bulkResults.length}件)`);
+    } catch (err) {
+      setError(`全件ダウンロードに失敗: ${err instanceof Error ? err.message : "Unknown error"}`);
+    } finally {
+      setIsBulkDownloading(false);
+    }
   };
 
   const downloadImage = () => {
@@ -1140,9 +1192,9 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="relative max-w-7xl mx-auto px-6 py-8">
+      <main className="relative max-w-7xl mx-auto px-6 py-[var(--space-section)]">
         {/* Tab Navigation */}
-        <nav id="tab-nav" className="glass-card p-2 mb-8 inline-flex gap-1 flex-wrap">
+        <nav id="tab-nav" className="glass-card p-2 mb-[var(--space-section)] inline-flex gap-1 flex-wrap">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -1157,12 +1209,12 @@ export default function Home() {
           ))}
         </nav>
 
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid lg:grid-cols-5 gap-[var(--space-section)]">
           {/* Input Panel */}
-          <div id="input-panel" className="lg:col-span-3 space-y-6">
+          <div id="input-panel" className="lg:col-span-3 space-y-[var(--space-card)]">
             {/* Templates Tab */}
             {activeTab === "templates" && (
-              <div className="glass-card p-6 animate-fade-in">
+              <div className="glass-card p-[var(--space-card)] animate-fade-in">
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-lg font-semibold">テンプレート選択</h2>
                   <div className="flex gap-2 flex-wrap">
@@ -1227,7 +1279,7 @@ export default function Home() {
 
             {/* Substance (Dangerous Goods) Tab */}
             {activeTab === "substance" && (
-              <div className="glass-card p-6 animate-fade-in">
+              <div className="glass-card p-[var(--space-card)] animate-fade-in">
                 <h2 className="text-lg font-semibold mb-6">危険物カード（攻撃）</h2>
 
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -1357,7 +1409,7 @@ export default function Home() {
 
             {/* Extinguish Tab (new equipment-based) */}
             {activeTab === "extinguish" && (
-              <div className="glass-card p-6 animate-fade-in">
+              <div className="glass-card p-[var(--space-card)] animate-fade-in">
                 <h2 className="text-lg font-semibold mb-6">消火カード（防御）</h2>
 
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -1476,7 +1528,7 @@ export default function Home() {
 
             {/* Transport Tab (new) */}
             {activeTab === "transport" && (
-              <div className="glass-card p-6 animate-fade-in">
+              <div className="glass-card p-[var(--space-card)] animate-fade-in">
                 <h2 className="text-lg font-semibold mb-6">運搬カード（強化）</h2>
 
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -1571,7 +1623,7 @@ export default function Home() {
 
             {/* Regulation Tab (simplified) */}
             {activeTab === "regulation" && (
-              <div className="glass-card p-6 animate-fade-in">
+              <div className="glass-card p-[var(--space-card)] animate-fade-in">
                 <h2 className="text-lg font-semibold mb-6">法令カード（妨害）</h2>
 
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -1668,7 +1720,7 @@ export default function Home() {
 
             {/* Bulk Tab */}
             {activeTab === "bulk" && (
-              <div className="glass-card p-6 animate-fade-in">
+              <div className="glass-card p-[var(--space-card)] animate-fade-in">
                 <h2 className="text-lg font-semibold mb-2">CSV一括発行</h2>
                 <p className="text-sm text-muted mb-6">
                   CSVを読み込むと、ローカルの判定ルールでカード効果の文面を整頓し、危険物取扱者試験向けの事実補足を自動追加します（この判定自体に外部APIは使いません）。確認後に一括発行します。
@@ -1777,9 +1829,10 @@ export default function Home() {
                       <h3 className="text-sm font-semibold">一括発行結果</h3>
                       <button
                         onClick={downloadAllBulkResults}
+                        disabled={isBulkDownloading}
                         className="category-filter-active text-xs"
                       >
-                        全件ダウンロード
+                        {isBulkDownloading ? "ZIP作成中..." : "全件ダウンロード（ZIP）"}
                       </button>
                     </div>
                     <div className="space-y-2 max-h-[220px] overflow-y-auto custom-scrollbar pr-2">
@@ -1807,7 +1860,7 @@ export default function Home() {
 
             {/* Direct Tab */}
             {activeTab === "direct" && (
-              <div className="glass-card p-6 animate-fade-in">
+              <div className="glass-card p-[var(--space-card)] animate-fade-in">
                 <h2 className="text-lg font-semibold mb-6">プロンプト直接入力</h2>
 
                 <div>
@@ -1821,7 +1874,7 @@ export default function Home() {
                   />
                 </div>
 
-                  <button
+                <button
                   onClick={() => generateImage(directPrompt, buildDirectRenderModel())}
                   disabled={isGenerating || !directPrompt.trim()}
                   className="premium-button-primary w-full mt-6 flex items-center justify-center gap-2"
@@ -1835,7 +1888,7 @@ export default function Home() {
 
           {/* Output Panel */}
           <div id="output-panel" className="lg:col-span-2">
-            <div className="glass-card p-6 sticky top-8">
+            <div className="glass-card p-[var(--space-card)] sticky top-8">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold">出力結果</h2>
                 {generatedImage && (
@@ -1939,7 +1992,7 @@ export default function Home() {
       {showCardBackModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowCardBackModal(false)} />
-          <div className="relative glass-card p-6 w-full max-w-md animate-fade-in">
+          <div className="relative glass-card p-[var(--space-card)] w-full max-w-md animate-fade-in">
             <h3 className="text-lg font-semibold mb-4">カード裏面デザイン</h3>
             <p className="text-sm text-muted mb-4">
               全カード共通の裏面デザインです。カスタム画像をアップロードして差し替えることもできます。

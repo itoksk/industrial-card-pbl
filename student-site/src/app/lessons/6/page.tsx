@@ -30,7 +30,7 @@ export default function Lesson6() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen lesson-page-bg">
       <div className="container-custom py-12">
         {/* Breadcrumb */}
         <motion.nav
@@ -39,11 +39,11 @@ export default function Lesson6() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <Link href="/" className="hover:text-blue-500 transition-colors">
+          <Link href="/" className="hover:text-[var(--accent)] transition-colors">
             ホーム
           </Link>
           <ChevronRightIcon className="w-4 h-4" />
-          <span className="text-gray-900 dark:text-gray-100">レッスン6</span>
+          <span className="text-[var(--foreground)]">レッスン6</span>
         </motion.nav>
 
         {/* Hero Section */}
@@ -57,10 +57,10 @@ export default function Lesson6() {
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
             <span className="gradient-text">レッスン6</span>
           </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-6">
             カードレイアウト設計
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl">
+          <p className="text-xl text-[var(--text-secondary)] max-w-3xl">
             カードゲームの視覚デザインを設計します。情報の階層性と視認性を考慮した効果的なレイアウトを学びましょう。
           </p>
 
@@ -69,20 +69,20 @@ export default function Lesson6() {
             <h3 className="section-label">学習目標</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <CheckCircleIcon className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-200">
+                <CheckCircleIcon className="w-6 h-6 text-[var(--color-info)] flex-shrink-0 mt-0.5" />
+                <span className="text-[var(--text-secondary)]">
                   片面カードのメリットと制約を理解する
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircleIcon className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-200">
+                <CheckCircleIcon className="w-6 h-6 text-[var(--color-info)] flex-shrink-0 mt-0.5" />
+                <span className="text-[var(--text-secondary)]">
                   カードの構成要素を理解し、情報の優先順位を決定する
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircleIcon className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-200">
+                <CheckCircleIcon className="w-6 h-6 text-[var(--color-info)] flex-shrink-0 mt-0.5" />
+                <span className="text-[var(--text-secondary)]">
                   視認性とゲーム体験を考慮したレイアウトを設計する
                 </span>
               </li>
@@ -98,16 +98,16 @@ export default function Lesson6() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="glass-card">
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+            <h3 className="text-2xl font-bold text-[var(--foreground)] mb-6">
               なぜ片面カードなのか
             </h3>
-            <div className="space-y-4 text-gray-700 dark:text-gray-300">
+            <div className="space-y-4 text-[var(--text-secondary)]">
               <p>
                 今回のカードゲームでは、<strong>片面印刷のカードデザイン</strong>を採用します。これには以下の理由があります。
               </p>
               <div className="grid md:grid-cols-2 gap-4 mt-6">
                 <div className="content-card category-card-blue">
-                  <h4 className="font-semibold text-lg mb-2 text-blue-600 dark:text-blue-400">
+                  <h4 className="font-semibold text-lg mb-2 text-[var(--color-info)]">
                     シンプルさ
                   </h4>
                   <p className="text-sm">
@@ -115,7 +115,7 @@ export default function Lesson6() {
                   </p>
                 </div>
                 <div className="content-card category-card-green">
-                  <h4 className="font-semibold text-lg mb-2 text-green-600 dark:text-green-400">
+                  <h4 className="font-semibold text-lg mb-2 text-[var(--color-success)]">
                     印刷コスト
                   </h4>
                   <p className="text-sm">
@@ -123,7 +123,7 @@ export default function Lesson6() {
                   </p>
                 </div>
                 <div className="content-card category-card-purple">
-                  <h4 className="font-semibold text-lg mb-2 text-purple-600 dark:text-purple-400">
+                  <h4 className="font-semibold text-lg mb-2 text-[var(--color-purple)]">
                     デザインの制約
                   </h4>
                   <p className="text-sm">
@@ -131,7 +131,7 @@ export default function Lesson6() {
                   </p>
                 </div>
                 <div className="content-card category-card-orange">
-                  <h4 className="font-semibold text-lg mb-2 text-orange-600 dark:text-orange-400">
+                  <h4 className="font-semibold text-lg mb-2 text-[var(--accent)]">
                     プロトタイピング
                   </h4>
                   <p className="text-sm">
@@ -151,113 +151,120 @@ export default function Lesson6() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <div className="glass-card">
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+            <h3 className="text-2xl font-bold text-[var(--foreground)] mb-6">
               カードの構成要素
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] mb-6">
               カードは以下の要素で構成されます。各要素の役割を理解し、適切に配置することが重要です。
             </p>
 
-            {/* Card Mockup */}
+            {/* Card Mockup: ガソリンカード */}
             <div className="max-w-md mx-auto my-8">
-              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 border-4 border-blue-500">
-                {/* Badge */}
-                <div className="mb-4">
-                  <div className="inline-block bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    カテゴリバッジ
+              <div className="bg-[var(--surface)] rounded-xl shadow-2xl p-6 border-4 border-[var(--accent)]">
+                {/* Badge + Water Solubility */}
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="inline-block bg-[var(--accent)] text-white text-xs font-bold px-3 py-1 rounded-full">
+                    第1石油類
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    カードの種類を一目で識別
-                  </p>
+                  <div className="inline-block bg-[var(--section-alt-bg)] text-[var(--text-secondary)] text-xs font-bold px-3 py-1 rounded-full">
+                    非水溶性
+                  </div>
                 </div>
 
                 {/* Title */}
                 <div className="mb-4">
-                  <h4 className="text-2xl font-bold text-gray-800 dark:text-gray-200">
-                    カード名称
+                  <h4 className="text-2xl font-bold text-[var(--foreground)]">
+                    ガソリン
                   </h4>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    カードの主題やアイテム名
-                  </p>
                 </div>
 
                 {/* Illustration Area */}
-                <div className="mb-4 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-lg aspect-video flex items-center justify-center">
-                  <p className="text-sm font-semibold text-gray-600 dark:text-gray-300">
-                    イラスト領域
+                <div className="mb-4 bg-[var(--accent-muted)] rounded-lg aspect-video flex items-center justify-center">
+                  <p className="text-sm font-semibold text-[var(--text-secondary)]">
+                    AI生成イラスト領域
                   </p>
                 </div>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                  視覚的な魅力を提供し、カードの内容を直感的に伝える
-                </p>
 
-                {/* Info Rows */}
+                {/* Info Rows - Hazmat Parameters */}
                 <div className="mb-4 space-y-2">
-                  <div className="flex justify-between items-center bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded">
-                    <span className="text-sm font-medium">パラメータA</span>
-                    <span className="text-sm font-bold">値</span>
+                  <div className="flex justify-between items-center bg-[var(--accent-subtle)] px-3 py-2 rounded">
+                    <span className="text-sm font-medium">引火点</span>
+                    <span className="text-sm font-bold text-[var(--color-danger)]">-40&#8451;</span>
                   </div>
-                  <div className="flex justify-between items-center bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded">
-                    <span className="text-sm font-medium">パラメータB</span>
-                    <span className="text-sm font-bold">値</span>
+                  <div className="flex justify-between items-center bg-[var(--section-alt-bg)] px-3 py-2 rounded">
+                    <span className="text-sm font-medium">比重</span>
+                    <span className="text-sm font-bold">0.65-0.75</span>
+                  </div>
+                  <div className="flex justify-between items-center bg-[var(--accent-subtle)] px-3 py-2 rounded">
+                    <span className="text-sm font-medium">蒸気比重</span>
+                    <span className="text-sm font-bold">3.0-4.0</span>
+                  </div>
+                  <div className="flex justify-between items-center bg-[var(--section-alt-bg)] px-3 py-2 rounded">
+                    <span className="text-sm font-medium">指定数量</span>
+                    <span className="text-sm font-bold">200L</span>
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                  ゲーム上の数値情報（攻撃力、防御力など）
-                </p>
+
+                {/* Extinguishing Methods */}
+                <div className="bg-[var(--color-info-subtle)] p-3 rounded-lg mb-2">
+                  <p className="text-xs font-semibold text-[var(--color-info)] mb-1">消火方法</p>
+                  <div className="flex gap-2">
+                    <span className="text-xs bg-[var(--color-info-muted)] px-2 py-0.5 rounded">泡</span>
+                    <span className="text-xs bg-[var(--color-success-muted)] px-2 py-0.5 rounded">粉末</span>
+                    <span className="text-xs bg-[var(--accent-muted)] px-2 py-0.5 rounded">CO2</span>
+                  </div>
+                </div>
 
                 {/* Effect Text */}
-                <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg">
-                  <p className="text-xs text-gray-700 dark:text-gray-300">
-                    効果テキスト: カードの特殊効果や使用条件を説明する文章。ゲームのルールやカード同士の相互作用を決定します。
+                <div className="bg-[var(--section-alt-bg)] p-3 rounded-lg">
+                  <p className="text-xs text-[var(--text-secondary)]">
+                    効果テキスト：「引火点が極めて低く、常温で引火する。蒸気比重が大きく床に滞留するため、離れた火源でも引火の危険がある」
                   </p>
                 </div>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                  カードの効果や使用方法を説明
-                </p>
               </div>
             </div>
 
             {/* Element Details */}
             <div className="space-y-4 mt-8">
+              <h4 className="font-bold text-lg">危険物カードの構成要素</h4>
               <div className="content-card">
-                <h4 className="font-semibold text-lg mb-2 text-blue-600 dark:text-blue-400">
-                  1. カテゴリバッジ
+                <h4 className="font-semibold text-lg mb-2 text-[var(--accent)]">
+                  1. 分類タグ（上部左）
                 </h4>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
-                  カードの種類（運搬、消火、規制など）を示すラベル。色分けすることで瞬時に識別できます。
+                <p className="text-sm text-[var(--text-secondary)]">
+                  第4類の7分類（特殊引火物/第1石油類/アルコール類/第2石油類/第3石油類/第4石油類/動植物油類）を色分け表示。一目でカードの分類がわかります。
                 </p>
               </div>
               <div className="content-card">
-                <h4 className="font-semibold text-lg mb-2 text-purple-600 dark:text-purple-400">
-                  2. カード名称
+                <h4 className="font-semibold text-lg mb-2 text-[var(--color-info)]">
+                  2. 水溶性アイコン（上部右）
                 </h4>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
-                  危険物の名前や装備の名称。大きく読みやすいフォントで配置します。
+                <p className="text-sm text-[var(--text-secondary)]">
+                  「水溶性」か「非水溶性」かを示すタグ。消火方法の選択に直結する重要な情報のため、常に見える位置に配置します。
                 </p>
               </div>
               <div className="content-card">
-                <h4 className="font-semibold text-lg mb-2 text-pink-600 dark:text-pink-400">
-                  3. イラスト領域
+                <h4 className="font-semibold text-lg mb-2 text-[var(--color-purple)]">
+                  3. 物質名（上部）+ イラスト（中央）
                 </h4>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
-                  カードの内容を視覚的に表現するエリア。AI生成イラストを配置します。カードの魅力を大きく左右する重要な要素です。
+                <p className="text-sm text-[var(--text-secondary)]">
+                  物質名を大きく表示し、中央にAI生成イラストを配置。イラストは物質の特徴（色、状態、危険性）を視覚的に表現します。
                 </p>
               </div>
               <div className="content-card">
-                <h4 className="font-semibold text-lg mb-2 text-orange-600 dark:text-orange-400">
-                  4. 情報欄（パラメータ）
+                <h4 className="font-semibold text-lg mb-2 text-[var(--color-danger)]">
+                  4. パラメータ欄（左下）
                 </h4>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
-                  攻撃力、防御力、容量などの数値情報。ゲームバランスを決定する重要な要素です。
+                <p className="text-sm text-[var(--text-secondary)]">
+                  <strong>引火点</strong>（ゲームの攻撃力に対応）、<strong>比重</strong>（水に浮くか沈むか）、<strong>蒸気比重</strong>（蒸気が滞留する度合い）を数値で表示。バトルの勝敗判定に使用します。
                 </p>
               </div>
               <div className="content-card">
-                <h4 className="font-semibold text-lg mb-2 text-green-600 dark:text-green-400">
-                  5. 効果テキスト領域
+                <h4 className="font-semibold text-lg mb-2 text-[var(--color-success)]">
+                  5. 指定数量（右下）+ 消火方法バー（下部）
                 </h4>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
-                  カードの特殊効果やルールを説明するテキスト。簡潔で分かりやすい文章を心がけます。
+                <p className="text-sm text-[var(--text-secondary)]">
+                  指定数量はカードのレアリティに対応。消火方法バーには使用可能な消火器を<strong>アイコンで表示</strong>し、防御カードとの相性を直感的に確認できます。
                 </p>
               </div>
             </div>
@@ -272,85 +279,85 @@ export default function Lesson6() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <div className="glass-card">
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+            <h3 className="text-2xl font-bold text-[var(--foreground)] mb-6">
               レイアウト設計のポイント
             </h3>
             <div className="space-y-6">
               <div className="content-card category-card-blue">
-                <h4 className="font-semibold text-lg mb-3 text-blue-600 dark:text-blue-400">
+                <h4 className="font-semibold text-lg mb-3 text-[var(--color-info)]">
                   情報の階層性
                 </h4>
-                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-500 font-bold">•</span>
+                    <span className="text-[var(--color-info)] font-bold">•</span>
                     最も重要な情報（カード名、イラスト）を大きく、目立つ位置に配置
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-500 font-bold">•</span>
+                    <span className="text-[var(--color-info)] font-bold">•</span>
                     数値情報は見やすくグループ化し、比較しやすいレイアウトに
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-500 font-bold">•</span>
+                    <span className="text-[var(--color-info)] font-bold">•</span>
                     効果テキストは読みやすいフォントサイズで、適切な行間を確保
                   </li>
                 </ul>
               </div>
 
               <div className="content-card category-card-purple">
-                <h4 className="font-semibold text-lg mb-3 text-purple-600 dark:text-purple-400">
+                <h4 className="font-semibold text-lg mb-3 text-[var(--color-purple)]">
                   視覚的な明瞭性
                 </h4>
-                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-500 font-bold">•</span>
+                    <span className="text-[var(--color-purple)] font-bold">•</span>
                     十分な余白を設けて、情報が詰まりすぎないように
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-500 font-bold">•</span>
+                    <span className="text-[var(--color-purple)] font-bold">•</span>
                     コントラストを意識し、背景と文字の読みやすさを確保
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-500 font-bold">•</span>
+                    <span className="text-[var(--color-purple)] font-bold">•</span>
                     境界線や背景色で各セクションを明確に区別
                   </li>
                 </ul>
               </div>
 
               <div className="content-card category-card-pink">
-                <h4 className="font-semibold text-lg mb-3 text-pink-600 dark:text-pink-400">
+                <h4 className="font-semibold text-lg mb-3 text-[var(--color-pink)]">
                   カテゴリ別の色分け
                 </h4>
-                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                   <li className="flex items-start gap-2">
-                    <span className="text-pink-500 font-bold">•</span>
+                    <span className="text-[var(--color-pink)] font-bold">•</span>
                     運搬カード、消火カード、規制カードなど、種類ごとに色を統一
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-pink-500 font-bold">•</span>
+                    <span className="text-[var(--color-pink)] font-bold">•</span>
                     色覚多様性を考慮し、色だけでなく形状やアイコンも併用
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-pink-500 font-bold">•</span>
+                    <span className="text-[var(--color-pink)] font-bold">•</span>
                     一貫性を保ち、プレイヤーが直感的に理解できるデザインに
                   </li>
                 </ul>
               </div>
 
               <div className="content-card category-card-green">
-                <h4 className="font-semibold text-lg mb-3 text-green-600 dark:text-green-400">
+                <h4 className="font-semibold text-lg mb-3 text-[var(--color-success)]">
                   ゲーム体験への配慮
                 </h4>
-                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 font-bold">•</span>
+                    <span className="text-[var(--color-success)] font-bold">•</span>
                     手に持ったときに重要な情報が隠れないレイアウト
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 font-bold">•</span>
+                    <span className="text-[var(--color-success)] font-bold">•</span>
                     テーブル上に並べたときの視認性を考慮
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 font-bold">•</span>
+                    <span className="text-[var(--color-success)] font-bold">•</span>
                     照明条件が悪い場所でも読みやすいデザイン
                   </li>
                 </ul>
@@ -367,16 +374,16 @@ export default function Lesson6() {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <div className="worksheet-section">
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+            <h3 className="text-2xl font-bold text-[var(--foreground)] mb-6">
               グループディスカッション: レイアウト設計
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] mb-6">
               グループで以下のポイントについて話し合い、カードレイアウトの方針を決定しましょう。
             </p>
             <div className="space-y-4">
               <div className="content-card">
                 <h4 className="font-semibold mb-2">ディスカッションポイント</h4>
-                <ol className="list-decimal list-inside space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                <ol className="list-decimal list-inside space-y-3 text-sm text-[var(--text-secondary)]">
                   <li>
                     <strong>カードサイズ</strong>: トレーディングカードサイズ（63mm × 88mm）を採用するか、別のサイズにするか
                   </li>
@@ -395,25 +402,25 @@ export default function Lesson6() {
                 </ol>
               </div>
 
-              <div className="content-card bg-blue-50 dark:bg-blue-900/20">
-                <h4 className="font-semibold mb-2 text-blue-800 dark:text-blue-200">
+              <div className="content-card bg-[var(--color-info-subtle)]">
+                <h4 className="font-semibold mb-2 text-[var(--color-info)]">
                   提出物
                 </h4>
-                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
                   <li className="flex items-start gap-2">
-                    <CheckCircleIcon className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircleIcon className="w-5 h-5 text-[var(--color-info)] flex-shrink-0 mt-0.5" />
                     カードレイアウトのラフスケッチ（手描きまたはデジタル）
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircleIcon className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircleIcon className="w-5 h-5 text-[var(--color-info)] flex-shrink-0 mt-0.5" />
                     各要素の配置とサイズの比率を記載
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircleIcon className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircleIcon className="w-5 h-5 text-[var(--color-info)] flex-shrink-0 mt-0.5" />
                     カテゴリごとの色の定義（色名またはカラーコード）
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircleIcon className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircleIcon className="w-5 h-5 text-[var(--color-info)] flex-shrink-0 mt-0.5" />
                     デザインの意図と工夫点の説明（200字程度）
                   </li>
                 </ul>
@@ -430,39 +437,39 @@ export default function Lesson6() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <div className="glass-card">
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+            <h3 className="text-2xl font-bold text-[var(--foreground)] mb-6">
               理解度チェック
             </h3>
 
             {/* Quiz 1 */}
             <div className="mb-8">
               <h4 className="font-semibold text-lg mb-4">
-                Q1. カードデザインにおいて最も優先すべき要素は何ですか？
+                Q1. 上のガソリンカードに記載されている引火点の値はいくつですか？
               </h4>
               <div className="space-y-3">
                 <div
                   className={`quiz-option ${
                     showQuiz1Result
                       ? quiz1Answer === 'a'
-                        ? 'incorrect'
+                        ? 'correct'
                         : ''
                       : ''
                   }`}
                   onClick={() => !showQuiz1Result && handleQuiz1('a')}
                 >
-                  <strong>A.</strong> 見た目の美しさ
+                  <strong>A.</strong> -40&#8451;
                 </div>
                 <div
                   className={`quiz-option ${
                     showQuiz1Result
                       ? quiz1Answer === 'b'
-                        ? 'correct'
+                        ? 'incorrect'
                         : ''
                       : ''
                   }`}
                   onClick={() => !showQuiz1Result && handleQuiz1('b')}
                 >
-                  <strong>B.</strong> 情報の視認性と階層性
+                  <strong>B.</strong> 40&#8451;以上
                 </div>
                 <div
                   className={`quiz-option ${
@@ -474,7 +481,7 @@ export default function Lesson6() {
                   }`}
                   onClick={() => !showQuiz1Result && handleQuiz1('c')}
                 >
-                  <strong>C.</strong> できるだけ多くの情報を詰め込むこと
+                  <strong>C.</strong> 約300&#8451;
                 </div>
                 <div
                   className={`quiz-option ${
@@ -486,24 +493,24 @@ export default function Lesson6() {
                   }`}
                   onClick={() => !showQuiz1Result && handleQuiz1('d')}
                 >
-                  <strong>D.</strong> 印刷コストの最小化
+                  <strong>D.</strong> 13&#8451;
                 </div>
               </div>
               {showQuiz1Result && (
                 <div
                   className={`mt-4 p-4 rounded-lg ${
-                    quiz1Answer === 'b'
-                      ? 'bg-green-50 dark:bg-green-900/20 border-2 border-green-500'
-                      : 'bg-red-50 dark:bg-red-900/20 border-2 border-red-500'
+                    quiz1Answer === 'a'
+                      ? 'bg-[var(--color-success-subtle)] border-2 border-[var(--color-success)]'
+                      : 'bg-[var(--color-danger-subtle)] border-2 border-[var(--color-danger)]'
                   }`}
                 >
-                  {quiz1Answer === 'b' ? (
-                    <p className="text-green-800 dark:text-green-200">
-                      正解です！情報の視認性と階層性は、プレイヤーがゲーム中にスムーズに情報を得るために最も重要な要素です。
+                  {quiz1Answer === 'a' ? (
+                    <p className="text-[var(--color-success)]">
+                      正解です！ガソリンの引火点は-40&#8451;で、常温でも容易に引火します。この値はカードの攻撃力に直結する最重要パラメータです。ちなみに40&#8451;以上は灯油、13&#8451;はエタノール、約300&#8451;はガソリンの「発火点」です。
                     </p>
                   ) : (
-                    <p className="text-red-800 dark:text-red-200">
-                      不正解です。正解は「B. 情報の視認性と階層性」です。美しさも重要ですが、まずプレイヤーが必要な情報を素早く正確に読み取れることが優先されます。
+                    <p className="text-[var(--color-danger)]">
+                      不正解です。正解は「A. -40&#8451;」です。ガソリンの引火点は-40&#8451;と極めて低く、常温でも引火の危険があります。カードの引火点欄をよく確認しましょう。
                     </p>
                   )}
                 </div>
@@ -569,16 +576,16 @@ export default function Lesson6() {
                 <div
                   className={`mt-4 p-4 rounded-lg ${
                     quiz2Answer === 'c'
-                      ? 'bg-green-50 dark:bg-green-900/20 border-2 border-green-500'
-                      : 'bg-red-50 dark:bg-red-900/20 border-2 border-red-500'
+                      ? 'bg-[var(--color-success-subtle)] border-2 border-[var(--color-success)]'
+                      : 'bg-[var(--color-danger-subtle)] border-2 border-[var(--color-danger)]'
                   }`}
                 >
                   {quiz2Answer === 'c' ? (
-                    <p className="text-green-800 dark:text-green-200">
+                    <p className="text-[var(--color-success)]">
                       正解です！色覚特性が異なる人でも識別できるよう、形状やアイコンなど複数の視覚的手がかりを組み合わせることが重要です。
                     </p>
                   ) : (
-                    <p className="text-red-800 dark:text-red-200">
+                    <p className="text-[var(--color-danger)]">
                       不正解です。正解は「C. 色覚多様性への配慮と識別性の向上のため」です。色だけに頼ると、一部のプレイヤーがカードを識別しにくくなる可能性があります。
                     </p>
                   )}
@@ -645,16 +652,16 @@ export default function Lesson6() {
                 <div
                   className={`mt-4 p-4 rounded-lg ${
                     quiz3Answer === 'b'
-                      ? 'bg-green-50 dark:bg-green-900/20 border-2 border-green-500'
-                      : 'bg-red-50 dark:bg-red-900/20 border-2 border-red-500'
+                      ? 'bg-[var(--color-success-subtle)] border-2 border-[var(--color-success)]'
+                      : 'bg-[var(--color-danger-subtle)] border-2 border-[var(--color-danger)]'
                   }`}
                 >
                   {quiz3Answer === 'b' ? (
-                    <p className="text-green-800 dark:text-green-200">
+                    <p className="text-[var(--color-success)]">
                       正解です！片面カードでは、情報の優先順位を明確にし、最も重要な情報を強調して配置することが成功の鍵です。
                     </p>
                   ) : (
-                    <p className="text-red-800 dark:text-red-200">
+                    <p className="text-[var(--color-danger)]">
                       不正解です。正解は「B. 限られたスペースに必要な情報を優先順位をつけて配置する」です。スペースが限られているからこそ、情報の取捨選択と優先順位付けが重要になります。
                     </p>
                   )}
@@ -671,10 +678,10 @@ export default function Lesson6() {
           transition={{ duration: 0.5, delay: 0.7 }}
         >
           <div className="glass-card text-center">
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+            <h3 className="text-2xl font-bold text-[var(--foreground)] mb-4">
               次のステップ
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] mb-6">
               レイアウト設計が完了したら、次はAIを使ってカードイラストを生成しましょう。
             </p>
             <TransitionLink href="/lessons/7" className="btn-primary inline-flex items-center gap-2">

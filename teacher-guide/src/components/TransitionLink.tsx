@@ -20,6 +20,7 @@ export default function TransitionLink({
       return;
     }
 
+    // External links
     if (href.startsWith('http') || href.startsWith('mailto:')) {
       return;
     }
@@ -27,6 +28,7 @@ export default function TransitionLink({
     e.preventDefault();
     setIsExiting(true);
 
+    // Wait for exit animation
     setTimeout(() => {
       router.push(href);
     }, 600);

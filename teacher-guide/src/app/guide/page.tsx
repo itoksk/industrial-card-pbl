@@ -265,30 +265,14 @@ const getPhaseColor = (color: string) => {
   return colors[color] || 'tag-primary';
 };
 
-const getIconColor = (color: string) => {
-  const colors: Record<string, { bg: string; border: string; text: string }> = {
-    amber: {
-      bg: 'bg-amber-50 dark:bg-amber-950/30',
-      border: 'border-amber-200 dark:border-amber-800',
-      text: 'text-amber-600 dark:text-amber-400',
-    },
-    emerald: {
-      bg: 'bg-emerald-50 dark:bg-emerald-950/30',
-      border: 'border-emerald-200 dark:border-emerald-800',
-      text: 'text-emerald-600 dark:text-emerald-400',
-    },
-    red: {
-      bg: 'bg-red-50 dark:bg-red-950/30',
-      border: 'border-red-200 dark:border-red-800',
-      text: 'text-red-600 dark:text-red-400',
-    },
-    blue: {
-      bg: 'bg-blue-50 dark:bg-blue-950/30',
-      border: 'border-blue-200 dark:border-blue-800',
-      text: 'text-blue-600 dark:text-blue-400',
-    },
+const getIconBadge = (color: string) => {
+  const badges: Record<string, string> = {
+    amber: 'icon-badge-tertiary',
+    emerald: 'icon-badge-success',
+    red: 'icon-badge-danger',
+    blue: 'icon-badge-info',
   };
-  return colors[color] || colors.amber;
+  return badges[color] || badges.amber;
 };
 
 export default function GuidePage() {
@@ -363,17 +347,17 @@ export default function GuidePage() {
                     onClick={() => toggleCheck(item.id)}
                     className={`glass-card rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
                       isChecked
-                        ? 'bg-indigo-50/70 dark:bg-indigo-950/50 border-indigo-300 dark:border-indigo-700'
+                        ? 'checked-state'
                         : 'hover:shadow-xl'
                     }`}
                   >
                     <div className="flex items-start space-x-4">
                       <div
-                        className={`flex-shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all ${
-                          isChecked
-                            ? 'bg-indigo-600 border-indigo-600'
-                            : 'border-[var(--border)]'
-                        }`}
+                        className="flex-shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all"
+                        style={{
+                          background: isChecked ? 'var(--accent-primary)' : 'transparent',
+                          borderColor: isChecked ? 'var(--accent-primary)' : 'var(--border)',
+                        }}
                       >
                         {isChecked && (
                           <CheckCircleIcon className="w-5 h-5 text-white" />
@@ -382,18 +366,12 @@ export default function GuidePage() {
                       <div className="flex-1 space-y-2">
                         <div className="flex items-center space-x-2">
                           <Icon
-                            className={`h-5 w-5 ${
-                              isChecked
-                                ? 'text-indigo-600 dark:text-indigo-400'
-                                : 'text-[var(--text-muted)]'
-                            }`}
+                            className="h-5 w-5"
+                            style={{ color: isChecked ? 'var(--accent-primary)' : 'var(--text-muted)' }}
                           />
                           <h3
-                            className={`font-semibold ${
-                              isChecked
-                                ? 'text-indigo-900 dark:text-indigo-300'
-                                : 'text-[var(--text-primary)]'
-                            }`}
+                            className="font-semibold"
+                            style={{ color: isChecked ? 'var(--accent-primary)' : 'var(--text-primary)' }}
                           >
                             {item.title}
                           </h3>
@@ -407,18 +385,18 @@ export default function GuidePage() {
                 );
               })}
             </div>
-            <div className="glass-card rounded-2xl p-6 bg-indigo-50/50 dark:bg-indigo-950/30">
+            <div className="glass-card rounded-2xl p-6 checked-state">
               <div className="flex items-center space-x-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full text-white flex items-center justify-center font-bold" style={{ background: 'var(--accent-primary)' }}>
                   {checkedItems.size}
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-indigo-900 dark:text-indigo-300">
+                  <p className="text-sm font-medium text-[var(--accent-primary)]">
                     {checkedItems.size} / {checklist.length} 項目完了
                   </p>
-                  <div className="mt-2 h-2 w-48 bg-indigo-200 dark:bg-indigo-900 rounded-full overflow-hidden">
+                  <div className="mt-2 h-2 w-48 progress-bg rounded-full overflow-hidden">
                     <motion.div
-                      className="h-full bg-indigo-600"
+                      className="h-full progress-fill"
                       initial={{ width: 0 }}
                       animate={{
                         width: `${(checkedItems.size / checklist.length) * 100}%`,
@@ -445,7 +423,7 @@ export default function GuidePage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b-2 border-indigo-200 dark:border-indigo-800">
+                      <tr className="border-b-2" style={{ borderColor: 'color-mix(in srgb, var(--accent-primary) 30%, transparent)' }}>
                         <th className="text-left p-3 font-semibold text-[var(--text-secondary)]">L</th>
                         <th className="text-left p-3 font-semibold text-[var(--text-secondary)]">フェーズ</th>
                         <th className="text-left p-3 font-semibold text-[var(--text-secondary)]">タイトル</th>
@@ -464,7 +442,7 @@ export default function GuidePage() {
                           className="border-b border-[var(--border)] hover:bg-[var(--surface-hover)] transition-colors"
                         >
                           <td className="p-3">
-                            <div className="w-8 h-8 rounded-full bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-sm">
+                            <div className="w-8 h-8 rounded-full bg-[var(--surface-hover)] text-[var(--accent-primary)] flex items-center justify-center font-bold text-sm">
                               {lesson.lesson}
                             </div>
                           </td>
@@ -516,7 +494,7 @@ export default function GuidePage() {
                     className="content-card rounded-xl p-4"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 rounded-full bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-sm flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full bg-[var(--surface-hover)] text-[var(--accent-primary)] flex items-center justify-center font-bold text-sm flex-shrink-0">
                         {lesson.lesson}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -563,8 +541,8 @@ export default function GuidePage() {
                 className="glass-card rounded-2xl p-6 space-y-4"
               >
                 <div className="flex items-center space-x-3">
-                  <div className="inline-flex rounded-xl p-3 bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800">
-                    <ComputerDesktopIcon className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                  <div className="icon-badge icon-badge-primary">
+                    <ComputerDesktopIcon className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                     デジタル環境
@@ -573,7 +551,7 @@ export default function GuidePage() {
                 <ul className="space-y-3">
                   {materials.digital.map((item, idx) => (
                     <li key={idx} className="flex items-start space-x-2">
-                      <CheckCircleIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-0.5" />
+                      <CheckCircleIcon className="h-5 w-5 text-[var(--accent-primary)] flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-sm font-medium text-[var(--text-primary)]">
                           {item.name}
@@ -594,8 +572,8 @@ export default function GuidePage() {
                 className="glass-card rounded-2xl p-6 space-y-4"
               >
                 <div className="flex items-center space-x-3">
-                  <div className="inline-flex rounded-xl p-3 bg-purple-50 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800">
-                    <PrinterIcon className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                  <div className="icon-badge icon-badge-secondary">
+                    <PrinterIcon className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                     物理材料
@@ -604,7 +582,7 @@ export default function GuidePage() {
                 <ul className="space-y-3">
                   {materials.physical.map((item, idx) => (
                     <li key={idx} className="flex items-start space-x-2">
-                      <CheckCircleIcon className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                      <CheckCircleIcon className="h-5 w-5 text-[var(--accent-secondary)] flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-sm font-medium text-[var(--text-primary)]">
                           {item.name}
@@ -625,8 +603,8 @@ export default function GuidePage() {
                 className="glass-card rounded-2xl p-6 space-y-4"
               >
                 <div className="flex items-center space-x-3">
-                  <div className="inline-flex rounded-xl p-3 bg-pink-50 dark:bg-pink-950/30 border border-pink-200 dark:border-pink-800">
-                    <DocumentTextIcon className="h-6 w-6 text-pink-600 dark:text-pink-400" />
+                  <div className="icon-badge icon-badge-tertiary">
+                    <DocumentTextIcon className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                     ソフトウェア
@@ -635,7 +613,7 @@ export default function GuidePage() {
                 <ul className="space-y-3">
                   {materials.software.map((item, idx) => (
                     <li key={idx} className="flex items-start space-x-2">
-                      <CheckCircleIcon className="h-5 w-5 text-pink-600 dark:text-pink-400 flex-shrink-0 mt-0.5" />
+                      <CheckCircleIcon className="h-5 w-5 text-[var(--accent-tertiary)] flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-sm font-medium text-[var(--text-primary)]">
                           {item.name}
@@ -662,7 +640,7 @@ export default function GuidePage() {
             <div className="grid gap-6 md:grid-cols-2">
               {apiKeyInfo.map((info, index) => {
                 const Icon = info.icon;
-                const colors = getIconColor(info.color);
+                const badgeClass = getIconBadge(info.color);
                 return (
                   <motion.div
                     key={info.title}
@@ -671,8 +649,8 @@ export default function GuidePage() {
                     transition={{ delay: 1.3 + index * 0.1 }}
                     className="glass-card rounded-2xl p-6 space-y-4"
                   >
-                    <div className={`inline-flex rounded-xl p-3 ${colors.bg} border ${colors.border}`}>
-                      <Icon className={`h-6 w-6 ${colors.text}`} />
+                    <div className={`icon-badge ${badgeClass}`}>
+                      <Icon className="h-6 w-6" />
                     </div>
                     <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                       {info.title}
@@ -684,14 +662,14 @@ export default function GuidePage() {
                 );
               })}
             </div>
-            <div className="glass-card rounded-2xl p-6 bg-amber-50/50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800">
+            <div className="glass-card rounded-2xl p-6 alert-warning">
               <div className="flex items-start space-x-4">
-                <ExclamationTriangleIcon className="h-6 w-6 text-amber-600 dark:text-amber-400 flex-shrink-0" />
+                <ExclamationTriangleIcon className="h-6 w-6 flex-shrink-0" style={{ color: 'var(--warning)' }} />
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-amber-900 dark:text-amber-300">
+                  <h4 className="font-semibold text-[var(--text-primary)]">
                     重要な注意事項
                   </h4>
-                  <p className="text-sm text-amber-800 dark:text-amber-400 leading-relaxed">
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                     APIキーは絶対に公開リポジトリにコミットしないでください。
                     また、生徒にAPIキーを直接共有する場合は、使用後に必ずキーをローテーション（再生成）することを推奨します。
                     Vercelの環境変数機能を使用することで、より安全な運用が可能です。
