@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "TCG-PBL 教員ガイド",
   description: "トレーディングカードゲーム形式で学ぶ工業系PBL教材の教員向けガイド。実践的な指導法、評価基準、教授法メモを提供します。",
   keywords: ["PBL", "プロジェクト型学習", "トレーディングカードゲーム", "工業教育", "教員ガイド"],

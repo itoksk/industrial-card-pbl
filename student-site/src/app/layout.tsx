@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "TCG-PBL | カードゲーム制作で学ぶPBL学習",
   description: "産業保安分野のカードゲーム制作を通じて、実践的な知識とスキルを習得するPBLフレームワーク",
 };
